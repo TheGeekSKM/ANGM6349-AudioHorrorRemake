@@ -816,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 522314942}
+  _OnPlayerMove: {fileID: 11400000, guid: 1be4fa75abb12c54ea58424792db7256, type: 2}
   _moveDirection: {x: 0, y: 0, z: 0}
   _isMoving: 0
 --- !u!1 &602811775
@@ -1687,6 +1688,8 @@ GameObject:
   - component: {fileID: 1389014447}
   - component: {fileID: 1389014446}
   - component: {fileID: 1389014445}
+  - component: {fileID: 1389014448}
+  - component: {fileID: 1389014449}
   m_Layer: 5
   m_Name: PNL_Header
   m_TagString: Untagged
@@ -1780,6 +1783,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389014443}
   m_CullTransparentMesh: 1
+--- !u!114 &1389014448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389014443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42e129ab851d1439c79e6f372b888c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStateText: {fileID: 1543115883}
+  _walkingHexColor: {r: 0.15419191, g: 0.5641451, b: 0.7264151, a: 1}
+  _walkingText: WALKING
+  _standingText: STANDING
+--- !u!114 &1389014449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389014443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69467608895accb459a0518918b4bca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1be4fa75abb12c54ea58424792db7256, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1389014448}
+        m_TargetAssemblyTypeName: PlayerStateDisplayController, Assembly-CSharp
+        m_MethodName: UpdatePlayerState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1481653569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82578592dab138f42aa85e93d2169f30, type: 3}
@@ -1796,7 +1843,6 @@ GameObject:
   - component: {fileID: 1503175368}
   - component: {fileID: 1503175371}
   - component: {fileID: 1503175370}
-  - component: {fileID: 1503175369}
   m_Layer: 5
   m_Name: PNL_Background
   m_TagString: Untagged
@@ -1828,32 +1874,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1503175369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503175367}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 50
-    m_Right: 50
-    m_Top: 50
-    m_Bottom: 50
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &1503175370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,7 +2824,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1953644298
 MonoBehaviour:
   m_ObjectHideFlags: 0

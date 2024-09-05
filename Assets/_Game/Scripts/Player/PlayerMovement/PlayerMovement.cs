@@ -1,16 +1,20 @@
+using GameEvents;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] Rigidbody _rigidbody;
+
+    [Header("Events")]
+    [SerializeField] BoolEvent _OnPlayerMove;
+
+    [Header("Debug")]
     [SerializeField, ReadOnly] Vector3 _moveDirection;
     [SerializeField, ReadOnly] bool _isMoving = false;
     public bool IsMoving => _isMoving;
-
-    public UnityAction OnMove;
-    public UnityAction OnStop;
 
     void OnValidate()
     {
@@ -28,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
     public void Move()
     {
         _isMoving = true;
-        OnMove?.Invoke();
+        _OnPlayerMove.Raise(_isMoving);
     }
 
     [Button]
     public void Stop()
     {
         _isMoving = false;
-        OnStop?.Invoke();
+        _OnPlayerMove.Raise(_isMoving);
     }
 
     void OnCollisionEnter(Collision other)
