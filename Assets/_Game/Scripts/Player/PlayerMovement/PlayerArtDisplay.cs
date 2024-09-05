@@ -52,8 +52,6 @@ public class PlayerArtDisplay : MonoBehaviour
     [Button]
     public void SetPlayerArtInactive()
     {
-        if (_artEnabled == false) return;
-
         // sets the player art to inactive
         _playerArt.SetActive(false);
         foreach (GameObject anims in _playerAnimationList)
