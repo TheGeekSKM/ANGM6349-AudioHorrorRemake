@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 217181033}
   - component: {fileID: 217181034}
   - component: {fileID: 217181035}
+  - component: {fileID: 217181036}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -418,6 +419,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 522314946}
+--- !u!114 &217181036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217181032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f962198758aac4fbdc81563e8ce695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 0
+  OnHealthPercentageChanged: {fileID: 11400000, guid: 2c64ee68a5eb34d4084fc870524bebf7, type: 2}
 --- !u!1 &287037540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3036a78b8b52793489a9627377d00ab4, type: 3}
@@ -885,6 +901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627778275}
   - component: {fileID: 627778276}
+  - component: {fileID: 627778277}
   m_Layer: 5
   m_Name: SL_HealthBar
   m_TagString: Untagged
@@ -965,6 +982,34 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &627778277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627778274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7f8cd8a75b4dc4d9adc13a6c71c17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2c64ee68a5eb34d4084fc870524bebf7, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 627778276}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &688323880
 GameObject:
   m_ObjectHideFlags: 0

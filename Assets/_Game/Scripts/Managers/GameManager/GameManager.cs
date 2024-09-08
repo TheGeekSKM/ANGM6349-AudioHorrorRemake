@@ -15,9 +15,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SceneReference _safeRoomScene;
     [SerializeField] private SceneReference _endScene;
 
+    [Header("Game Settings")]   
+    [SerializeField] bool _startWithMainMenu = true;
+
     SceneReference _currentScene;
 
     StateMachine _gameStateMachine;
+
+    public StateMachine GameStateMachine => _gameStateMachine;
+
+    public GameMainMenuState GameMainMenuState {get; private set;}
+    public GameCutsceneState GameCutsceneState {get; private set;}
+    public GamePlayState GamePlayState {get; private set;}
+    public GameSafeRoomState GameSafeRoomState {get; private set;}
+    public GameEndState GameEndState {get; private set;}
 
     void Awake()
     {
@@ -37,13 +48,21 @@ public class GameManager : MonoBehaviour
         var gameSafeRoomState = new GameSafeRoomState(this);
         var gameEndState = new GameEndState(this);
 
+        GameMainMenuState = gameMainMenuState;
+        GameCutsceneState = gameCutsceneState;
+        GamePlayState = gamePlayState;
+        GameSafeRoomState = gameSafeRoomState;
+        GameEndState = gameEndState;
+
         _gameStateMachine.AddTransition(gameMainMenuState, gameCutsceneState, new BlankPredicate());
         _gameStateMachine.AddTransition(gameCutsceneState, gamePlayState, new BlankPredicate());
         _gameStateMachine.AddTransition(gamePlayState, gameSafeRoomState, new BlankPredicate());
         _gameStateMachine.AddTransition(gameSafeRoomState, gameEndState, new BlankPredicate());
 
-        _gameStateMachine.SetState(gameMainMenuState);
+        if (_startWithMainMenu) _gameStateMachine.SetState(gameMainMenuState);
     }
+
+
 
     public void LoadMainMenuScene()
     {

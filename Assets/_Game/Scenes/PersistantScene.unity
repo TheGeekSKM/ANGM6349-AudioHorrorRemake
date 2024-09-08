@@ -320,6 +320,7 @@ MonoBehaviour:
   _endScene:
     asset: {fileID: 0}
     guid: 00000000000000000000000000000000
+  _startWithMainMenu: 0
 --- !u!4 &945597928
 Transform:
   m_ObjectHideFlags: 0
