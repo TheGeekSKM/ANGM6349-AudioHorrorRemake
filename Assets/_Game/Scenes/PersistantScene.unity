@@ -482,6 +482,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b149fa682a5c5458e9fe8cecd4e42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainMenuScene:
+    asset: {fileID: 102900000, guid: 54be357c4f2eaf747887094d80e9f231, type: 3}
+    guid: 54be357c4f2eaf747887094d80e9f231
+  _cutsceneScene:
+    asset: {fileID: 102900000, guid: 0bceedb9bec9654449d406271af7f93e, type: 3}
+    guid: 0bceedb9bec9654449d406271af7f93e
+  _gameScene:
+    asset: {fileID: 102900000, guid: 922750b34ba313140a2cd205dca2d828, type: 3}
+    guid: 922750b34ba313140a2cd205dca2d828
+  _safeRoomScene:
+    asset: {fileID: 102900000, guid: fa03e9d6c12fd994abb99a5af3f84c31, type: 3}
+    guid: fa03e9d6c12fd994abb99a5af3f84c31
+  _endScene:
+    asset: {fileID: 0}
+    guid: 00000000000000000000000000000000
 --- !u!4 &945597928
 Transform:
   m_ObjectHideFlags: 0

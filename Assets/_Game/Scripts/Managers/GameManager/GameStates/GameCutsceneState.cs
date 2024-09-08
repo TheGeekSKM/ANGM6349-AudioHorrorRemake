@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSafeRoomState : GameBaseState
+public class GameCutsceneState : GameBaseState
 {
-    public GameSafeRoomState(GameManager gameManager) : base(gameManager)
+    public GameCutsceneState(GameManager gameManager) : base(gameManager)
     {
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        _gameManager.LoadSafeRoomScene();
+        _gameManager.LoadCutsceneScene();
     }
 
     public override void Update()
@@ -28,4 +28,6 @@ public class GameSafeRoomState : GameBaseState
     {
         base.OnExit();
     }
+
 }
+

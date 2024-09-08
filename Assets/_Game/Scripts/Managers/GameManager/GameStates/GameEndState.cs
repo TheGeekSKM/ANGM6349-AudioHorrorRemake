@@ -11,6 +11,7 @@ public class GameEndState : GameBaseState
     public override void OnEnter()
     {
         base.OnEnter();
+        _gameManager.LoadEndScene();
     }
 
     public override void Update()

@@ -11,6 +11,7 @@ public class GameMainMenuState : GameBaseState
     public override void OnEnter()
     {
         base.OnEnter();
+        _gameManager.LoadMainMenuScene();
     }
 
     public override void Update()
