@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     [CreateAssetMenu(fileName = "New Void Event", menuName = "GameEvents/VoidEvent")]
     public class VoidEvent : BaseGameEvent<Void>

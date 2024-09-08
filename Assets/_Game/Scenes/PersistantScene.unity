@@ -625,7 +625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerFootstepSounds:
   - {fileID: 11400000, guid: fbbac7416c4c29f4d92fa59ede814590, type: 2}
-  PlayerTurnSounds: []
+  PlayerTurnSounds:
+  - {fileID: 11400000, guid: eb7c94032e2ef2543a78d6189320cecf, type: 2}
   MonsterFootstepSounds: []
   MonsterGrowlSounds: []
 --- !u!1 &1558297649

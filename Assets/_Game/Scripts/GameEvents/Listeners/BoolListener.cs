@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     public class BoolListener : BaseGameEventListener<bool, BoolEvent, UnityBoolEvent> {}
     

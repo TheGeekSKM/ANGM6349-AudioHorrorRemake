@@ -383,7 +383,6 @@ Transform:
   - {fileID: 1840095975}
   - {fileID: 522314941}
   - {fileID: 344874433}
-  - {fileID: 2045957058}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -822,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 522314942}
-  _soundParent: {fileID: 2045957057}
+  _soundParent: {fileID: 1368546197}
   _OnPlayerMove: {fileID: 11400000, guid: 1be4fa75abb12c54ea58424792db7256, type: 2}
   _moveDirection: {x: 0, y: 0, z: 0}
   _isMoving: 1
@@ -1582,6 +1581,7 @@ GameObject:
   - component: {fileID: 1183875037}
   - component: {fileID: 1183875038}
   - component: {fileID: 1183875040}
+  - component: {fileID: 1183875041}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -1597,7 +1597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183875034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0.75, z: 13.9}
+  m_LocalPosition: {x: -18.8, y: 0.75, z: 31.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1656,6 +1656,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1183875041
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183875034}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &1368546197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,37 +3036,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &2045957057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2045957058}
-  m_Layer: 0
-  m_Name: SoundParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2045957058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045957057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 217181033}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &444405439815312672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6253578002529460973, guid: 1ff9ebb1154d8984694d7cfd7bfe3b3a, type: 3}

@@ -1,6 +1,6 @@
 using UnityEngine.Events;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     [System.Serializable]
     public class UnityBoolEvent : UnityEvent<bool> { }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     public interface IGameEventListener<T>
     {

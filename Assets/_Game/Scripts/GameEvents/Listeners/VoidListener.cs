@@ -1,5 +1,6 @@
 using UnityEngine;
-namespace GameEvents
+
+namespace SaiUtils.GameEvents
 {
     public class VoidListener : BaseGameEventListener<Void, VoidEvent, UnityVoidEvent>
     {

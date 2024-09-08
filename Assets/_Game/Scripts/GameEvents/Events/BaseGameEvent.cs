@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     public abstract class BaseGameEvent<T> : ScriptableObject
     {

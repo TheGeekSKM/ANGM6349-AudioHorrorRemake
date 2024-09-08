@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     [CreateAssetMenu(fileName = "New Bool Event", menuName = "GameEvents/BoolEvent")]
     public class BoolEvent : BaseGameEvent<bool> {}

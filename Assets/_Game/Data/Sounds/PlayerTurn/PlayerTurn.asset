@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198e4bea277850c4f93de9cbab5fab04, type: 3}
+  m_Name: PlayerTurn
+  m_EditorClassIdentifier: 
+  Sounds:
+  - {fileID: 8300000, guid: f705ef0b13c608d4c837b4d2576aa50a, type: 3}
+  - {fileID: 8300000, guid: a76028f553b2856479284d589d80275e, type: 3}
+  Volume: 0.5

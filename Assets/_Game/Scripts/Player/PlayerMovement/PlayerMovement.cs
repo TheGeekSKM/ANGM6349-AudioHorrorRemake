@@ -1,9 +1,9 @@
-using System;
+
 using System.Collections;
-using GameEvents;
+using SaiUtils.GameEvents;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,11 +32,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // set the initial move direction to forward
         _moveDirection = new Vector3(0, 0, -1);
-    }
-
-    void Update()
-    {
-        _soundParent.transform.position = transform.position;
     }
 
     [Button]
@@ -68,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         while (_isMoving)
         {
-            SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerFootstepSound);
+            SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerFootstepSound, _soundParent.transform);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -84,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // rotate the _moveDirection to the left
         _moveDirection = new Vector3(-_moveDirection.z, 0, _moveDirection.x);
-        SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound);
+        SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound, _soundParent.transform);
     }
 
     [Button]
@@ -92,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // rotate the _moveDirection to the right
         _moveDirection = new Vector3(_moveDirection.z, 0, -_moveDirection.x);
-        SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound);
+        SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound, _soundParent.transform);
     }
 
     void FixedUpdate()

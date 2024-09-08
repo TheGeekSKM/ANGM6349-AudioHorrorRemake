@@ -15,18 +15,23 @@ public class SoundManager : MonoBehaviour
     [SerializeField] GameObject _soundPrefab;
     [SerializeField] GameObject _enemySoundPrefab;
 
-    public void PlaySound(Transform soundSource, SoundData soundData)
+    public void PlaySound(Transform soundSource, SoundData soundData, Transform parent = null)
     {
         GameObject sound = Instantiate(_soundPrefab, soundSource.position, Quaternion.identity);
         sound.GetComponent<SoundController>().InitSound(soundData);
-        sound.transform.SetParent(soundSource);
+        
+        if (parent != null) sound.transform.SetParent(parent);
+        else sound.transform.SetParent(soundSource);
     }
 
-    public void PlayEnemySound(Transform soundSource, SoundData soundData)
+
+    public void PlayEnemySound(Transform soundSource, SoundData soundData, Transform parent = null)
     {
         GameObject sound = Instantiate(_enemySoundPrefab, soundSource.position, Quaternion.identity);
         sound.GetComponent<SoundController>().InitSound(soundData);
-        sound.transform.SetParent(soundSource);
+        
+        if (parent != null) sound.transform.SetParent(parent);
+        else sound.transform.SetParent(soundSource);
     }
 
 

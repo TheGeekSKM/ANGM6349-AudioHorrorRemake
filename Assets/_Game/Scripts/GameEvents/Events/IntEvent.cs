@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEvents
+namespace SaiUtils.GameEvents
 {
     [CreateAssetMenu(fileName = "New Int Event", menuName = "GameEvents/IntEvent")]
     public class IntEvent : BaseGameEvent<int> {}

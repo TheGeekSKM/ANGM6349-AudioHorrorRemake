@@ -34,8 +34,8 @@ public class SoundController : MonoBehaviour
         // set the volume
         _audioSource.volume = _soundData.Volume;
 
-        // set the sprite size
-        transform.localScale = Vector3.one * _soundData.Volume * 2f;
+        // // set the sprite size
+        // transform.localScale = Vector3.one * _soundData.Volume;
         
         // play the sound
         _audioSource.Play();
@@ -68,7 +68,7 @@ public class SoundController : MonoBehaviour
 
         if (!_soundData) return;
 
-        transform.localScale += Vector3.one * Time.deltaTime * _soundData.Volume * 5;
+        transform.localScale += Vector3.one * Time.deltaTime * _soundData.Volume * 10;
         
         transform.rotation = Quaternion.Euler(0, 0, 0);
 

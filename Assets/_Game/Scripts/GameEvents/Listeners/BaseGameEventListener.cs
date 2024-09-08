@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameEvents {
+namespace SaiUtils.GameEvents {
     // T is the type of the GameEvent, 
     // E is the event that the listener is listening to, 
     // UER is the UnityEventResponse
