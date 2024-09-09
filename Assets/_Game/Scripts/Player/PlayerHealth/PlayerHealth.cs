@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     [Button]
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
         if (_currentHealth <= 0)
