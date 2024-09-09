@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerMovement _playerMovement;
     public PlayerMovement PlayerMovement => _playerMovement;
 
+    [SerializeField] RoomController _roomController;
+    public RoomController RoomController => _roomController;
+
+    [SerializeField] InventoryController _inventoryController;
+    public InventoryController InventoryController => _inventoryController;
+
     [SerializeField] bool _isCrouching;
     public bool IsCrouching => _isCrouching;
 

@@ -5,6 +5,7 @@ public class ItemData : ScriptableObject
 {
     [Header("Item Data")]
     public string ItemName;
+    public string ItemDescription;
     public string[] ItemUsageDescription;
     public bool UseDurability = false;
     public int Durability = -1;
