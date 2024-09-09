@@ -68,7 +68,7 @@ public class SoundController : MonoBehaviour
 
         if (!_soundData) return;
 
-        transform.localScale += Vector3.one * Time.deltaTime * _soundData.Volume * 10;
+        transform.localScale += Vector3.one * Time.deltaTime * _soundData.Volume * 15;
         
         transform.rotation = Quaternion.Euler(0, 0, 0);
 

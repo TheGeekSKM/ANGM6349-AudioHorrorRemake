@@ -9,7 +9,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void OnEnter()
     {
-        Debug.Log("PlayerIdleState OnEnter");
+        // Debug.Log("PlayerIdleState OnEnter");
        _playerController.PlayerMovement.Stop();
     }
 }

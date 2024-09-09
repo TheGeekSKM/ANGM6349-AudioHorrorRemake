@@ -11,11 +11,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerMovement _playerMovement;
     public PlayerMovement PlayerMovement => _playerMovement;
 
+    public Transform PlayerTransform => _playerMovement.transform;
+
     [SerializeField] RoomController _roomController;
     public RoomController RoomController => _roomController;
 
     [SerializeField] InventoryController _inventoryController;
     public InventoryController InventoryController => _inventoryController;
+
+    [SerializeField] PlayerArtDisplay _playerArtDisplay;
+    public PlayerArtDisplay PlayerArtDisplay => _playerArtDisplay;
+
+    [SerializeField] PlayerHealth _playerHealth;
+    public PlayerHealth PlayerHealth => _playerHealth;
 
     [SerializeField] bool _isCrouching;
     public bool IsCrouching => _isCrouching;

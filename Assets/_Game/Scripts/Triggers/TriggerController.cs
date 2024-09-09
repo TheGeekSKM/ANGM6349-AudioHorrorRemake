@@ -19,7 +19,7 @@ public class TriggerController : MonoBehaviour
     {
         if ((_targetLayer.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            Debug.Log("Hit with Layermask");
+            // Debug.Log("Hit with Layermask");
             _onTriggerEnter?.Invoke();
             _onTriggerEnterGameEvent?.Raise();
         }
@@ -29,7 +29,7 @@ public class TriggerController : MonoBehaviour
     {
         if ((_targetLayer.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            Debug.Log("Exit with Layermask");
+            // Debug.Log("Exit with Layermask");
             _onTriggerExit?.Invoke();
             _onTriggerExitGameEvent?.Raise();
         }

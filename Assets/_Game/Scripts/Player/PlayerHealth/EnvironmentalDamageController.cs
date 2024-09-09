@@ -12,6 +12,12 @@ public class EnvironmentalDamageController : MonoBehaviour
     public void PlayerInDamageZone() => _isPlayerInDamageZone = true;
 
     public void PlayerNotInDamageZone() => _isPlayerInDamageZone = false;
+
+
+    void Start()
+    {
+        _playerHealth = PlayerController.Instance.PlayerHealth;
+    }
     
     
     void Update()

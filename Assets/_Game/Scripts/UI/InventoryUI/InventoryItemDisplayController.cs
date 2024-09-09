@@ -37,6 +37,9 @@ public class InventoryItemDisplayController : MonoBehaviour
             if (_itemData.Durability <= 0)
             {
                 PlayerController.Instance.InventoryController.RemoveItem(_itemData);
+                
+                _useButton.onClick.RemoveAllListeners();
+                _discardButton.onClick.RemoveAllListeners();
                 Destroy(gameObject);
             }
         }

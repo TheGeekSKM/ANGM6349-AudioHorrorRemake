@@ -70,8 +70,8 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        // stop the player when it collides with something
-        Stop();
+        // stop the player when it collides with something that isn't the ground
+        if (!other.gameObject.CompareTag("Ground")) Stop();
     }
 
     [Button]

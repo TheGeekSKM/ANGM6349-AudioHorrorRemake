@@ -9,7 +9,7 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void OnEnter()
     {
-        Debug.Log("PlayerMoveState OnEnter");
+        // Debug.Log("PlayerMoveState OnEnter");
        _playerController.PlayerMovement.Move();
     }
 }
