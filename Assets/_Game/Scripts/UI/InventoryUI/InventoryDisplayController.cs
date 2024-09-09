@@ -5,6 +5,7 @@ public class InventoryDisplayController : MonoBehaviour
 {
     [SerializeField] private InventoryController _inventoryController;
     [SerializeField] private GameObject _inventoryItemDisplayPrefab;
+    [SerializeField] Transform _inventoryDisplayParent;
 
     List<GameObject> _inventoryItemDisplays = new List<GameObject>();
 
@@ -15,7 +16,7 @@ public class InventoryDisplayController : MonoBehaviour
 
         foreach (var item in _inventoryController.Inventory.Inventory)
         {
-            var itemDisplay = Instantiate(_inventoryItemDisplayPrefab, transform);
+            var itemDisplay = Instantiate(_inventoryItemDisplayPrefab, _inventoryDisplayParent);
             itemDisplay.GetComponent<InventoryItemDisplayController>().Initialize(item);
 
             _inventoryItemDisplays.Add(itemDisplay);

@@ -5,6 +5,7 @@ using UnityEngine;
 using SaiUtils.StateMachine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using TMPro;
 
 public enum GamePlayUIState
 {
@@ -30,6 +31,8 @@ public class GamePlayUIController : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] Button _walkButton;
     [SerializeField] Button _stopMovingButton;
+    [SerializeField] Button _leftButton;
+    [SerializeField] Button _rightButton;
     [SerializeField] Button _listenButton;
     [SerializeField] Button _stopListenButton;
     [SerializeField] Button _playerInventoryButton;
@@ -39,9 +42,13 @@ public class GamePlayUIController : MonoBehaviour
     [SerializeField] Button _notePadActivateButton;
     [SerializeField] Button _notePadHideButton;
 
+    [Header("NotePad")]
     [SerializeField] float _notePadHiddenYPos = 1014f;
     [SerializeField] float _notePadShownYPos = 0f;
 
+    [Header("Chatlogs")]
+    [SerializeField] List<Transform> _chatLogParents = new();
+    [SerializeField] GameObject _chatLogPrefab;
 
     StateMachine _gamePlayUIStateMachine;
     public StateMachine GamePlayUIStateMachine => _gamePlayUIStateMachine;
@@ -73,8 +80,8 @@ public class GamePlayUIController : MonoBehaviour
 
         GamePlayUIDefaultState = new GamePlayUIDefaultState(this);
         GamePlayUIListenState = new GamePlayUIListenState(this);
-        GamePlayUIPlayerInventoryState = new GamePlayUIPlayerInventoryState(this);
-        GamePlayUIRoomInventoryState = new GamePlayUIRoomInventoryState(this);
+        GamePlayUIPlayerInventoryState = new GamePlayUIPlayerInventoryState(this, _playerInventoryPanel.GetComponent<InventoryDisplayController>());
+        GamePlayUIRoomInventoryState = new GamePlayUIRoomInventoryState(this, _roomInventoryPanel.GetComponent<RoomInventoryController>());
         GamePlayUIWalkingState = new GamePlayUIWalkingState(this);
 
         _gamePlayUIStateMachine.AddAnyTransition(GamePlayUIDefaultState, new BlankPredicate());
@@ -98,6 +105,8 @@ public class GamePlayUIController : MonoBehaviour
         _stopListenButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
         _closePlayerInventoryButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
         _closeRoomInventoryButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
+        _leftButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnLeft());
+        _rightButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnRight());
     }
 
     void OnDisable()
@@ -112,6 +121,8 @@ public class GamePlayUIController : MonoBehaviour
         _stopListenButton.onClick.RemoveAllListeners();
         _closePlayerInventoryButton.onClick.RemoveAllListeners();
         _closeRoomInventoryButton.onClick.RemoveAllListeners();
+        _leftButton.onClick.RemoveAllListeners();
+        _rightButton.onClick.RemoveAllListeners();
     }
 
     public void ChangeUIState(GamePlayUIState state)
@@ -181,6 +192,15 @@ public class GamePlayUIController : MonoBehaviour
         _walkingPanel.SetActive(true);
 
         
+    }
+
+    public void AddNotification(string message)
+    {
+        foreach (var chatLogParent in _chatLogParents)
+        {
+            var chatLog = Instantiate(_chatLogPrefab, chatLogParent).GetComponent<ChatLogController>();
+            chatLog.Initialize(message);
+        }
     }
 
     [Button]

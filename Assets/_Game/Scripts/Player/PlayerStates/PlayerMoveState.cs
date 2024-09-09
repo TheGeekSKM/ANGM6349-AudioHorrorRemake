@@ -11,5 +11,12 @@ public class PlayerMoveState : PlayerBaseState
     {
         // Debug.Log("PlayerMoveState OnEnter");
        _playerController.PlayerMovement.Move();
+
+       GamePlayUIController.Instance.AddNotification("<b>You:</b> I started walking...");
+    }
+
+    public override void OnExit()
+    {
+        GamePlayUIController.Instance.AddNotification("<b>You:</b> I stopped walking...I must've hit a wall or something.");
     }
 }

@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryController: {fileID: 0}
   _inventoryItemDisplayPrefab: {fileID: 3830486464530189939, guid: 2a16e1cf8e144d348817f110ad6864fd, type: 3}
+  _inventoryDisplayParent: {fileID: 6647848721551232603}
 --- !u!1 &6247315298780453319
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,5 +705,10 @@ PrefabInstance:
 --- !u!224 &1298360450048606093 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7572768388309756643, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
+  m_PrefabInstance: {fileID: 8868523665563751790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6647848721551232603 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2833525549778475829, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
   m_PrefabInstance: {fileID: 8868523665563751790}
   m_PrefabAsset: {fileID: 0}

@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentRoomData: {fileID: 0}
   _roomInventoryDisplayPrefab: {fileID: 7229894243680834607, guid: 8a260f6c1b5409b488d985ef36bc7ab1, type: 3}
+  _roomInventoryDisplayParent: {fileID: 1375420290440641080}
 --- !u!1 &4165676772208816029
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
+--- !u!224 &1375420290440641080 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2833525549778475829, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
+  m_PrefabInstance: {fileID: 3766360648739332365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6724768919772236782 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7572768388309756643, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}

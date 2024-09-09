@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class GamePlayUIRoomInventoryState : GamePlayUIBaseState
 {
-    public GamePlayUIRoomInventoryState(GamePlayUIController controller) : base(controller)
+    RoomInventoryController roomInventoryController;
+    public GamePlayUIRoomInventoryState(GamePlayUIController controller, RoomInventoryController roomInventoryController) : base(controller)
     {
+        this.roomInventoryController = roomInventoryController;
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
         Controller.ShowRoomInventoryPanel();
+
+        roomInventoryController.OpenRoomInventory();
     }
 
     public override void OnExit()
     {
         base.OnExit();
+
+        roomInventoryController.CloseRoomInventory();
     }
 
     public override void Update()

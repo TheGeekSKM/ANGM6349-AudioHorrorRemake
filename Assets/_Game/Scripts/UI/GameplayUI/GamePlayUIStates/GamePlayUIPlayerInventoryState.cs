@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class GamePlayUIPlayerInventoryState : GamePlayUIBaseState
 {
-    public GamePlayUIPlayerInventoryState(GamePlayUIController controller) : base(controller)
+    InventoryDisplayController inventoryDisplayController;
+    public GamePlayUIPlayerInventoryState(GamePlayUIController controller, InventoryDisplayController inventoryDisplayController) : base(controller)
     {
+        this.inventoryDisplayController = inventoryDisplayController;
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
         Controller.ShowPlayerInventoryPanel();
+
+        inventoryDisplayController.OpenPlayerInventory();
     }
 
     public override void OnExit()
     {
         base.OnExit();
+
+        inventoryDisplayController.ClosePlayerInventory();
     }
 
     public override void Update()

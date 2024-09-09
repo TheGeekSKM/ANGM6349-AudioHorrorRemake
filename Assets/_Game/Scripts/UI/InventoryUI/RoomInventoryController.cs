@@ -5,6 +5,7 @@ public class RoomInventoryController : MonoBehaviour
 {
     [SerializeField] private RoomData _currentRoomData;
     [SerializeField] GameObject _roomInventoryDisplayPrefab;
+    [SerializeField] Transform _roomInventoryDisplayParent;
 
     List<GameObject> _roomInventoryDisplays = new();
 
@@ -15,7 +16,7 @@ public class RoomInventoryController : MonoBehaviour
 
         foreach (var item in _currentRoomData.Loot)
         {
-            var roomInventoryDisplay = Instantiate(_roomInventoryDisplayPrefab, transform);
+            var roomInventoryDisplay = Instantiate(_roomInventoryDisplayPrefab, _roomInventoryDisplayParent);
             roomInventoryDisplay.GetComponent<RoomInventoryDisplayController>().Initialize(item);
 
             _roomInventoryDisplays.Add(roomInventoryDisplay);
