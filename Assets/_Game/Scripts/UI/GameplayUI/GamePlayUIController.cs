@@ -194,12 +194,30 @@ public class GamePlayUIController : MonoBehaviour
         
     }
 
+    [Button]
     public void AddNotification(string message)
     {
         foreach (var chatLogParent in _chatLogParents)
         {
             var chatLog = Instantiate(_chatLogPrefab, chatLogParent).GetComponent<ChatLogController>();
             chatLog.Initialize(message);
+        }
+    }
+
+    [Button]
+    public void ClearChatLog()
+    {
+        foreach (var chatLogParent in _chatLogParents)
+        {
+            foreach (Transform child in chatLogParent)
+            {
+                Destroy(child.gameObject);
+
+                // destroy immediate for unity editor
+#if UNITY_EDITOR
+                DestroyImmediate(child.gameObject);
+#endif
+            }
         }
     }
 

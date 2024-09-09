@@ -420,8 +420,16 @@ PrefabInstance:
       value: PNL_ScrollRect
       objectReference: {fileID: 0}
     - target: {fileID: 2833525549778475829, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833525549778475829, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833525549778475829, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0011901855
       objectReference: {fileID: 0}
     - target: {fileID: 4621291401095071441, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
       propertyPath: m_Color.a
