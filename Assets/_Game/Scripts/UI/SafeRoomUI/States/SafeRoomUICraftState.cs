@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeRoomUICraftState : MonoBehaviour
+public class SafeRoomUICraftState : SafeRoomUIBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public SafeRoomUICraftState(SafeRoomController controller, GameObject uiPanel) : base(controller, uiPanel)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEnter()
     {
-        
+        base.OnEnter();
+    }
+
+    public override void OnExit()
+    {
+        base.OnExit();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
     }
 }

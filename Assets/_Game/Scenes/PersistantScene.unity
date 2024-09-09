@@ -320,7 +320,7 @@ MonoBehaviour:
   _endScene:
     asset: {fileID: 102900000, guid: 7310478d7104929468a188ab500d01a8, type: 3}
     guid: 7310478d7104929468a188ab500d01a8
-  _startWithMainMenu: 0
+  _startWithMainMenu: 1
 --- !u!4 &945597928
 Transform:
   m_ObjectHideFlags: 0
