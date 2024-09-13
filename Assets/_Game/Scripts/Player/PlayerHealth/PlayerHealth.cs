@@ -21,10 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
-        if (_currentHealth <= 0)
-        {
-            Die();
-        }
+        if (_currentHealth <= 0) Die();
 
         OnHealthPercentageChanged.Raise(_currentHealth / _maxHealth);
     }
@@ -32,6 +29,6 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died");
-        GameManager.Instance.LoadEndScene();
+        GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GameEndState);
     }
 }

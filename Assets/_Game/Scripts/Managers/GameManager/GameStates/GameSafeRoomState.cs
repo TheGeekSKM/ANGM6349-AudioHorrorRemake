@@ -1,31 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Eflatun.SceneReference;
 
 public class GameSafeRoomState : GameBaseState
 {
-    public GameSafeRoomState(GameManager gameManager) : base(gameManager)
-    {
-    }
+    public GameSafeRoomState(GameManager gameManager, SceneReference sceneReference) : base(gameManager, sceneReference) { }
 
-    public override void OnEnter()
-    {
-        base.OnEnter();
-        _gameManager.LoadSafeRoomScene();
-    }
-
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    public override void FixedUpdate()
-    {
-        base.FixedUpdate();
-    }
-
-    public override void OnExit()
-    {
-        base.OnExit();
-    }
 }

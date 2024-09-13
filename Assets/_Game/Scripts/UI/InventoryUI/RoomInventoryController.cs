@@ -13,6 +13,7 @@ public class RoomInventoryController : MonoBehaviour
     public void OpenRoomInventory()
     {
         _currentRoomData = PlayerController.Instance.RoomController.CurrentRoom;
+        if (_currentRoomData == null) return;
 
         foreach (var item in _currentRoomData.Loot)
         {

@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     [Header("Game Settings")]   
     [SerializeField] bool _startWithMainMenu = true;
 
-    SceneReference _currentScene;
 
     StateMachine _gameStateMachine;
 
@@ -42,11 +41,11 @@ public class GameManager : MonoBehaviour
     {
         _gameStateMachine = new StateMachine();
 
-        var gameMainMenuState = new GameMainMenuState(this);
-        var gameCutsceneState = new GameCutsceneState(this);
+        var gameMainMenuState = new GameMainMenuState(this, _mainMenuScene);
+        var gameCutsceneState = new GameCutsceneState(this, _cutsceneScene);
         var gamePlayState = new GamePlayState(this);
-        var gameSafeRoomState = new GameSafeRoomState(this);
-        var gameEndState = new GameEndState(this);
+        var gameSafeRoomState = new GameSafeRoomState(this, _safeRoomScene);
+        var gameEndState = new GameEndState(this, _endScene, _gameScene);
 
         GameMainMenuState = gameMainMenuState;
         GameCutsceneState = gameCutsceneState;
@@ -59,64 +58,16 @@ public class GameManager : MonoBehaviour
         _gameStateMachine.AddTransition(gamePlayState, gameSafeRoomState, new BlankPredicate());
         _gameStateMachine.AddTransition(gameSafeRoomState, gameEndState, new BlankPredicate());
 
-        if (_startWithMainMenu) _gameStateMachine.SetState(gameMainMenuState);
     }
 
-
-
-    public void LoadMainMenuScene()
+    void Start()
     {
-        if (_currentScene != null)
-        {
-            SceneManager.UnloadSceneAsync(_currentScene.BuildIndex);
-        }
-
-        SceneManager.LoadSceneAsync(_mainMenuScene.BuildIndex, LoadSceneMode.Additive);
-        _currentScene = _mainMenuScene;
-    }
-
-    public void LoadCutsceneScene()
-    {
-        if (_currentScene != null)
-        {
-            SceneManager.UnloadSceneAsync(_currentScene.BuildIndex);
-        }
-
-        SceneManager.LoadSceneAsync(_cutsceneScene.BuildIndex, LoadSceneMode.Additive);
-        _currentScene = _cutsceneScene;
-    }
-
-    public void LoadGameScene()
-    {
-        if (_currentScene != null)
-        {
-            SceneManager.UnloadSceneAsync(_currentScene.BuildIndex);
-        }
-
         SceneManager.LoadSceneAsync(_gameScene.BuildIndex, LoadSceneMode.Additive);
-        _currentScene = _gameScene;
+        if (_startWithMainMenu) _gameStateMachine.SetState(GameMainMenuState);
+
     }
 
-    public void LoadSafeRoomScene()
-    {
-        if (_currentScene != null)
-        {
-            SceneManager.UnloadSceneAsync(_currentScene.BuildIndex);
-        }
 
-        SceneManager.LoadSceneAsync(_safeRoomScene.BuildIndex, LoadSceneMode.Additive);
-        _currentScene = _safeRoomScene;
-    }
 
-    public void LoadEndScene()
-    {
-        if (_currentScene != null)
-        {
-            SceneManager.UnloadSceneAsync(_currentScene.BuildIndex);
-        }
-
-        SceneManager.LoadSceneAsync(_endScene.BuildIndex, LoadSceneMode.Additive);
-        _currentScene = _endScene;
-    }
 
 }

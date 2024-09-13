@@ -1,32 +1,21 @@
+using Eflatun.SceneReference;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEndState : GameBaseState
 {
-    public GameEndState(GameManager gameManager) : base(gameManager)
-    {
+    SceneReference gameScene;
+    public GameEndState(GameManager gameManager, SceneReference sceneReference, SceneReference gameScene) : base(gameManager, sceneReference) {
+        this.gameScene = gameScene;
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        _gameManager.LoadEndScene();
+        SceneManager.UnloadSceneAsync(gameScene.BuildIndex);
     }
 
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    public override void FixedUpdate()
-    {
-        base.FixedUpdate();
-    }
-
-    public override void OnExit()
-    {
-        base.OnExit();
-    }
 }
 
