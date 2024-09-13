@@ -71,3 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# I don't want Feel
+/[Aa]ssets/[Ff]eel/
+Assets/Feel.meta

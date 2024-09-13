@@ -8,4 +8,13 @@ public class MainMenuController : MonoBehaviour
     {
         GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GamePlayState);
     }
+
+    public void QuitButtonPressed()
+    {
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
 }
