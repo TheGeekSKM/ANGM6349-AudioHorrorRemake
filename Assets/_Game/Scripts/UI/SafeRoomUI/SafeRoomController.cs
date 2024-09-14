@@ -1,3 +1,4 @@
+using System.Collections;
 using SaiUtils.StateMachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -58,14 +59,14 @@ public class SafeRoomController : MonoBehaviour
     void OnEnable()
     {
         _leaveButton.onClick.AddListener(() => GameManager.Instance.ChangeGameStateWithDelay(GameManager.Instance.GamePlayState, 0.2f));
-        _questButton.onClick.AddListener(() => _safeRoomStateMachine.ChangeState(SafeRoomUIQuestState));
-        _questCloseButton.onClick.AddListener(() => _safeRoomStateMachine.ChangeState(SafeRoomUIDefaultState));
-        _craftButton.onClick.AddListener(() => _safeRoomStateMachine.ChangeState(SafeRoomUICraftState));
-        _craftCloseButton.onClick.AddListener(() => _safeRoomStateMachine.ChangeState(SafeRoomUIDefaultState));
+        _questButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIQuestState, 0.2f));
+        _questCloseButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIDefaultState, 0.2f));
+        _craftButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUICraftState, 0.2f));
+        _craftCloseButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIDefaultState, 0.2f));
         _notePadButton.onClick.AddListener(() => ShowNotepad());
         _notePadCloseButton.onClick.AddListener(() => HideNotepad());
-        _recordsButton.onClick.AddListener(() => _safeRoomStateMachine.ChangeState(SafeRoomUIRecordsState));
-        _recordsCloseButton.onClick.AddListener(() => _safeRoomStateMachine.ChangeState(SafeRoomUIDefaultState));
+        _recordsButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIRecordsState, 0.2f));
+        _recordsCloseButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIDefaultState, 0.2f));
     }
 
     void OnDisable()
@@ -98,4 +99,16 @@ public class SafeRoomController : MonoBehaviour
     {
         _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(_notePadPanel.GetComponent<RectTransform>().anchoredPosition.x, _notePadPanelY);    
     }
+
+    public void ChangeSafeRoomStateWithDelay(SafeRoomUIBaseState state, float delay)
+    {
+        StartCoroutine(ChangeSafeRoomStateWithDelayCoroutine(state, delay));
+    }
+
+    IEnumerator ChangeSafeRoomStateWithDelayCoroutine(SafeRoomUIBaseState state, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _safeRoomStateMachine.ChangeState(state);
+    }
+    
 }
