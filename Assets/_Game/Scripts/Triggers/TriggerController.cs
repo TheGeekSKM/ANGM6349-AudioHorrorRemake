@@ -4,7 +4,9 @@ using SaiUtils.GameEvents;
 
 public class TriggerController : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] LayerMask _targetLayer;
+    [SerializeField] bool _ignoreFirstTime = false;
 
     [Header("Unity Events")]
     [SerializeField] private UnityEvent _onTriggerEnter;
@@ -19,7 +21,12 @@ public class TriggerController : MonoBehaviour
     {
         if ((_targetLayer.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            // Debug.Log("Hit with Layermask");
+
+            if (_ignoreFirstTime) {
+                _ignoreFirstTime = false;
+                return;
+            }
+            
             _onTriggerEnter?.Invoke();
             _onTriggerEnterGameEvent?.Raise();
         }
@@ -29,7 +36,6 @@ public class TriggerController : MonoBehaviour
     {
         if ((_targetLayer.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            // Debug.Log("Exit with Layermask");
             _onTriggerExit?.Invoke();
             _onTriggerExitGameEvent?.Raise();
         }

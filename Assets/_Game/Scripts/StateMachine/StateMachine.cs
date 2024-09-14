@@ -60,6 +60,15 @@ namespace SaiUtils.StateMachine
             _currentStateNode = _stateNodes[state.GetType()]; 
         }
 
+        IEnumerator ChangeStateWithDelayCoroutine(IState state, float delay)
+        {
+            // wait for a delay
+            yield return new WaitForSeconds(delay);
+
+            // change the state
+            ChangeState(state);
+        }
+
         ITransition GetTransition()
         {
             // first look through _anyTransitions to see if any of them are true

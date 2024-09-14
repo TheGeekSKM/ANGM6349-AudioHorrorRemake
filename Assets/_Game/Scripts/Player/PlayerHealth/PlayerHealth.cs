@@ -29,6 +29,6 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died");
-        GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GameEndState);
+        GameManager.Instance.ChangeGameStateWithDelay(GameManager.Instance.GameEndState, 0.2f);
     }
 }

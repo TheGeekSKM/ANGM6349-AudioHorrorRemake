@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeRoomUIDefaulState : SafeRoomUIBaseState
+public class SafeRoomUIDefaultState : SafeRoomUIBaseState
 {
-    public SafeRoomUIDefaulState(SafeRoomController safeRoomController, GameObject _null) : base(safeRoomController, _null)
+    public SafeRoomUIDefaultState(SafeRoomController safeRoomController, GameObject _null) : base(safeRoomController, _null)
     {
     }
 

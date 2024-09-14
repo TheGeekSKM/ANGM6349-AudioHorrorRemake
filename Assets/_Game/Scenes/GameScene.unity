@@ -3614,6 +3614,7 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 256
+  _ignoreFirstTime: 1
   _onTriggerEnter:
     m_PersistentCalls:
       m_Calls: []

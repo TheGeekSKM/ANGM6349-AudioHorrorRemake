@@ -101,6 +101,6 @@ public class LocalCutsceneManager : MonoBehaviour
         _characterNameText.text = string.Empty;
         _dialogueText.text = string.Empty;
         CutsceneManager.Instance.ClearDialogue();
-        GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GamePlayState);
+        GameManager.Instance.ChangeGameStateWithDelay(GameManager.Instance.GamePlayState, 0.2f);
     }
 }

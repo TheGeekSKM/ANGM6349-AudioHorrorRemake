@@ -104,16 +104,16 @@ public class GamePlayUIController : MonoBehaviour
 
     void OnEnable()
     {
-        _walkButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Walking));
-        _listenButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Listen));
-        _playerInventoryButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.PlayerInventory));
-        _roomInventoryButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.RoomInventory));
+        _walkButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIWalkingState, 0.2f));
+        _listenButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIListenState, 0.2f));
+        _playerInventoryButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIPlayerInventoryState, 0.2f));
+        _roomInventoryButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIRoomInventoryState, 0.2f));
         _notePadActivateButton.onClick.AddListener(ShowNotePadPanel);
         _notePadHideButton.onClick.AddListener(HideNotePadPanel);
-        _stopMovingButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
-        _stopListenButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
-        _closePlayerInventoryButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
-        _closeRoomInventoryButton.onClick.AddListener(() => ChangeUIState(GamePlayUIState.Default));
+        _stopMovingButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIDefaultState, 0.2f));
+        _stopListenButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIDefaultState, 0.2f));
+        _closePlayerInventoryButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIDefaultState, 0.2f));
+        _closeRoomInventoryButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIDefaultState, 0.2f));
         _leftButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnLeft());
         _rightButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnRight());
     }
@@ -254,6 +254,17 @@ public class GamePlayUIController : MonoBehaviour
     void FixedUpdate()
     {
         _gamePlayUIStateMachine.FixedUpdate();
+    }
+
+    public void ChangeGamePlayUIStateWithDelay(GamePlayUIBaseState state, float delay)
+    {
+        StartCoroutine(ChangeGamePlayUIStateWithDelayCoroutine(state, delay));
+    }
+
+    IEnumerator ChangeGamePlayUIStateWithDelayCoroutine(GamePlayUIBaseState state, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _gamePlayUIStateMachine.ChangeState(state);
     }
 }
 

@@ -24,7 +24,10 @@ public class GameBaseState : IState
     public virtual void FixedUpdate() { }
 
     public virtual void OnExit() {
-        if (_sceneReference != null) SceneManager.UnloadSceneAsync(_sceneReference.BuildIndex);
-        Debug.Log($"Unloaded {_sceneReference.Name}");
+        if (_sceneReference != null) 
+        {
+            SceneManager.UnloadSceneAsync(_sceneReference.BuildIndex);
+            Debug.Log($"Unloaded {_sceneReference.Name}");
+        }
     }
 }
