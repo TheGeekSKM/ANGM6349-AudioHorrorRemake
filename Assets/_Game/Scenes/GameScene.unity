@@ -3198,6 +3198,7 @@ MonoBehaviour:
   - {fileID: 242005319}
   - {fileID: 109173974}
   _chatLogPrefab: {fileID: 8142681209132498547, guid: d40ddd1a8b0925c4e9a625b9851dac48, type: 3}
+  _isNotepadFound: {fileID: 11400000, guid: f178484b4f5225a4985b52559ad5609c, type: 2}
 --- !u!1 &1542149163
 GameObject:
   m_ObjectHideFlags: 0

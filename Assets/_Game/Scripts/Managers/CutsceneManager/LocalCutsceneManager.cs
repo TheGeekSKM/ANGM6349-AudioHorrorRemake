@@ -1,9 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using SaiUtils.Extensions;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class LocalCutsceneManager : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class LocalCutsceneManager : MonoBehaviour
 
     [Header("Skip Button")]
     [SerializeField] GameObject _skipButton;
-    [SerializeField] float _skipButtonYPosition;
+    [SerializeField, ReadOnly] float _skipButtonYPosition;
     RectTransform _skipButtonRectTransform;
     bool _isSkipButtonEnabled = false;
 
@@ -39,17 +39,26 @@ public class LocalCutsceneManager : MonoBehaviour
         DialogueStart(CutsceneManager.Instance.CurrentDialogueScene);
     }
 
+    // void Update()
+    // {
+    //     if (Input.GetMouseButtonDown(0)) ToggleEnableSkipButton();
+    // }
+
     public void ToggleEnableSkipButton()
     {
+        Debug.Log("ToggleEnableSkipButton");
+
         if (_isSkipButtonEnabled)
         {
             //_skipButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, _skipButtonYPosition);
             _skipButtonRectTransform.DOAnchorPosY(_skipButtonYPosition, 0.5f).SetEase(Ease.OutExpo);
             _isSkipButtonEnabled = false;
+            
         }
         else
         {
-            _skipButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            // _skipButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            _skipButtonRectTransform.DOAnchorPosY(50f, 0.5f).SetEase(Ease.OutExpo);
             _isSkipButtonEnabled = true;
         }
     }

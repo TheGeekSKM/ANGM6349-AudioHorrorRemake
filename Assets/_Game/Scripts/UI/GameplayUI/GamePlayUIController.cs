@@ -6,6 +6,7 @@ using SaiUtils.StateMachine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using TMPro;
+using DG.Tweening;
 
 public enum GamePlayUIState
 {
@@ -45,10 +46,15 @@ public class GamePlayUIController : MonoBehaviour
     [Header("NotePad")]
     [SerializeField] float _notePadHiddenYPos = 1014f;
     [SerializeField] float _notePadShownYPos = 0f;
+    RectTransform _notePadRectTransform;
 
     [Header("Chatlogs")]
     [SerializeField] List<Transform> _chatLogParents = new();
     [SerializeField] GameObject _chatLogPrefab;
+
+    [Header("Events/Variables")]
+    [SerializeField] BoolVariable _isNotepadFound;
+
 
     StateMachine _gamePlayUIStateMachine;
     public StateMachine GamePlayUIStateMachine => _gamePlayUIStateMachine;
@@ -72,6 +78,9 @@ public class GamePlayUIController : MonoBehaviour
     {
         ShowDefaultPanel();
         HideNotePadPanel();
+
+        _notePadRectTransform = _notePadPanel.GetComponent<RectTransform>();
+        _notePadPanel.SetActive(_isNotepadFound.Value);
     }
 
     void ConfigureStateMachine()
@@ -124,6 +133,7 @@ public class GamePlayUIController : MonoBehaviour
         _leftButton.onClick.RemoveAllListeners();
         _rightButton.onClick.RemoveAllListeners();
     }
+
 
     public void ChangeUIState(GamePlayUIState state)
     {
@@ -224,13 +234,16 @@ public class GamePlayUIController : MonoBehaviour
     [Button]
     public void ShowNotePadPanel()
     {
-        _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, _notePadShownYPos);
+        // _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, _notePadShownYPos);
+        _notePadRectTransform.DOAnchorPosY(_notePadShownYPos, 0.5f).SetEase(Ease.OutExpo);
+
     }
 
     [Button]
     public void HideNotePadPanel()
     {
-        _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, _notePadHiddenYPos);
+        // _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, _notePadHiddenYPos);
+        _notePadRectTransform.DOAnchorPosY(_notePadHiddenYPos, 0.5f).SetEase(Ease.OutExpo);
     }
 
     void Update()
