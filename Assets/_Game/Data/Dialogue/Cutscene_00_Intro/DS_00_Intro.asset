@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11723a8fc84bc5144b89c1ee73f17de3, type: 3}
+  m_Name: DS_00_Intro
+  m_EditorClassIdentifier: 
+  _sceneName: 
+  _dialogueLines:
+  - {fileID: 11400000, guid: 4aefb7c0be45cde4d9e8a8c23b409e41, type: 2}
+  - {fileID: 11400000, guid: 0480522373190e3429b6d77afe9d56a3, type: 2}
+  - {fileID: 11400000, guid: 28880a882eed10b41bac2d14f1214e15, type: 2}
+  - {fileID: 11400000, guid: c62f476cb9f39214384a715210bea006, type: 2}
+  - {fileID: 11400000, guid: 6f31d658d38c9e24d9512ee43337a6f4, type: 2}
+  - {fileID: 11400000, guid: 568621c66cedcfa4cafe65111a863253, type: 2}
+  - {fileID: 11400000, guid: 73f4773a8b920624c9b76778474a7d0d, type: 2}
+  - {fileID: 11400000, guid: 9df3260b0d4c8fa4e90c39771593702e, type: 2}
+  - {fileID: 11400000, guid: b77bbea6dc4090241b21fe6db254545a, type: 2}
+  - {fileID: 11400000, guid: f8bcc1d5fbbf53448b8dc144baf5375f, type: 2}
+  - {fileID: 11400000, guid: b187aa7ca54a4634fb9dd5e9c212d108, type: 2}
+  - {fileID: 11400000, guid: 52ae9752142364a49a6919c13d94ff2b, type: 2}
+  - {fileID: 11400000, guid: f3b76e072f5361648b7c6bb595dd2d9c, type: 2}
+  - {fileID: 11400000, guid: b53564550c0aa164496c904d920d658f, type: 2}
+  - {fileID: 11400000, guid: 582f8b94e59516f43a3efe5e640ad282, type: 2}
+  - {fileID: 11400000, guid: 21c8476b3e4dcad45b243761e544106d, type: 2}
+  - {fileID: 11400000, guid: e57cd5a2d09e7484ca27cc09f851fa31, type: 2}
+  - {fileID: 11400000, guid: 729ac5c7e799cbf428730d7366cc2082, type: 2}
+  - {fileID: 11400000, guid: 32e47297d4faa134897068925c61e800, type: 2}
+  - {fileID: 11400000, guid: 59b09f4902de8ad4cb25900ee1327e4d, type: 2}
+  - {fileID: 11400000, guid: 06a270da1cfd61049934d1969ffb3901, type: 2}
+  - {fileID: 11400000, guid: 8b30f84d2674c534da4805b6d8bceba2, type: 2}
+  - {fileID: 11400000, guid: 95db5c530475beb4bb6af0d767affe39, type: 2}
+  - {fileID: 11400000, guid: 3b80085b9979b9a43bc5ec144bd3eae4, type: 2}
+  _backgroundMusic: {fileID: 0}

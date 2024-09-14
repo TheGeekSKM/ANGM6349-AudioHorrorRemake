@@ -67,7 +67,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void PlayCutscene(DialogueSceneSO dialogueSceneSO)
+    {
+        var gameCutsceneState = new GameCutsceneState(this, _cutsceneScene, dialogueSceneSO);
+        _gameStateMachine.ChangeState(gameCutsceneState);
+    }
 
 
 }

@@ -1,12 +1,97 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using SaiUtils.Extensions;
+using DG.Tweening;
 
 public class LocalCutsceneManager : MonoBehaviour
 {
+    [Header("Text")]
+    [SerializeField] TextMeshProUGUI _characterNameText;
+    [SerializeField] TextMeshProUGUI _dialogueText;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource _voiceAudioSource;
+    [SerializeField] AudioSource _backgroundMusicAudioSource;
+
+    [Header("Skip Button")]
+    [SerializeField] GameObject _skipButton;
+    [SerializeField] float _skipButtonYPosition;
+    RectTransform _skipButtonRectTransform;
+    bool _isSkipButtonEnabled = false;
+
+    Coroutine _dialogueCoroutine;
+
+    private void OnValidate()
+    {
+        if (_voiceAudioSource == null) _voiceAudioSource = gameObject.GetOrAdd<AudioSource>();
+    }
+
+    private void Start()
+    {
+        _characterNameText.text = string.Empty;
+        _dialogueText.text = string.Empty;
+
+        _skipButtonRectTransform = _skipButton.GetComponent<RectTransform>();
+        _skipButtonYPosition = _skipButtonRectTransform.anchoredPosition.y;
+
+        DialogueStart(CutsceneManager.Instance.CurrentDialogueScene);
+    }
+
     public void ToggleEnableSkipButton()
     {
-        // if the skip button is enabled and on the screen, get it off the screen
-        // if the skip button is disabled and off the screen, get it on the screen
+        if (_isSkipButtonEnabled)
+        {
+            //_skipButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, _skipButtonYPosition);
+            _skipButtonRectTransform.DOAnchorPosY(_skipButtonYPosition, 0.5f).SetEase(Ease.OutExpo);
+            _isSkipButtonEnabled = false;
+        }
+        else
+        {
+            _skipButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            _isSkipButtonEnabled = true;
+        }
+    }
+
+    public void DialogueStart(DialogueSceneSO dialogueSceneSO)
+    {
+        Debug.Log("DialogueStarted");
+
+        if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
+
+        _dialogueCoroutine = StartCoroutine(DialogueRoutine(dialogueSceneSO));
+    }
+
+    IEnumerator DialogueRoutine(DialogueSceneSO dialogueSceneSO)
+    {
+        _characterNameText.text = string.Empty;
+        _dialogueText.text = string.Empty;
+
+        foreach (var dialogue in dialogueSceneSO.DialogueLines)
+        {
+            _dialogueText.text = dialogue.Line;
+            if (dialogue.VoiceClip) _voiceAudioSource.PlayOneShot(dialogue.VoiceClip);
+
+            yield return new WaitForSeconds(dialogue.Duration);
+        }
+
+        OnDialogueEnd();
+    }
+
+    public void SkipDialogue()
+    {
+        if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
+        _dialogueText.text = string.Empty;
+
+        OnDialogueEnd();
+    }
+
+    public void OnDialogueEnd()
+    {
+        _characterNameText.text = string.Empty;
+        _dialogueText.text = string.Empty;
+        CutsceneManager.Instance.ClearDialogue();
+        GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GamePlayState);
     }
 }

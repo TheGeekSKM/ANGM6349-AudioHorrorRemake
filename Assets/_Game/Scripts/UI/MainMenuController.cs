@@ -6,7 +6,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayButtonPressed()
     {
-        GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GamePlayState);
+        GameManager.Instance.GameStateMachine.ChangeState(GameManager.Instance.GameCutsceneState);
     }
 
     public void QuitButtonPressed()
