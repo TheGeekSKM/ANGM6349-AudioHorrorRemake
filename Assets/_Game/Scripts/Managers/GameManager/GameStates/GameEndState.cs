@@ -1,7 +1,4 @@
 using Eflatun.SceneReference;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameEndState : GameBaseState
@@ -13,8 +10,9 @@ public class GameEndState : GameBaseState
 
     public override void OnEnter()
     {
-        base.OnEnter();
+        _gameManager.OnGameStateChange?.Invoke(GameStateEnum.End);
         SceneManager.UnloadSceneAsync(gameScene.BuildIndex);
+        base.OnEnter();
     }
 
 }

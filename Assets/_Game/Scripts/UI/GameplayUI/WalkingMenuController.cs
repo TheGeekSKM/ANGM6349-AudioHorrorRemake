@@ -25,17 +25,14 @@ public class WalkingMenuController : MonoBehaviour
         _walkingButton.onClick.RemoveListener(OnWalkingButtonClicked);
     }
 
+    public void UpdateText(bool isMoving)
+    {
+        _walkingButtonText.text = isMoving ? "Stop Walking" : "Walk Forward";
+    }
+
     void OnWalkingButtonClicked()
     {
-        if (_playerMovement.IsMoving)
-        {
-            _playerMovement.Stop();
-            _walkingButtonText.text = "Walk Forward";
-        }
-        else
-        {
-            _playerMovement.Move();
-            _walkingButtonText.text = "Stop Walking";
-        }
+        if (_playerMovement.IsMoving) _playerMovement.Stop();
+        else _playerMovement.Move();
     }
 }

@@ -1,7 +1,4 @@
 using Eflatun.SceneReference;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class GameCutsceneState : GameBaseState
 {
@@ -12,8 +9,9 @@ public class GameCutsceneState : GameBaseState
 
     public override void OnEnter()
     {
+        // if (_dialogueScene) CutsceneManager.Instance.SetDialogue(_dialogueScene);
+        _gameManager.OnGameStateChange?.Invoke(GameStateEnum.Cutscene);
         base.OnEnter();
-        if (_dialogueScene) CutsceneManager.Instance.SetDialogue(_dialogueScene);
     }
 
 }

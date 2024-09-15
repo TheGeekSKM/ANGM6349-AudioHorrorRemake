@@ -16,6 +16,10 @@ public class QuestManager : MonoBehaviour
 
     [Header("Quests")]
     [SerializeField] GameObject FindBandagesQuestListener;
+    [SerializeField] GameObject BringBandagesQuestListener;
+
+    [Header("Cutscenes")]
+    [SerializeField] DialogueSceneSO _bringBandagesCutscene;
 
     void Awake()
     {
@@ -31,6 +35,7 @@ public class QuestManager : MonoBehaviour
 #region All The Quests
     public QuestFindBandagesState QuestFindBandagesState { get; private set; }
     public QuestBringBandagesState QuestBringBandagesState { get; private set; }
+    public QuestFindSuppliesState QuestFindSuppliesState { get; private set; }
 #endregion
 
     void ConfigureStateMachine()
@@ -44,6 +49,10 @@ public class QuestManager : MonoBehaviour
         QuestBringBandagesState = new QuestBringBandagesState(this, new QuestData("Bring Bandages", "Bring bandages to the man in the <b>Safe Room</b>..."));
         _questStateMachine.AddTransition(QuestFindBandagesState, QuestBringBandagesState, new BlankPredicate());
         _quests.Add(QuestBringBandagesState.QuestData);
+
+        QuestFindSuppliesState = new QuestFindSuppliesState(this, new QuestData("Find Supplies", "Find explosive chemicals in the <b>Chemical Storage Room</b>..."));
+        _questStateMachine.AddTransition(QuestBringBandagesState, QuestFindSuppliesState, new BlankPredicate());
+        _quests.Add(QuestFindSuppliesState.QuestData);
 
         _questStateMachine.SetState(QuestFindBandagesState);
     }
@@ -63,11 +72,21 @@ public class QuestManager : MonoBehaviour
     public void FoundBandages()
     {
         if (QuestFindBandagesState.QuestData.questCompleted) return;
-
         QuestFindBandagesState.QuestData.questCompleted = true;
-        ChangeQuestState(QuestBringBandagesState);
 
+        ChangeQuestState(QuestBringBandagesState);
         FindBandagesQuestListener.SetActive(false);
+    }
+
+    public void BroughtBandages()
+    {
+        if (QuestBringBandagesState.QuestData.questCompleted) return;
+        QuestBringBandagesState.QuestData.questCompleted = true;
+
+        GameManager.Instance.PlayCutscene(_bringBandagesCutscene);
+
+        ChangeQuestState(QuestFindSuppliesState);
+        BringBandagesQuestListener.SetActive(false);
     }
 
 }

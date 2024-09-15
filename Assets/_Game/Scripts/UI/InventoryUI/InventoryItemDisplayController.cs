@@ -48,7 +48,7 @@ public class InventoryItemDisplayController : MonoBehaviour
     private void DiscardItem()
     {
         PlayerController.Instance.InventoryController.RemoveItem(_itemData);
-        PlayerController.Instance.RoomController.CurrentRoom.Loot.Add(_itemData);
+        PlayerController.Instance.RoomController.CurrentRoom.AddItem(_itemData);
         Destroy(gameObject);
     }
 }

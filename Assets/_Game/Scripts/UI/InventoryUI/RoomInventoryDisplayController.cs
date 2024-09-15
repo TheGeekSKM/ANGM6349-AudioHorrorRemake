@@ -26,7 +26,7 @@ public class RoomInventoryDisplayController : MonoBehaviour
     {
         _itemData.PickUpItem(gameObject);
 
-        PlayerController.Instance.RoomController.CurrentRoom.Loot.Remove(_itemData);
+        PlayerController.Instance.RoomController.CurrentRoom.RemoveItem(_itemData);
         PlayerController.Instance.InventoryController.AddItem(_itemData);
         
         _pickUpButton.onClick.RemoveAllListeners();

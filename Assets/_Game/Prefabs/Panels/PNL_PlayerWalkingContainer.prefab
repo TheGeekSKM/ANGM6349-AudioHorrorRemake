@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1200230846519503036}
   - component: {fileID: 3969996663678668581}
   - component: {fileID: 3719180858822144005}
+  - component: {fileID: 4564629179675994406}
   m_Layer: 5
   m_Name: PNL_PlayerWalkingContainer
   m_TagString: Untagged
@@ -129,6 +130,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkingButton: {fileID: 7760547387482185277}
   _walkingButtonText: {fileID: 7760547387699570064}
+--- !u!114 &4564629179675994406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170473654120965274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69467608895accb459a0518918b4bca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1be4fa75abb12c54ea58424792db7256, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3719180858822144005}
+        m_TargetAssemblyTypeName: WalkingMenuController, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6170473655561722422
 GameObject:
   m_ObjectHideFlags: 0

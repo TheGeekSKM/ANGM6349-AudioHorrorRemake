@@ -6,6 +6,15 @@ using System.Collections;
 using System;
 
 
+public enum GameStateEnum
+{
+    MainMenu,
+    Cutscene,
+    Play,
+    SafeRoom,
+    End
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -19,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]   
     [SerializeField] bool _startWithMainMenu = true;
-    public Action<GameBaseState> OnGameStateChange;
+    public Action<GameStateEnum> OnGameStateChange;
 
     // [Header("Events")]
     // [SerializeField] VoidEvent _onPlayerEnterSafeRoom;
@@ -82,13 +91,13 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         _gameStateMachine.ChangeState(state);
-        OnGameStateChange?.Invoke(state);
     }
 
     public void PlayCutscene(DialogueSceneSO dialogueSceneSO)
     {
+        CutsceneManager.Instance.SetDialogue(dialogueSceneSO);
         var gameCutsceneState = new GameCutsceneState(this, _cutsceneScene, dialogueSceneSO);
-        _gameStateMachine.ChangeState(gameCutsceneState);
+        ChangeGameStateWithDelay(gameCutsceneState, 0.1f);
     }
 
     public void SafeRoom() => _gameStateMachine.ChangeState(GameSafeRoomState);
