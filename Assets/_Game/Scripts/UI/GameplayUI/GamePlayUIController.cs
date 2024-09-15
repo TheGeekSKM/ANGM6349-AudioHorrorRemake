@@ -29,6 +29,15 @@ public class GamePlayUIController : MonoBehaviour
     [SerializeField] GameObject _walkingPanel;
     [SerializeField] GameObject _notePadPanel;
 
+    [Header("UI Panel Settings")]
+    [SerializeField] Vector2 _onScreenPanelPosition = new Vector2(960f, -622f);
+    [SerializeField] Vector2 _offScreenDefaultPanelPosition;
+    [SerializeField] Vector2 _offScreenListenPanelPosition;
+    [SerializeField] Vector2 _offScreenPlayerInventoryPanelPosition;
+    [SerializeField] Vector2 _offScreenRoomInventoryPanelPosition;
+    [SerializeField] Vector2 _offScreenWalkingPanelPosition;
+
+
     [Header("Buttons")]
     [SerializeField] Button _walkButton;
     [SerializeField] Button _stopMovingButton;
@@ -71,28 +80,54 @@ public class GamePlayUIController : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
+        // CalculateOffScreenPositions();
         ConfigureStateMachine();
     }
 
     void Start()
     {
-        ShowDefaultPanel();
         HideNotePadPanel();
 
         _notePadRectTransform = _notePadPanel.GetComponent<RectTransform>();
         _notePadPanel.SetActive(_isNotepadFound.Value);
     }
 
+    [Button]
+    void CalculateOffScreenPositions()
+    {
+        _offScreenDefaultPanelPosition = _defaultPanel.GetComponent<RectTransform>().anchoredPosition;
+        _offScreenListenPanelPosition = _listenPanel.GetComponent<RectTransform>().anchoredPosition;
+        _offScreenPlayerInventoryPanelPosition = _playerInventoryPanel.GetComponent<RectTransform>().anchoredPosition;
+        _offScreenRoomInventoryPanelPosition = _roomInventoryPanel.GetComponent<RectTransform>().anchoredPosition;
+        _offScreenWalkingPanelPosition = _walkingPanel.GetComponent<RectTransform>().anchoredPosition;
+    }
+
     void ConfigureStateMachine()
     {
         _gamePlayUIStateMachine = new StateMachine();
 
-        GamePlayUIDefaultState = new GamePlayUIDefaultState(this);
-        GamePlayUIListenState = new GamePlayUIListenState(this);
-        GamePlayUIPlayerInventoryState = new GamePlayUIPlayerInventoryState(this, _playerInventoryPanel.GetComponent<InventoryDisplayController>());
-        GamePlayUIRoomInventoryState = new GamePlayUIRoomInventoryState(this, _roomInventoryPanel.GetComponent<RoomInventoryController>());
-        GamePlayUIWalkingState = new GamePlayUIWalkingState(this);
+        GamePlayUIDefaultState = new GamePlayUIDefaultState(
+            this, _defaultPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenDefaultPanelPosition
+        );
 
+        GamePlayUIListenState = new GamePlayUIListenState(
+            this, _listenPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenListenPanelPosition
+        );
+
+        GamePlayUIWalkingState = new GamePlayUIWalkingState(
+            this, _walkingPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenWalkingPanelPosition
+        );
+
+        GamePlayUIPlayerInventoryState = new GamePlayUIPlayerInventoryState(
+            this, _playerInventoryPanel.GetComponent<InventoryDisplayController>(), _playerInventoryPanel.GetComponent<RectTransform>(), 
+            _onScreenPanelPosition, _offScreenPlayerInventoryPanelPosition
+        );
+
+        GamePlayUIRoomInventoryState = new GamePlayUIRoomInventoryState(
+            this, _roomInventoryPanel.GetComponent<RoomInventoryController>(), _roomInventoryPanel.GetComponent<RectTransform>(), 
+            _onScreenPanelPosition, _offScreenRoomInventoryPanelPosition
+        );
+        
         _gamePlayUIStateMachine.AddAnyTransition(GamePlayUIDefaultState, new BlankPredicate());
         _gamePlayUIStateMachine.AddAnyTransition(GamePlayUIListenState, new BlankPredicate());
         _gamePlayUIStateMachine.AddAnyTransition(GamePlayUIPlayerInventoryState, new BlankPredicate());
@@ -157,52 +192,7 @@ public class GamePlayUIController : MonoBehaviour
         }
     }
 
-    public void ShowDefaultPanel()
-    {
-        _defaultPanel.SetActive(true);
-        _listenPanel.SetActive(false);
-        _playerInventoryPanel.SetActive(false);
-        _roomInventoryPanel.SetActive(false);
-        _walkingPanel.SetActive(false);
-    }
-
-    public void ShowListenPanel()
-    {
-        _defaultPanel.SetActive(false);
-        _listenPanel.SetActive(true);
-        _playerInventoryPanel.SetActive(false);
-        _roomInventoryPanel.SetActive(false);
-        _walkingPanel.SetActive(false);
-    }
-
-    public void ShowPlayerInventoryPanel()
-    {
-        _defaultPanel.SetActive(false);
-        _listenPanel.SetActive(false);
-        _playerInventoryPanel.SetActive(true);
-        _roomInventoryPanel.SetActive(false);
-        _walkingPanel.SetActive(false);
-    }
-
-    public void ShowRoomInventoryPanel()
-    {
-        _defaultPanel.SetActive(false);
-        _listenPanel.SetActive(false);
-        _playerInventoryPanel.SetActive(false);
-        _roomInventoryPanel.SetActive(true);
-        _walkingPanel.SetActive(false);
-    }
-
-    public void ShowWalkingPanel()
-    {
-        _defaultPanel.SetActive(false);
-        _listenPanel.SetActive(false);
-        _playerInventoryPanel.SetActive(false);
-        _roomInventoryPanel.SetActive(false);
-        _walkingPanel.SetActive(true);
-
-        
-    }
+    
 
     [Button]
     public void AddNotification(string message)

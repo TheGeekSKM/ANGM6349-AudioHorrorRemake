@@ -5,7 +5,9 @@ using UnityEngine;
 public class GamePlayUIRoomInventoryState : GamePlayUIBaseState
 {
     RoomInventoryController roomInventoryController;
-    public GamePlayUIRoomInventoryState(GamePlayUIController controller, RoomInventoryController roomInventoryController) : base(controller)
+    public GamePlayUIRoomInventoryState(GamePlayUIController controller, RoomInventoryController roomInventoryController, 
+        RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos) : 
+        base(controller, panel, onScreenPos, offScreenPos)
     {
         this.roomInventoryController = roomInventoryController;
     }
@@ -13,7 +15,6 @@ public class GamePlayUIRoomInventoryState : GamePlayUIBaseState
     public override void OnEnter()
     {
         base.OnEnter();
-        Controller.ShowRoomInventoryPanel();
 
         roomInventoryController.OpenRoomInventory();
     }

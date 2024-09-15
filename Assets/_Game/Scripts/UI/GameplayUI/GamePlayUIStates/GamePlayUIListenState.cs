@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GamePlayUIListenState : GamePlayUIBaseState
 {
-    public GamePlayUIListenState(GamePlayUIController controller) : base(controller)
+    public GamePlayUIListenState(GamePlayUIController controller, RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos) : 
+        base(controller, panel, onScreenPos, offScreenPos)
     {
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        Controller.ShowListenPanel();
 
         // make the player visible
         PlayerController.Instance.PlayerArtDisplay.SetPlayerArtActive();

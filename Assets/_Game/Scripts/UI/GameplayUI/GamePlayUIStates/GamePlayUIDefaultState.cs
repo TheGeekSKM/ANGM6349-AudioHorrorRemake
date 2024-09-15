@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class GamePlayUIDefaultState : GamePlayUIBaseState
 {
-    public GamePlayUIDefaultState(GamePlayUIController controller) : base(controller)
-    {
-    }
+    public GamePlayUIDefaultState(GamePlayUIController controller, RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos) : 
+        base(controller, panel, onScreenPos, offScreenPos) { }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        Controller.ShowDefaultPanel();
 
         // Set the player's movement state to default
         if (PlayerController.Instance) PlayerController.Instance.PlayerMovement.Stop();
