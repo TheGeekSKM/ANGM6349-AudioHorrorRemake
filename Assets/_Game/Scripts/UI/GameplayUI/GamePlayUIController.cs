@@ -36,6 +36,7 @@ public class GamePlayUIController : MonoBehaviour
     [SerializeField] Vector2 _offScreenPlayerInventoryPanelPosition;
     [SerializeField] Vector2 _offScreenRoomInventoryPanelPosition;
     [SerializeField] Vector2 _offScreenWalkingPanelPosition;
+    [SerializeField] bool _enableAnimations = true;
 
 
     [Header("Buttons")]
@@ -92,6 +93,7 @@ public class GamePlayUIController : MonoBehaviour
         _notePadPanel.SetActive(_isNotepadFound.Value);
     }
 
+
     [Button]
     void CalculateOffScreenPositions()
     {
@@ -107,25 +109,25 @@ public class GamePlayUIController : MonoBehaviour
         _gamePlayUIStateMachine = new StateMachine();
 
         GamePlayUIDefaultState = new GamePlayUIDefaultState(
-            this, _defaultPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenDefaultPanelPosition
+            this, _defaultPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenDefaultPanelPosition, _enableAnimations
         );
 
         GamePlayUIListenState = new GamePlayUIListenState(
-            this, _listenPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenListenPanelPosition
+            this, _listenPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenListenPanelPosition, _enableAnimations
         );
 
         GamePlayUIWalkingState = new GamePlayUIWalkingState(
-            this, _walkingPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenWalkingPanelPosition
+            this, _walkingPanel.GetComponent<RectTransform>(), _onScreenPanelPosition, _offScreenWalkingPanelPosition, _enableAnimations
         );
 
         GamePlayUIPlayerInventoryState = new GamePlayUIPlayerInventoryState(
             this, _playerInventoryPanel.GetComponent<InventoryDisplayController>(), _playerInventoryPanel.GetComponent<RectTransform>(), 
-            _onScreenPanelPosition, _offScreenPlayerInventoryPanelPosition
+            _onScreenPanelPosition, _offScreenPlayerInventoryPanelPosition, _enableAnimations
         );
 
         GamePlayUIRoomInventoryState = new GamePlayUIRoomInventoryState(
             this, _roomInventoryPanel.GetComponent<RoomInventoryController>(), _roomInventoryPanel.GetComponent<RectTransform>(), 
-            _onScreenPanelPosition, _offScreenRoomInventoryPanelPosition
+            _onScreenPanelPosition, _offScreenRoomInventoryPanelPosition, _enableAnimations
         );
         
         _gamePlayUIStateMachine.AddAnyTransition(GamePlayUIDefaultState, new BlankPredicate());
@@ -151,6 +153,8 @@ public class GamePlayUIController : MonoBehaviour
         _closeRoomInventoryButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIDefaultState, 0.2f));
         _leftButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnLeft());
         _rightButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnRight());
+
+        _isNotepadFound.OnValueChanged += (value) => _notePadPanel.SetActive(value);
     }
 
     void OnDisable()
@@ -167,6 +171,8 @@ public class GamePlayUIController : MonoBehaviour
         _closeRoomInventoryButton.onClick.RemoveAllListeners();
         _leftButton.onClick.RemoveAllListeners();
         _rightButton.onClick.RemoveAllListeners();
+
+        _isNotepadFound.OnValueChanged -= (value) => _notePadPanel.SetActive(value);
     }
 
 

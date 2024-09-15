@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using SaiUtils.StateMachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,13 +20,20 @@ public class SafeRoomController : MonoBehaviour
 
 
     [Header("Panels")]
-    [SerializeField] GameObject _dialoguePanel;
-    [SerializeField] GameObject _questPanel;
-    [SerializeField] GameObject _craftPanel;
-    [SerializeField] GameObject _notePadPanel;
-    [SerializeField] GameObject _recordsPanel;
+    [SerializeField] RectTransform _dialoguePanel;
+    [SerializeField] RectTransform _questPanel;
+    [SerializeField] RectTransform _craftPanel;
+    [SerializeField] RectTransform _notePadPanel;
+    [SerializeField] RectTransform _recordsPanel;
     [SerializeField] float _notePadPanelY;
 
+    [Header("Panel Settings")]
+    [SerializeField] Vector2 _onScreenPos = new Vector2(0, 50f);
+    [SerializeField] Vector2 _offScreenDialoguePanelPos;
+    [SerializeField] Vector2 _offScreenQuestPanelPos;
+    [SerializeField] Vector2 _offScreenCraftPanelPos;
+    [SerializeField] Vector2 _offScreenRecordsPanelPos;
+    [SerializeField] bool _enableAnimations = true;
     StateMachine _safeRoomStateMachine;
     public StateMachine SafeRoomStateMachine => _safeRoomStateMachine;
 
@@ -39,14 +47,23 @@ public class SafeRoomController : MonoBehaviour
         ConfigureStateMachine();
     }
 
+    [Button]
+    void CalculateOffScreenPositions()
+    {
+        _offScreenDialoguePanelPos = _dialoguePanel.anchoredPosition;
+        _offScreenQuestPanelPos = _questPanel.anchoredPosition;
+        _offScreenCraftPanelPos = _craftPanel.anchoredPosition;
+        _offScreenRecordsPanelPos = _recordsPanel.anchoredPosition;
+    }
+
     void ConfigureStateMachine()
     {
         _safeRoomStateMachine = new StateMachine();
 
-        SafeRoomUICraftState = new SafeRoomUICraftState(this, _craftPanel);
-        SafeRoomUIQuestState = new SafeRoomUIQuestState(this, _questPanel);
-        SafeRoomUIDefaultState = new SafeRoomUIDefaultState(this, _dialoguePanel);
-        SafeRoomUIRecordsState = new SafeRoomUIRecordsState(this, _recordsPanel);
+        SafeRoomUICraftState = new SafeRoomUICraftState(this, _craftPanel, _onScreenPos, _offScreenCraftPanelPos, _enableAnimations);
+        SafeRoomUIQuestState = new SafeRoomUIQuestState(this, _questPanel, _onScreenPos, _offScreenQuestPanelPos, _enableAnimations);
+        SafeRoomUIDefaultState = new SafeRoomUIDefaultState(this, _dialoguePanel, _onScreenPos, _offScreenDialoguePanelPos, _enableAnimations);
+        SafeRoomUIRecordsState = new SafeRoomUIRecordsState(this, _recordsPanel, _onScreenPos, _offScreenRecordsPanelPos, _enableAnimations);
 
         _safeRoomStateMachine.AddTransition(SafeRoomUICraftState, SafeRoomUIQuestState, new BlankPredicate());
         _safeRoomStateMachine.AddTransition(SafeRoomUIQuestState, SafeRoomUICraftState, new BlankPredicate());
@@ -84,20 +101,21 @@ public class SafeRoomController : MonoBehaviour
 
     private void Start()
     {
-        _notePadPanelY = _notePadPanel.GetComponent<RectTransform>().anchoredPosition.y;
+        _notePadPanelY = _notePadPanel.anchoredPosition.y;
     }
 
     [Button]
     void ShowNotepad()
     {
         // set the notepad anchor position y to 0
-        _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(_notePadPanel.GetComponent<RectTransform>().anchoredPosition.x, 0);
+        _notePadPanel.DOAnchorPosY(0, 0.3f).SetEase(Ease.OutExpo);
     }
 
     [Button]
     void HideNotepad()
     {
-        _notePadPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(_notePadPanel.GetComponent<RectTransform>().anchoredPosition.x, _notePadPanelY);    
+        // set the notepad anchor position y to the original value
+        _notePadPanel.DOAnchorPosY(_notePadPanelY, 0.3f).SetEase(Ease.OutExpo);    
     }
 
     public void ChangeSafeRoomStateWithDelay(SafeRoomUIBaseState state, float delay)

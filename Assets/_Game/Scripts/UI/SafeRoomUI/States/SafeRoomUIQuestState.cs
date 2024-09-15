@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SafeRoomUIQuestState : SafeRoomUIBaseState
 {
-    public SafeRoomUIQuestState(SafeRoomController controller, GameObject uiPanel) : base(controller, uiPanel)
+    public SafeRoomUIQuestState(SafeRoomController controller, RectTransform uiPanel, Vector2 onScreenPos, Vector2 offScreenPos, bool enableAnimations) : 
+        base(controller, uiPanel, onScreenPos, offScreenPos, enableAnimations)
     {
     }
 

@@ -9,18 +9,20 @@ public class GamePlayUIBaseState : IState
     protected Vector2 _onScreenPos;
     protected Vector2 _offScreenPos;
     private GamePlayUIController controller;
+    protected bool _enableAnimations;
 
     protected GamePlayUIController Controller => _controller;
     protected RectTransform Panel => _panel;
     protected Vector2 OnScreenPos => _onScreenPos;
     protected Vector2 OffScreenPos => _offScreenPos;
 
-    public GamePlayUIBaseState(GamePlayUIController controller, RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos)
+    public GamePlayUIBaseState(GamePlayUIController controller, RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos, bool enableAnimations = true)
     {
         _controller = controller;
         _panel = panel;
         _onScreenPos = onScreenPos;
         _offScreenPos = offScreenPos;
+        _enableAnimations = enableAnimations;
     }
 
     public GamePlayUIBaseState(GamePlayUIController controller)
@@ -32,13 +34,16 @@ public class GamePlayUIBaseState : IState
     {
         if (!Panel) return;
         Panel.anchoredPosition = OffScreenPos;
-        Panel.DOAnchorPos(OnScreenPos, 0.3f).SetEase(Ease.OutExpo);
+        if (_enableAnimations) Panel.DOAnchorPos(OnScreenPos, 0.3f).SetEase(Ease.OutExpo);
+        else Panel.anchoredPosition = OnScreenPos;
     }
 
     public virtual void OnExit()
     {
         if (!Panel) return;
-        Panel.DOAnchorPos(OffScreenPos, 0.3f).SetEase(Ease.InExpo);
+        
+        if (_enableAnimations) Panel.DOAnchorPos(OffScreenPos, 0.3f).SetEase(Ease.OutExpo);
+        else Panel.anchoredPosition = OffScreenPos;
     }
 
     public virtual void Update()

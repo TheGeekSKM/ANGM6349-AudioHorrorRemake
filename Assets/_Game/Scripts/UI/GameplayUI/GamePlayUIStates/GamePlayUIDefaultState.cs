@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GamePlayUIDefaultState : GamePlayUIBaseState
 {
-    public GamePlayUIDefaultState(GamePlayUIController controller, RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos) : 
-        base(controller, panel, onScreenPos, offScreenPos) { }
+    public GamePlayUIDefaultState(GamePlayUIController controller, RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos, bool enableAnimations) : 
+        base(controller, panel, onScreenPos, offScreenPos, enableAnimations) { }
 
     public override void OnEnter()
     {

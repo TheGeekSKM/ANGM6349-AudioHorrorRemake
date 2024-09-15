@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SafeRoomUIDefaultState : SafeRoomUIBaseState
 {
-    public SafeRoomUIDefaultState(SafeRoomController safeRoomController, GameObject _null) : base(safeRoomController, _null)
+    public SafeRoomUIDefaultState(SafeRoomController safeRoomController, RectTransform _null, Vector2 onScreenPos, Vector2 offScreenPos, bool enableAnimations) : 
+        base(safeRoomController, _null, onScreenPos, offScreenPos, enableAnimations)
     {
     }
 

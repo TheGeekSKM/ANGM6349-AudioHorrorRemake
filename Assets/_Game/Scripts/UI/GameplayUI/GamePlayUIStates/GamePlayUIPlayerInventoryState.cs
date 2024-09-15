@@ -6,8 +6,8 @@ public class GamePlayUIPlayerInventoryState : GamePlayUIBaseState
 {
     InventoryDisplayController inventoryDisplayController;
     public GamePlayUIPlayerInventoryState(GamePlayUIController controller, InventoryDisplayController inventoryDisplayController, 
-        RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos) : 
-        base(controller, panel, onScreenPos, offScreenPos)
+        RectTransform panel, Vector2 onScreenPos, Vector2 offScreenPos, bool enableAnimations) : 
+        base(controller, panel, onScreenPos, offScreenPos, enableAnimations)
     {
         this.inventoryDisplayController = inventoryDisplayController;
     }
