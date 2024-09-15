@@ -28,6 +28,8 @@ public class GamePlayUIController : MonoBehaviour
     [SerializeField] GameObject _roomInventoryPanel;
     [SerializeField] GameObject _walkingPanel;
     [SerializeField] GameObject _notePadPanel;
+    [SerializeField] GameObject _gameHidePanel;
+    public GameObject GameHidePanel => _gameHidePanel;
 
     [Header("UI Panel Settings")]
     [SerializeField] Vector2 _onScreenPanelPosition = new Vector2(960f, -622f);
@@ -91,6 +93,7 @@ public class GamePlayUIController : MonoBehaviour
 
         _notePadRectTransform = _notePadPanel.GetComponent<RectTransform>();
         _notePadPanel.SetActive(_isNotepadFound.Value);
+
     }
 
 
