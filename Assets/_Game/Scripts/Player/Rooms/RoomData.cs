@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Room", menuName = "Rooms/Room Data")]
 public class RoomData : ScriptableObject
 {
-    public string RoomName;
+    string roomName;
+    public string RoomName => discovered ? roomName : "Unknown Room";
 
     [TextArea(15, 20)]
     public string StartingRoomDescription;

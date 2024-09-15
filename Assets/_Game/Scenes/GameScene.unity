@@ -1344,6 +1344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentRoom: {fileID: 0}
+  _onRoomEnterString: {fileID: 11400000, guid: 5dd5db79ee0dffb499fd5216aa24a83d, type: 2}
+  _onRoomEnterRoomData: {fileID: 11400000, guid: c511a4bf71c1c7f418f1a3a3e7420dea, type: 2}
 --- !u!114 &522314949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3185,6 +3187,7 @@ MonoBehaviour:
   _offScreenPlayerInventoryPanelPosition: {x: -969, y: -622}
   _offScreenRoomInventoryPanelPosition: {x: 960, y: 578}
   _offScreenWalkingPanelPosition: {x: 960, y: -1532}
+  _enableAnimations: 1
   _walkButton: {fileID: 1183724795}
   _stopMovingButton: {fileID: 111171304}
   _leftButton: {fileID: 46367166}
@@ -3435,6 +3438,8 @@ GameObject:
   - component: {fileID: 1568727704}
   - component: {fileID: 1568727706}
   - component: {fileID: 1568727705}
+  - component: {fileID: 1568727708}
+  - component: {fileID: 1568727707}
   m_Layer: 5
   m_Name: TXT_QuestText
   m_TagString: Untagged
@@ -3559,6 +3564,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568727703}
   m_CullTransparentMesh: 1
+--- !u!114 &1568727707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568727703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7f4af38939a8c42840d143eb37169f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a4ed94208baa19549b9574cd11f6da20, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1568727708}
+        m_TargetAssemblyTypeName: QuestTextController, Assembly-CSharp
+        m_MethodName: UpdateQuestText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1568727708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568727703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf8fc30757afbb49ac1adaa6fb85f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questText: {fileID: 1568727705}
 --- !u!1 &1647115328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4912960812279675762, guid: 1ff9ebb1154d8984694d7cfd7bfe3b3a, type: 3}
