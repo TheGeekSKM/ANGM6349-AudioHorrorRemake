@@ -12,18 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce019b20d7fff84b954417e14c97ee2, type: 3}
   m_Name: Infirmary
   m_EditorClassIdentifier: 
-  RoomName: Infirmary
   StartingRoomDescription: 
   RoomDescription: 
   Loot:
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
-  - {fileID: 11400000, guid: 5ae2ba32e978b9c4699a1271efbd86cc, type: 2}
+  - {fileID: 11400000, guid: 00cb08008e3006649acb7dc1cb0df250, type: 2}
   discovered: 0

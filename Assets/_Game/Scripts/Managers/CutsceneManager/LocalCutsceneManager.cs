@@ -46,7 +46,7 @@ public class LocalCutsceneManager : MonoBehaviour
 
     public void ToggleEnableSkipButton()
     {
-        Debug.Log("ToggleEnableSkipButton");
+        // Debug.Log("ToggleEnableSkipButton");
 
         if (_isSkipButtonEnabled)
         {
@@ -65,7 +65,7 @@ public class LocalCutsceneManager : MonoBehaviour
 
     public void DialogueStart(DialogueSceneSO dialogueSceneSO)
     {
-        Debug.Log("DialogueStarted");
+        // Debug.Log("DialogueStarted");
 
         if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
 

@@ -27,7 +27,7 @@ public class GameBaseState : IState
         if (_sceneReference != null) 
         {
             SceneManager.UnloadSceneAsync(_sceneReference.BuildIndex);
-            Debug.Log($"Unloaded {_sceneReference.Name}");
+            // Debug.Log($"Unloaded {_sceneReference.Name}");
         }
     }
 }

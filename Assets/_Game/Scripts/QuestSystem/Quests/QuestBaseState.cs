@@ -7,6 +7,7 @@ public class QuestBaseState : IState
 {
     protected QuestManager questManager;
     protected QuestData questData;
+    public QuestData QuestData => questData;
 
     public QuestBaseState(QuestManager questManager, QuestData questData)
     {
@@ -19,6 +20,7 @@ public class QuestBaseState : IState
     {
         questManager.UpdateQuestText(questData.questDescription);
         questManager.Quests.Add(questData);
+        questManager.currentQuest = questData;
     }
 
 
@@ -27,14 +29,16 @@ public class QuestBaseState : IState
     public void Update() { }
 }
 
-public struct QuestData
+public class QuestData
 {
     public string questName;
     public string questDescription;
+    public bool questCompleted;
 
     public QuestData(string questName, string questDescription)
     {
         this.questName = questName;
         this.questDescription = questDescription;
+        questCompleted = false;
     }
 }

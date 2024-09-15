@@ -13,7 +13,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void OnEnter()
     {
-        Debug.Log("Idle");
+        // Debug.Log("Idle");
         base.OnEnter();
     }
 
@@ -33,7 +33,7 @@ public class EnemyIdleState : EnemyBaseState
             var finalPosition = hit.position;
             Agent.SetDestination(finalPosition);
             Controller.Direction = finalPosition - Controller.transform.position;
-            Debug.Log($"picked new destination: {finalPosition}");
+            // Debug.Log($"picked new destination: {finalPosition}");
         }
     }
 

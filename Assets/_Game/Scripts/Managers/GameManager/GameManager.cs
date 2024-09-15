@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Eflatun.SceneReference;
 using System.Collections;
+using System;
 
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]   
     [SerializeField] bool _startWithMainMenu = true;
+    public Action<GameBaseState> OnGameStateChange;
 
     // [Header("Events")]
     // [SerializeField] VoidEvent _onPlayerEnterSafeRoom;
@@ -76,10 +78,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ChangeGameStateWithDelayCoroutine(state, delay));
     }
 
-    IEnumerator ChangeGameStateWithDelayCoroutine(IState state, float delay)
+    IEnumerator ChangeGameStateWithDelayCoroutine(GameBaseState state, float delay)
     {
         yield return new WaitForSeconds(delay);
         _gameStateMachine.ChangeState(state);
+        OnGameStateChange?.Invoke(state);
     }
 
     public void PlayCutscene(DialogueSceneSO dialogueSceneSO)

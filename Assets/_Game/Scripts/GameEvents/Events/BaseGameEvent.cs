@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace SaiUtils.GameEvents
@@ -9,6 +10,7 @@ namespace SaiUtils.GameEvents
         private readonly List<IGameEventListener<T>> eventListeners = new List<IGameEventListener<T>>();
 
         // Raise the event
+        [Button]
         public void Raise(T item)
         {
             for (int i = eventListeners.Count - 1; i >= 0; i--)
