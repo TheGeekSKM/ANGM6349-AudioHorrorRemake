@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace SaiUtils.ScriptableVariables
@@ -17,6 +16,12 @@ namespace SaiUtils.ScriptableVariables
                 _value = value;
                 OnValueChanged?.Invoke(_value);
             }
+        }
+
+        [Button]
+        public void ChangeValue(T value)
+        {
+            Value = value;
         }
     }
 }

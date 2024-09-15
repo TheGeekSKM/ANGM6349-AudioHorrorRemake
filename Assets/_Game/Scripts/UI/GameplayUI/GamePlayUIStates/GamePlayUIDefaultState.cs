@@ -12,7 +12,7 @@ public class GamePlayUIDefaultState : GamePlayUIBaseState
         base.OnEnter();
 
         // Set the player's movement state to default
-        if (PlayerController.Instance) PlayerController.Instance.PlayerMovement.Stop();
+        // if (PlayerController.Instance) PlayerController.Instance.PlayerMovement.Stop();
     }
 
     public override void OnExit()

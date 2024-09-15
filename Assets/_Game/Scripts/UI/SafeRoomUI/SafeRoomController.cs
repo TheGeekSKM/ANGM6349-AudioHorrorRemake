@@ -34,6 +34,7 @@ public class SafeRoomController : MonoBehaviour
     [SerializeField] Vector2 _offScreenCraftPanelPos;
     [SerializeField] Vector2 _offScreenRecordsPanelPos;
     [SerializeField] bool _enableAnimations = true;
+    [SerializeField] BoolVariable _notePadEnabled;
     StateMachine _safeRoomStateMachine;
     public StateMachine SafeRoomStateMachine => _safeRoomStateMachine;
 
@@ -84,6 +85,8 @@ public class SafeRoomController : MonoBehaviour
         _notePadCloseButton.onClick.AddListener(() => HideNotepad());
         _recordsButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIRecordsState, 0.2f));
         _recordsCloseButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIDefaultState, 0.2f));
+
+        _notePadEnabled.OnValueChanged += (enabled) => _notePadPanel.gameObject.SetActive(enabled);
     }
 
     void OnDisable()
@@ -97,11 +100,14 @@ public class SafeRoomController : MonoBehaviour
         _notePadCloseButton.onClick.RemoveAllListeners();
         _recordsButton.onClick.RemoveAllListeners();
         _recordsCloseButton.onClick.RemoveAllListeners();
+
+        _notePadEnabled.OnValueChanged -= (enabled) => _notePadPanel.gameObject.SetActive(enabled);
     }
 
     private void Start()
     {
         _notePadPanelY = _notePadPanel.anchoredPosition.y;
+        _notePadPanel.gameObject.SetActive(_notePadEnabled.Value);
     }
 
     [Button]

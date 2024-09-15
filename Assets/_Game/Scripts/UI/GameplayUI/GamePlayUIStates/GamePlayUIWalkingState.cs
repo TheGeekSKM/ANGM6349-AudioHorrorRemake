@@ -8,34 +8,5 @@ public class GamePlayUIWalkingState : GamePlayUIBaseState
         base(controller, panel, onScreenPos, offScreenPos, enableAnimations)
     {
     }
-
-    public override void OnEnter()
-    {
-        base.OnEnter();
-
-        // Set the player's movement state to walking
-        PlayerController.Instance.PlayerMovement.Move();
-    }
-
-    public override void OnExit()
-    {
-        base.OnExit();
-    }
-
-    public override void Update()
-    {
-        base.Update();
-
-        // if player stops moving, change state to default
-        if (PlayerController.Instance.PlayerMovement.IsMoving == false)
-        {
-            Controller.ChangeUIState(GamePlayUIState.Default);
-        }
-    }
-
-    public override void FixedUpdate()
-    {
-        base.FixedUpdate();
-    }
 }
 
