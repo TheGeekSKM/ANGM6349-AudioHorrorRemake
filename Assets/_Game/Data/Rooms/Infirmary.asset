@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce019b20d7fff84b954417e14c97ee2, type: 3}
   m_Name: Infirmary
   m_EditorClassIdentifier: 
-  StartingRoomDescription: 
-  RoomDescription: 
+  roomName: Infirmary
+  startingRoomDescription: "The smell of disinfectant, mixed with rot. Beds overturned.
+    Metal tools scatter underfoot. This was an infirmary once\u2014now it's a graveyard..."
+  roomDescriptions:
+  - The familiar scent of decay. My feet catch on the same twisted bed frame. The
+    infirmary... no safer than before...
+  - It still smells like disinfectant and rot mixed together...
+  - I wonder how many sick people were kept in this room...
+  - The decay clings to the air, just like before. I need to move.
+  - "Another step, another reminder\u2014this place hasn\u2019t improved."
   Loot:
   - {fileID: 11400000, guid: 00cb08008e3006649acb7dc1cb0df250, type: 2}
   discovered: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce019b20d7fff84b954417e14c97ee2, type: 3}
+  m_Name: Mortuary
+  m_EditorClassIdentifier: 
+  roomName: Mortuary
+  startingRoomDescription: I smell corpses...I can't really describe how it smells,
+    but the air is damp...and rotten...I think dead bodies used to be held here...This
+    is a Mortuary, isn't it...? What lab has a mortuary in here?
+  roomDescriptions:
+  - Oh gods...I forgot that that there's dead people in this room with me...
+  - Is she in this room...?
+  - I'm slightly thankful I can't see...I don't know what I would do if I saw her
+    here...
+  - I hope these people can rest in peace...I'm sorry...
+  Loot: []
+  discovered: 0

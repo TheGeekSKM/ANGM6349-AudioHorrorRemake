@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce019b20d7fff84b954417e14c97ee2, type: 3}
+  m_Name: BreakRoom
+  m_EditorClassIdentifier: 
+  roomName: Break Room
+  startingRoomDescription: Broken chairs, old food rotting in the air. Feels like
+    a break room...The smell is unbearable...a smelly break room...
+  roomDescriptions:
+  - How long has this food been rotting...?
+  - I wonder if I'll start to smell like rotting cheese if I stay here longer...
+  - If I ever eat the food in this room...I hope the creature eats me first.
+  - I will never eat cheese as long as I live...cheese sucks...it smells bad....I
+    hate it so much...
+  Loot: []
+  discovered: 0

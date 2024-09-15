@@ -5,14 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Room", menuName = "Rooms/Room Data")]
 public class RoomData : ScriptableObject
 {
-    string roomName;
-    public string RoomName => discovered ? roomName : "Unknown Room";
+    [SerializeField] string roomName;
+    public string RoomName => roomName;
 
-    [TextArea(15, 20)]
-    public string StartingRoomDescription;
+    [TextArea(4, 20)]
+    [SerializeField] string startingRoomDescription;
 
-    [TextArea(15, 20)]
-    public string RoomDescription;
+    [SerializeField] List<string> roomDescriptions;
+
+    public string RoomDescription => discovered ? roomDescriptions[Random.Range(0, roomDescriptions.Count - 1)] : startingRoomDescription;
 
     public List<ItemData> Loot;
 

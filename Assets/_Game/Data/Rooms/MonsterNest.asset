@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce019b20d7fff84b954417e14c97ee2, type: 3}
+  m_Name: MonsterNest
+  m_EditorClassIdentifier: 
+  roomName: Monster Nest
+  startingRoomDescription: All I smell are rot and decay...my feet step on small
+    spheres that crack and ooze under my feet...I think these are eggs....Oh shit
+    this is the creature's nest, isn't it?
+  roomDescriptions:
+  - I might just eat these eggs....
+  - Can I throw these eggs to distract the creatures??
+  - I wonder if I can hide stuff in this room...Would the creature check it's own
+    nest?
+  - Ewwwwwww I hate eggs....
+  Loot: []
+  discovered: 0
