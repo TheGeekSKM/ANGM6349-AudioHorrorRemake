@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Throwable Item", menuName = "Items/Throwable Item")]
 public class ThrowableItemData : ItemData
 {
     [SerializeField] GameObject _afterThrownPrefab;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c1b6f66d311f24ab453c19d8e0d01c, type: 3}
   m_Name: Bandage
   m_EditorClassIdentifier: 
-  ItemName: Bandage
+  ItemName: Old Bandage
   ItemDescription: The bandages are barely holding on, but atleast it'll hold the
     infection for a bit longer...Some of them are used though...
   ItemUsageDescription:
@@ -30,3 +30,5 @@ MonoBehaviour:
   BreakSound: {fileID: 0}
   DropSound: {fileID: 0}
   HealthRestore: 10
+  SpeedBoost: 0
+  SpeedBoostDuration: 0

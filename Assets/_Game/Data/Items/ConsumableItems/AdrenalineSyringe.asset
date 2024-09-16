@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c1b6f66d311f24ab453c19d8e0d01c, type: 3}
+  m_Name: AdrenalineSyringe
+  m_EditorClassIdentifier: 
+  ItemName: Adrenaline Syringe
+  ItemDescription: I don't exactly know what's in this syringe...but...and don't
+    laugh...I feel like it makes me faster....eh, if I'm gonna die, at least I'll
+    die high as balls.
+  ItemUsageDescription:
+  - gods, I love being high...and fast, too...but mainly high.
+  - If I just take like a billion of these...I can probably phase through the walls.
+  - I could always just stab the guy with these...actually, he might talk more...nevermind...
+  - I just stabbed myself...and now I'm fast as hell.
+  - This shit is better than therapy...and it makes me fast, too.
+  UseDurability: 1
+  Durability: 1
+  PickupSound: {fileID: 0}
+  UseSound: {fileID: 0}
+  BreakSound: {fileID: 0}
+  DropSound: {fileID: 0}
+  HealthRestore: 10
+  SpeedBoost: 0
+  SpeedBoostDuration: 0
