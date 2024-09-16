@@ -11,6 +11,7 @@ public class SoundAtlas : MonoBehaviour
     public SoundData[] PlayerTurnSounds;
     public SoundData[] MonsterFootstepSounds;
     public SoundData[] MonsterGrowlSounds;
+    public SoundData[] WhooshSounds;
 
 
     public SoundData PlayerFootstepSound
@@ -42,6 +43,14 @@ public class SoundAtlas : MonoBehaviour
         get
         {
             return MonsterGrowlSounds[Random.Range(0, MonsterGrowlSounds.Length - 1)];
+        }
+    }
+
+    public SoundData WhooshSound
+    {
+        get
+        {
+            return WhooshSounds[Random.Range(0, WhooshSounds.Length - 1)];
         }
     }
  

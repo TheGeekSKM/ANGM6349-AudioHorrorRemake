@@ -4,6 +4,8 @@ using DG.Tweening;
 public class ButtonController : MonoBehaviour {
 
     [SerializeField] Vector2Int _buttonRotationRange = new Vector2Int(-5, 5);
+    [SerializeField] SoundData _onClickSound;
+    [SerializeField] SoundData _onHoverSound;
 
     RectTransform _rectTransform;
 
@@ -14,6 +16,9 @@ public class ButtonController : MonoBehaviour {
 
     public void OnClick()
     {
+        //play sound
+        if (_onClickSound) SoundManager.Instance.PlaySound2D(_onClickSound);
+
         var randRot = Random.Range(0, 2) == 0 ? _buttonRotationRange.x : _buttonRotationRange.y;
 
         if (!_rectTransform) return;
@@ -26,6 +31,8 @@ public class ButtonController : MonoBehaviour {
     {
         //tweens to scale up
         _rectTransform.DOScale(1.1f, 0.1f).SetEase(Ease.InExpo);
+        //play sound
+        // if (_onHoverSound) SoundManager.Instance.PlaySound2D(_onHoverSound);
         //Debug.Log("OnMouseEnter");
     }
 

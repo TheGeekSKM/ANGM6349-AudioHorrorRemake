@@ -144,9 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundData: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
+  _additionalTime: 20
+  _spriteRenderer: {fileID: 2810190234488982608}
   _audioSource: {fileID: 436650374378086318}
   _clipLength: 0
+  _fadeSpeed: 0
 --- !u!135 &5477883643126126871
 SphereCollider:
   m_ObjectHideFlags: 0

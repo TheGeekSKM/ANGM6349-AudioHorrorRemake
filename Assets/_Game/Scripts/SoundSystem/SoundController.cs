@@ -5,6 +5,7 @@ public class SoundController : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField, ReadOnly] SoundData _soundData;
+    [SerializeField] float _additionalTime = 0f;
 
     [Header("References")]
     [SerializeField] SpriteRenderer _spriteRenderer;
@@ -28,8 +29,8 @@ public class SoundController : MonoBehaviour
         _audioSource.clip = _soundData.GetRandomSound();
 
         // set the clip length
-        if (_audioSource.clip) _clipLength = _audioSource.clip.length * 5f;
-        else _clipLength = 10f;
+        if (_audioSource.clip) _clipLength = _audioSource.clip.length * 5f + _additionalTime;
+        else _clipLength = 10f + _additionalTime;
 
         // set the volume
         _audioSource.volume = _soundData.Volume;

@@ -23,4 +23,9 @@ MonoBehaviour:
   UseSound: {fileID: 0}
   BreakSound: {fileID: 0}
   DropSound: {fileID: 0}
-  _afterThrownPrefab: {fileID: 0}
+  _timeToDestroy: 10
+  _speedFactor: 1
+  _damageAtEnd: 1000
+  _damageOverTime: 0
+  _timeBetweenDamage: 1
+  _afterThrownPrefab: {fileID: 4797945711150691599, guid: 9a3e643e45688e14c90ec3eb58d601ea, type: 3}

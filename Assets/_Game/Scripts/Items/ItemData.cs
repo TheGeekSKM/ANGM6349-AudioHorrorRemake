@@ -41,7 +41,7 @@ public class ItemData : ScriptableObject
         }
     }
 
-    public virtual void DropItem(GameObject user)
+    public virtual void DropItem(GameObject user, RoomData room)
     {
         if (DropSound) SoundManager.Instance.PlaySound(user.transform, DropSound);
         OnDrop?.Invoke();

@@ -26,7 +26,11 @@ public class SafeRoomUIBaseState : IState
     {
         if (!_uiPanel) return; 
         
-        if (_enableAnimations) _uiPanel.DOAnchorPos(_onScreenPos, 0.3f).SetEase(Ease.OutExpo);
+        if (_enableAnimations) 
+        {
+            _uiPanel.DOAnchorPos(_onScreenPos, 0.3f).SetEase(Ease.OutExpo);
+            SoundManager.Instance.PlaySound2D(SoundAtlas.Instance.WhooshSound);
+        }
         else _uiPanel.anchoredPosition = _onScreenPos;
     }
 

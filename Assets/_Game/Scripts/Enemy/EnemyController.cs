@@ -9,8 +9,11 @@ using SaiUtils.StateMachine;
 public class EnemyController : MonoBehaviour
 {
 
+    public static EnemyController Instance { get; private set; }
+
     [Header("References")]
     [SerializeField] NavMeshAgent _navMeshAgent;
+    public NavMeshAgent NavMeshAgent => _navMeshAgent;
     [SerializeField] GameObject _damagePrefab;
 
     [Header("Settings")]
@@ -36,6 +39,12 @@ public class EnemyController : MonoBehaviour
     public EnemyTargetState TargetState { get; private set; }
     public EnemyAttackState AttackState { get; private set; }
 
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     void Start()
     {
         ConfigureStateMachine();
@@ -45,7 +54,7 @@ public class EnemyController : MonoBehaviour
     {
         _enemyStateMachine = new StateMachine();
 
-        IdleState = new EnemyIdleState(this, _navMeshAgent, _wanderRadius);
+        IdleState = new EnemyIdleState(this, _navMeshAgent, _wanderRadius, new Vector2(10, 15));
         TargetState = new EnemyTargetState(this, _navMeshAgent, PlayerController.Instance.PlayerTransform);
         AttackState = new EnemyAttackState(this, _navMeshAgent, _damagePrefab, _attackCooldown);
 
@@ -102,6 +111,7 @@ public class EnemyController : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(_damage);
+            SoundManager.Instance.PlayEnemySound(transform, SoundAtlas.Instance.MonsterGrowlSound);
         }
     }
     

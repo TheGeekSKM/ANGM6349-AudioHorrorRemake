@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyIdleState : EnemyBaseState
 {
     float wanderRadius;
-    public EnemyIdleState(EnemyController controller, NavMeshAgent agent, float wanderRadius) : base(controller, agent)
+    Vector2 timeBetweenRoars;
+    float acutalTime;
+    float timer;
+    public EnemyIdleState(EnemyController controller, NavMeshAgent agent, float wanderRadius, Vector2 timeBetweenRoars) : base(controller, agent)
     {
         this.wanderRadius = wanderRadius;
+        this.timeBetweenRoars = timeBetweenRoars;
     }
 
     public override void OnEnter()
     {
         // Debug.Log("Idle");
+        acutalTime = Random.Range(timeBetweenRoars.x, timeBetweenRoars.y);
         base.OnEnter();
     }
 
@@ -34,6 +40,14 @@ public class EnemyIdleState : EnemyBaseState
             Agent.SetDestination(finalPosition);
             Controller.Direction = finalPosition - Controller.transform.position;
             // Debug.Log($"picked new destination: {finalPosition}");
+        }
+
+        timer += Time.deltaTime;
+        if (timer >= acutalTime)
+        {
+            timer = 0;
+            acutalTime = Random.Range(timeBetweenRoars.x, timeBetweenRoars.y);
+            SoundManager.Instance.PlayEnemySound(Controller.transform, SoundAtlas.Instance.MonsterFootstepSound);
         }
     }
 

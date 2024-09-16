@@ -193,8 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6107fbbf9f8b8e4ebe423279daa867e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hoverFeedback: {fileID: 0}
-  _clickFeedback: {fileID: 0}
+  _buttonRotationRange: {x: -5, y: 5}
+  _onClickSound: {fileID: 11400000, guid: 08a11a3d35025ae4c9cf559db7956322, type: 2}
+  _onHoverSound: {fileID: 11400000, guid: 8f16ecdb5cc43c847ada3cd1833c1ee4, type: 2}
 --- !u!1 &1706503699179623759
 GameObject:
   m_ObjectHideFlags: 0

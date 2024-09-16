@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SaiUtils.Extensions;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -14,6 +15,13 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] GameObject _soundPrefab;
     [SerializeField] GameObject _enemySoundPrefab;
+    [SerializeField] GameObject _sound2DPrefab;
+
+    public void PlaySound2D(SoundData soundData)
+    {
+        GameObject sound = Instantiate(_sound2DPrefab);
+        sound.GetComponent<SoundController>().InitSound(soundData);
+    }
 
     public void PlaySound(Transform soundSource, SoundData soundData, Transform parent = null)
     {

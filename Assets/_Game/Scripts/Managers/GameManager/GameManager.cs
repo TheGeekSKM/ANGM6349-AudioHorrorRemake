@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool _startWithMainMenu = true;
     public Action<GameStateEnum> OnGameStateChange;
 
+    [SerializeField] RoomData _monsterNest;
+
     // [Header("Events")]
     // [SerializeField] VoidEvent _onPlayerEnterSafeRoom;
 
@@ -103,5 +105,21 @@ public class GameManager : MonoBehaviour
     }
 
     public void SafeRoom() => _gameStateMachine.ChangeState(GameSafeRoomState);
+
+    public void AlertMonsterToMonsterNest()
+    {
+        Debug.Log("Alerting monster to monster nest");
+        var monsterNestRT = RoomManager.Instance.FindRoomTrigger(_monsterNest);
+        EnemyController.Instance.NavMeshAgent.Warp(monsterNestRT.transform.position);
+        EnemyController.Instance.NavMeshAgent.speed = 0;
+        StartCoroutine(StayInRoom());
+        // EnemyController.Instance.TriggerTargetState(monsterNestRT.transform);
+    }
+
+    IEnumerator StayInRoom()
+    {
+        yield return new WaitForSeconds(10f);
+        EnemyController.Instance.NavMeshAgent.speed = 2;
+    }
 
 }

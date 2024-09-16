@@ -34,7 +34,10 @@ public class GamePlayUIBaseState : IState
     {
         if (!Panel) return;
         Panel.anchoredPosition = OffScreenPos;
-        if (_enableAnimations) Panel.DOAnchorPos(OnScreenPos, 0.3f).SetEase(Ease.OutExpo);
+        if (_enableAnimations) {
+            Panel.DOAnchorPos(OnScreenPos, 0.3f).SetEase(Ease.OutExpo);
+            SoundManager.Instance.PlaySound2D(SoundAtlas.Instance.WhooshSound);
+        }
         else Panel.anchoredPosition = OnScreenPos;
     }
 

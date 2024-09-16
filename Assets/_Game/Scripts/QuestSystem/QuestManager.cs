@@ -39,6 +39,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] ItemData _bandages;
     [SerializeField] ItemData _explosiveChemicals;
     [SerializeField] ItemData _beaker;
+    [SerializeField] ItemData _dynamite;
     bool _foundExplosiveChemicals = false;
     bool _foundBeaker = false;
 
@@ -78,41 +79,41 @@ public class QuestManager : MonoBehaviour
         _quests.Add(QuestFindBandagesState.QuestData);
 
         QuestBringBandagesState = new QuestBringBandagesState(this, new QuestData("Bring Bandages", "Bring bandages to the man in the <b>Safe Room</b>..."));
-        _questStateMachine.AddTransition(QuestFindBandagesState, QuestBringBandagesState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestBringBandagesState, new BlankPredicate());
         _quests.Add(QuestBringBandagesState.QuestData);
 
 
         QuestFindMonsterNestState = new QuestFindMonsterNestState(this, new QuestData("Find Monster Nest", "Find the monster nest..."));
-        _questStateMachine.AddTransition(QuestFindSuppliesState, QuestFindMonsterNestState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestFindMonsterNestState, new BlankPredicate());
         _quests.Add(QuestFindMonsterNestState.QuestData);
 
         QuestReportMonsterRoomState = new QuestReportMonsterRoomState(this, new QuestData("Report Monster Room", "Report the Monster Nest's location to the man in the <b>Safe Room</b>..."));
-        _questStateMachine.AddTransition(QuestFindMonsterNestState, QuestReportMonsterRoomState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestReportMonsterRoomState, new BlankPredicate());
         _quests.Add(QuestReportMonsterRoomState.QuestData);
 
         QuestFindSuppliesState = new QuestFindSuppliesState(this, new QuestData("Find Supplies", 
             "Find explosive chemicals in the <b>Chemical Storage Room</b> and beakers in the <b>Supply Storage Room</b>..."));
-        _questStateMachine.AddTransition(QuestBringBandagesState, QuestFindSuppliesState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestFindSuppliesState, new BlankPredicate());
         _quests.Add(QuestFindSuppliesState.QuestData);
 
         QuestBringSuppliesBackState = new QuestBringSuppliesBackState(this, new QuestData("Bring Supplies Back", "Bring the chemicals and beaker back to the man in the <b>Safe Room</b>..."));
-        _questStateMachine.AddTransition(QuestFindSuppliesState, QuestBringSuppliesBackState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestBringSuppliesBackState, new BlankPredicate());
         _quests.Add(QuestBringSuppliesBackState.QuestData);
        
         QuestFindExitRoomState = new QuestFindExitRoomState(this, new QuestData("Find Exit Room", "Find the exit room..."));
-        _questStateMachine.AddTransition(QuestBringSuppliesBackState, QuestFindExitRoomState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestFindExitRoomState, new BlankPredicate());
         _quests.Add(QuestFindExitRoomState.QuestData);
 
         QuestReportExitRoomState = new QuestReportExitRoomState(this, new QuestData("Report Exit Room", "Report the exit room to the man in the <b>Safe Room</b>..."));
-        _questStateMachine.AddTransition(QuestFindExitRoomState, QuestReportExitRoomState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestReportExitRoomState, new BlankPredicate());
         _quests.Add(QuestReportExitRoomState.QuestData);
 
         QuestKillMonsterState = new QuestKillMonsterState(this, new QuestData("Kill Monster", "Kill the monster..."));
-        _questStateMachine.AddTransition(QuestReportMonsterRoomState, QuestKillMonsterState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestKillMonsterState, new BlankPredicate());
         _quests.Add(QuestKillMonsterState.QuestData);
 
         QuestReportKillOrLeaveState = new QuestReportKillOrLeave(this, new QuestData("Report Kill", "Report the monster's death to the man, or explode the <b>Exit Room</b> and leave..."));
-        _questStateMachine.AddTransition(QuestKillMonsterState, QuestReportKillOrLeaveState, new BlankPredicate());
+        _questStateMachine.AddAnyTransition(QuestReportKillOrLeaveState, new BlankPredicate());
         _quests.Add(QuestReportKillOrLeaveState.QuestData);
 
         _questStateMachine.SetState(QuestFindBandagesState);
@@ -261,6 +262,12 @@ public class QuestManager : MonoBehaviour
 
         GameManager.Instance.PlayCutscene(_reportExitRoomCutscene);
         QuestKillMonsterState.QuestData.questActivated = true;
+
+        for (int i = 0; i < 7; i++)
+        {
+            PlayerController.Instance.InventoryController.AddItem(_dynamite);
+        }
+
         KillMonsterListener.SetActive(true);
   
         ReportExitRoomQuestListener.SetActive(false);

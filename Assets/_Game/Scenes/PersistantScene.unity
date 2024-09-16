@@ -661,6 +661,8 @@ GameObject:
   - component: {fileID: 728861739}
   - component: {fileID: 728861738}
   - component: {fileID: 728861743}
+  - component: {fileID: 728861744}
+  - component: {fileID: 728861745}
   m_Layer: 0
   m_Name: EventListeners
   m_TagString: Untagged
@@ -994,6 +996,95 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &728861744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728861735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc04f43731fe524a908d11db9ddb7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomData: {fileID: 11400000, guid: 8bb3de33d12e2e2448b97ddd76bfab89, type: 2}
+  itemDatasToCompare: []
+  OnLootAddedMatch:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLootAddedNotMatch:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945597927}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: AlertMonsterToMonsterNest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLootRemovedMatch:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLootRemovedNotMatch:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &728861745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728861735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6c34be262b11a48906af54cded9f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 11400000, guid: 088cefd2584c3d14dbb5f5abbf4033ba, type: 2}
+  OnPickUpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f178484b4f5225a4985b52559ad5609c, type: 2}
+        m_TargetAssemblyTypeName: SaiUtils.ScriptableVariables.ScriptableVariable`1[[System.Boolean,
+          mscorlib
+        m_MethodName: ChangeValue
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnUseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBreakEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDropEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f178484b4f5225a4985b52559ad5609c, type: 2}
+        m_TargetAssemblyTypeName: SaiUtils.ScriptableVariables.ScriptableVariable`1[[System.Boolean,
+          mscorlib
+        m_MethodName: ChangeValue
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &945597926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1130,7 @@ MonoBehaviour:
     asset: {fileID: 102900000, guid: 7310478d7104929468a188ab500d01a8, type: 3}
     guid: 7310478d7104929468a188ab500d01a8
   _startWithMainMenu: 1
+  _monsterNest: {fileID: 11400000, guid: 8bb3de33d12e2e2448b97ddd76bfab89, type: 2}
 --- !u!4 &945597928
 Transform:
   m_ObjectHideFlags: 0
@@ -1130,6 +1222,7 @@ MonoBehaviour:
   _bandages: {fileID: 11400000, guid: 00cb08008e3006649acb7dc1cb0df250, type: 2}
   _explosiveChemicals: {fileID: 11400000, guid: 0ff6754806b47a743b32c77bddcd8471, type: 2}
   _beaker: {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
+  _dynamite: {fileID: 0}
 --- !u!1 &1246165433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1516,7 @@ GameObject:
   - component: {fileID: 1461604693}
   - component: {fileID: 1461604694}
   - component: {fileID: 1461604695}
+  - component: {fileID: 1461604696}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -1459,6 +1553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundPrefab: {fileID: 5385516004212061987, guid: 937e6b8bde7e48b47ad2b81a91db9568, type: 3}
   _enemySoundPrefab: {fileID: 5385516004212061987, guid: fe55d79550533af4c8c2d073a398e223, type: 3}
+  _sound2DPrefab: {fileID: 5385516004212061987, guid: 08eb7dc4de404a74fbfc46b83cd749ae, type: 3}
 --- !u!114 &1461604695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,8 +1570,108 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fbbac7416c4c29f4d92fa59ede814590, type: 2}
   PlayerTurnSounds:
   - {fileID: 11400000, guid: eb7c94032e2ef2543a78d6189320cecf, type: 2}
-  MonsterFootstepSounds: []
-  MonsterGrowlSounds: []
+  MonsterFootstepSounds:
+  - {fileID: 11400000, guid: 3e9402c7997fda14ca2ea32291289294, type: 2}
+  MonsterGrowlSounds:
+  - {fileID: 11400000, guid: 0772c07e357c6be4e8e0b501c6d50249, type: 2}
+  WhooshSounds:
+  - {fileID: 11400000, guid: 19b67ead87185694e97433cb956a6c99, type: 2}
+--- !u!82 &1461604696
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461604692}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2592560377187498932, guid: 5f9d27794b1528b4e9b48381e47f91cf, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1507759977
 GameObject:
   m_ObjectHideFlags: 0
