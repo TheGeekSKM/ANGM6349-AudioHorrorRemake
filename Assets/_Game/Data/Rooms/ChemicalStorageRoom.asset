@@ -20,5 +20,7 @@ MonoBehaviour:
   - I wonder if the guy can use any of these chemicals or supplies...
   - My feet are sticky now...
   - Can I use these to brush my teeth...? Or bathe..??
-  Loot: []
+  Loot:
+  - {fileID: 11400000, guid: 0ff6754806b47a743b32c77bddcd8471, type: 2}
+  - {fileID: 11400000, guid: 7863246a227fe9d479663316d5f2168e, type: 2}
   discovered: 0

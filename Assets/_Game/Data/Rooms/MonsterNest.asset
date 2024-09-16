@@ -22,5 +22,6 @@ MonoBehaviour:
   - I wonder if I can hide stuff in this room...Would the creature check it's own
     nest?
   - Ewwwwwww I hate eggs....
-  Loot: []
+  Loot:
+  - {fileID: 11400000, guid: d6edf53faebdfd144b83104e144618f8, type: 2}
   discovered: 0

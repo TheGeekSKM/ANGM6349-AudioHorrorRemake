@@ -19,5 +19,10 @@ MonoBehaviour:
   - I can probably grab some stuff in this room.
   - Beakers...and...other glass shit, I don't know...I have no idea what's in this
     room.
-  Loot: []
+  Loot:
+  - {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
+  - {fileID: 11400000, guid: 00cb08008e3006649acb7dc1cb0df250, type: 2}
+  - {fileID: 11400000, guid: 396fd6e3b64e60d498ffab7bd856a6ce, type: 2}
+  - {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
+  - {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
   discovered: 0

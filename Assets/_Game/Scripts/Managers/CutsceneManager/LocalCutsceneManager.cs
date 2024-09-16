@@ -80,6 +80,7 @@ public class LocalCutsceneManager : MonoBehaviour
         foreach (var dialogue in dialogueSceneSO.DialogueLines)
         {
             _dialogueText.text = dialogue.Line;
+            _characterNameText.text = dialogue.CharacterName;
             if (dialogue.VoiceClip) _voiceAudioSource.PlayOneShot(dialogue.VoiceClip);
 
             yield return new WaitForSeconds(dialogue.Duration);

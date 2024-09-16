@@ -15,6 +15,6 @@ public class DialogueLineSO : ScriptableObject
     [Header("Audio")]
     [SerializeField] private AudioClip _voiceClip;
     public AudioClip VoiceClip => _voiceClip;
-    public float Duration => _voiceClip ? _voiceClip.length : 1f;
+    public float Duration => _voiceClip ? _voiceClip.length : 3f;
 
 }

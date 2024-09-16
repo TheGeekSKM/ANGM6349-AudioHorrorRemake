@@ -22,5 +22,8 @@ MonoBehaviour:
   - I'm slightly thankful I can't see...I don't know what I would do if I saw her
     here...
   - I hope these people can rest in peace...I'm sorry...
-  Loot: []
+  Loot:
+  - {fileID: 11400000, guid: d6edf53faebdfd144b83104e144618f8, type: 2}
+  - {fileID: 11400000, guid: 7863246a227fe9d479663316d5f2168e, type: 2}
+  - {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
   discovered: 0

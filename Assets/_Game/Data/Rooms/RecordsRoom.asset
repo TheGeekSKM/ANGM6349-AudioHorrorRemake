@@ -20,5 +20,9 @@ MonoBehaviour:
   - I think there are records in this room...Why did they use discs and not like...a
     recorder...?
   - I should take one of these discs back to the safe room...
-  Loot: []
+  Loot:
+  - {fileID: 11400000, guid: 955001e2d15b484479bbf10eb32f9462, type: 2}
+  - {fileID: 11400000, guid: 0fe23f2c2338c104785cd2de1c2da316, type: 2}
+  - {fileID: 11400000, guid: afce6b137f091f64787c5a9fb24405d6, type: 2}
+  - {fileID: 11400000, guid: dd34c78b901692441880012586205452, type: 2}
   discovered: 0

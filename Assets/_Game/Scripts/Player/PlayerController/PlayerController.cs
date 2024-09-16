@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool _isCrouching;
     public bool IsCrouching => _isCrouching;
 
+
     StateMachine _playerMotionStateMachine;
     public StateMachine PlayerMotionStateMachine => _playerMotionStateMachine;
 

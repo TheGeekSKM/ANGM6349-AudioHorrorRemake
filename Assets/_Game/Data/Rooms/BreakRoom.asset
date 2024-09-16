@@ -21,5 +21,6 @@ MonoBehaviour:
   - If I ever eat the food in this room...I hope the creature eats me first.
   - I will never eat cheese as long as I live...cheese sucks...it smells bad....I
     hate it so much...
-  Loot: []
+  Loot:
+  - {fileID: 11400000, guid: ecd9cd77d620c2d4783e624bc962b775, type: 2}
   discovered: 0
