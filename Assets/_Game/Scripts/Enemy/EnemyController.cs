@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _attackCooldown = 1f;
     [SerializeField] float _wanderRadius = 10f;
     [SerializeField] float _damage = 10f;
+    [SerializeField] Vector2 _timeBetweenRoars = new Vector2(10, 15);
 
     [Header("Debug")]
     [SerializeField, ReadOnly] Vector3 _direction;
@@ -54,7 +55,7 @@ public class EnemyController : MonoBehaviour
     {
         _enemyStateMachine = new StateMachine();
 
-        IdleState = new EnemyIdleState(this, _navMeshAgent, _wanderRadius, new Vector2(10, 15));
+        IdleState = new EnemyIdleState(this, _navMeshAgent, _wanderRadius, _timeBetweenRoars);
         TargetState = new EnemyTargetState(this, _navMeshAgent, PlayerController.Instance.PlayerTransform);
         AttackState = new EnemyAttackState(this, _navMeshAgent, _damagePrefab, _attackCooldown);
 
