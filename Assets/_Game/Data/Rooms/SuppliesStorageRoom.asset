@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SuppliesStorageRoom
   m_EditorClassIdentifier: 
   roomName: Supplies Storage Room
-  startingRoomDescription: This....is...the neatest room....in the world...Somehow
-    this room
+  startingRoomDescription: Oh shit...there's glass all over this room...I think this
+    is the room that they used to house supplies...
   roomDescriptions:
   - I can probably grab some stuff in this room.
   - Beakers...and...other glass shit, I don't know...I have no idea what's in this

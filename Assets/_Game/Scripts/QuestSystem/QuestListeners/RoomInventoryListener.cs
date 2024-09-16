@@ -6,11 +6,13 @@ using UnityEngine.Events;
 public class RoomInventoryListener : MonoBehaviour
 {
     [SerializeField] RoomData _roomData;
-
-    public UnityEvent OnLootAddedEvent;
-    public UnityEvent OnLootRemovedEvent;
-
     public List<ItemData> itemDatasToCompare = new();
+
+    public UnityEvent OnLootAddedMatch;
+    public UnityEvent OnLootAddedNotMatch;
+    public UnityEvent OnLootRemovedMatch;
+    public UnityEvent OnLootRemovedNotMatch;
+
 
     void OnEnable()
     {
@@ -26,13 +28,13 @@ public class RoomInventoryListener : MonoBehaviour
 
     void OnLootAdded(ItemData item)
     {
-        if (!itemDatasToCompare.Contains(item)) return;
-        OnLootAddedEvent.Invoke();
+        if (!itemDatasToCompare.Contains(item)) OnLootAddedNotMatch.Invoke();
+        else OnLootAddedMatch.Invoke();
     }
 
     void OnLootRemoved(ItemData item)
     {
-        if (!itemDatasToCompare.Contains(item)) return;
-        OnLootRemovedEvent.Invoke();
+        if (!itemDatasToCompare.Contains(item)) OnLootRemovedNotMatch.Invoke();
+        else OnLootRemovedMatch.Invoke();
     }
 }

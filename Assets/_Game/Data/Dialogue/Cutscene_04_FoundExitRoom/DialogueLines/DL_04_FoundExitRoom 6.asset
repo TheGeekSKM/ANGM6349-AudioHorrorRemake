@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf9a5f0afe9532499f372d0755248c0, type: 3}
+  m_Name: DL_04_FoundExitRoom 6
+  m_EditorClassIdentifier: 
+  _characterName: The Man
+  _line: I've done some awful things in this lab...and thanks to you, I might be
+    able to redeem myself, one day...
+  _voiceClip: {fileID: 0}

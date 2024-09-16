@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11723a8fc84bc5144b89c1ee73f17de3, type: 3}
+  m_Name: DS_01_PostBandages
+  m_EditorClassIdentifier: 
+  _sceneName: PostBandages
+  _dialogueLines:
+  - {fileID: 11400000, guid: 487bdaabb58f1384480f89e1a8db51f4, type: 2}
+  - {fileID: 11400000, guid: 8311c05bd0eb50e4897834f0ec9c88ad, type: 2}
+  - {fileID: 11400000, guid: ed2c837bcb3fd3b49b07a54ae5bb557d, type: 2}
+  - {fileID: 11400000, guid: 0c53fb60bd3ec8246a0301771e9a03ab, type: 2}
+  - {fileID: 11400000, guid: a25506c4d698a0c4e822b1af073fb2f0, type: 2}
+  - {fileID: 11400000, guid: 061934a71105fce49ac8d6ad8cba236a, type: 2}
+  - {fileID: 11400000, guid: d9f62245b83e1144d8219530110635b5, type: 2}
+  - {fileID: 11400000, guid: 125e67be0bacf284ea294f711a9868b3, type: 2}
+  - {fileID: 11400000, guid: d394930537634374eb10b40813185436, type: 2}
+  - {fileID: 11400000, guid: 37035ac89a0e5d5479a2acad8c6afcfc, type: 2}
+  _backgroundMusic: {fileID: 0}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11723a8fc84bc5144b89c1ee73f17de3, type: 3}
+  m_Name: DS_02_FoundMonsterRoom
+  m_EditorClassIdentifier: 
+  _sceneName: Found Monster Room
+  _dialogueLines:
+  - {fileID: 11400000, guid: d55903c7f475bc148b16f21f9a2e38c6, type: 2}
+  - {fileID: 11400000, guid: 77a92d16148f08b4187cba9f3bbabdfd, type: 2}
+  - {fileID: 11400000, guid: d4f1f932a450307479c5b901948bcbc3, type: 2}
+  - {fileID: 11400000, guid: 6402fb65e46641b4e8ef0e8b3bd00f05, type: 2}
+  - {fileID: 11400000, guid: 902b8b2725ed9ff43881d0df70165c21, type: 2}
+  - {fileID: 11400000, guid: 6791055c392f55c4da2c3158eef9f204, type: 2}
+  - {fileID: 11400000, guid: 8524bf7ac47cc0b4eb9ca58bb5975857, type: 2}
+  - {fileID: 11400000, guid: f608151e791654247921c0848d9768fa, type: 2}
+  - {fileID: 11400000, guid: 3dd31013ab12a5145ae366975169c15c, type: 2}
+  _backgroundMusic: {fileID: 0}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11723a8fc84bc5144b89c1ee73f17de3, type: 3}
+  m_Name: DS_05_ReportKill
+  m_EditorClassIdentifier: 
+  _sceneName: ReportKill
+  _dialogueLines:
+  - {fileID: 11400000, guid: a2b8960116223064b8acf03123308b54, type: 2}
+  - {fileID: 11400000, guid: 0e16f64299c471f4aa5e7fc3df1a1c37, type: 2}
+  - {fileID: 11400000, guid: 17674a5f4acaa2f4f88139fb4ae7965e, type: 2}
+  - {fileID: 11400000, guid: 84423ae0ea37bf0469f3e6cd967d3485, type: 2}
+  _backgroundMusic: {fileID: 0}

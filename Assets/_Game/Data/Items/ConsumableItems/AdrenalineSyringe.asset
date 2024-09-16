@@ -28,6 +28,6 @@ MonoBehaviour:
   UseSound: {fileID: 0}
   BreakSound: {fileID: 0}
   DropSound: {fileID: 0}
-  HealthRestore: 10
-  SpeedBoost: 0
-  SpeedBoostDuration: 0
+  HealthRestore: -5
+  SpeedBoost: 3
+  SpeedBoostDuration: 5

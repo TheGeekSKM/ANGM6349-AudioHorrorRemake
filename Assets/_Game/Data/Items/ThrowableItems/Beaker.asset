@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ba1222ae5025d46ae3a7d913c19adc, type: 3}
+  m_Name: Beaker
+  m_EditorClassIdentifier: 
+  ItemName: Beaker
+  ItemDescription: I could definitely throw this and make a goddamn minefield of
+    glass...heheehee
+  ItemUsageDescription:
+  - I...I can't...there's no liquid in this beaker...
+  - I wonder if I'd look like a pirate if I put the beaker up the my eyes...oh wait...damn
+    it.
+  UseDurability: 0
+  Durability: -1
+  PickupSound: {fileID: 0}
+  UseSound: {fileID: 0}
+  BreakSound: {fileID: 0}
+  DropSound: {fileID: 0}
+  _afterThrownPrefab: {fileID: 0}

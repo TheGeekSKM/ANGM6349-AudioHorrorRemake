@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ce019b20d7fff84b954417e14c97ee2, type: 3}
-  m_Name: DisheveledRoom
+  m_Name: Exit Room
   m_EditorClassIdentifier: 
-  roomName: Disheveled Broken Room
+  roomName: Exit Room
   startingRoomDescription: "Everything\u2019s upturned. Tables, chairs. Literally
     nothing is where it should be. Like a storm hit it. I think this room might be
     the closest room to the surface."

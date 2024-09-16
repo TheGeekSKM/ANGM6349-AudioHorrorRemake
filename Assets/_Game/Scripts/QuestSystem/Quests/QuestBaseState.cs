@@ -34,11 +34,13 @@ public class QuestData
     public string questName;
     public string questDescription;
     public bool questCompleted;
+    public bool questActivated;
 
     public QuestData(string questName, string questDescription)
     {
         this.questName = questName;
         this.questDescription = questDescription;
         questCompleted = false;
+        questActivated = false;
     }
 }

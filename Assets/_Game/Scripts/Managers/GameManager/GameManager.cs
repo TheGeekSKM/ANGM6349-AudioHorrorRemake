@@ -82,6 +82,8 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void GameEnd() => ChangeGameStateWithDelay(GameEndState, 0.1f);
+
     public void ChangeGameStateWithDelay(GameBaseState state, float delay)
     {
         StartCoroutine(ChangeGameStateWithDelayCoroutine(state, delay));
