@@ -84,6 +84,24 @@ public class GameManager : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        _gameStateMachine.Update();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
+    }
+
+    void FixedUpdate()
+    {
+        _gameStateMachine.FixedUpdate();
+    }
+
     public void GameEnd() => ChangeGameStateWithDelay(GameEndState, 0.1f);
 
     public void ChangeGameStateWithDelay(GameBaseState state, float delay)

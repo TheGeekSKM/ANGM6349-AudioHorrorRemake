@@ -4,6 +4,13 @@ using SaiUtils.GameEvents;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+public enum PlayerDirection
+{
+    Up,
+    Right,
+    Down,
+    Left
+}
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, ReadOnly] Vector3 _moveDirection;
     [SerializeField, ReadOnly] bool _isMoving = false;
     public bool IsMoving => _isMoving;
+    [SerializeField, ReadOnly] PlayerDirection _playerDirection = PlayerDirection.Down;
+    public PlayerDirection PlayerDirection => _playerDirection; 
 
 
     Coroutine _moveSoundsRoutine;
@@ -84,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         // rotate the _moveDirection to the left
         _moveDirection = new Vector3(-_moveDirection.z, 0, _moveDirection.x);
         SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound, _soundParent.transform);
+        UpdatePlayerDirection();
     }
 
     [Button]
@@ -92,6 +102,17 @@ public class PlayerMovement : MonoBehaviour
         // rotate the _moveDirection to the right
         _moveDirection = new Vector3(_moveDirection.z, 0, -_moveDirection.x);
         SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound, _soundParent.transform);
+        UpdatePlayerDirection();
+    }
+
+    void UpdatePlayerDirection()
+    {
+        if (_moveDirection == new Vector3(0, 0, -1)) _playerDirection = PlayerDirection.Down;
+        else if (_moveDirection == new Vector3(0, 0, 1)) _playerDirection = PlayerDirection.Up;
+        else if (_moveDirection == new Vector3(-1, 0, 0)) _playerDirection = PlayerDirection.Left;
+        else if (_moveDirection == new Vector3(1, 0, 0)) _playerDirection = PlayerDirection.Right;
+
+        Debug.Log("Player Direction: " + _playerDirection);
     }
 
     public void BoostSpeed(float speedBoost, float duration)
