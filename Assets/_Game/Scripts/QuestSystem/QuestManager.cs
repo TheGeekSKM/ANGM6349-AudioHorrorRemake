@@ -208,6 +208,8 @@ public class QuestManager : MonoBehaviour
     {
         if (item.ItemName == _explosiveChemicals.ItemName) _foundExplosiveChemicals = true;
         if (item.ItemName == _beaker.ItemName) _foundBeaker = true;
+        
+        PlayerController.Instance.PlayerHealth.TakeDamage(-30);
 
         if (_foundExplosiveChemicals && _foundBeaker) 
         {
