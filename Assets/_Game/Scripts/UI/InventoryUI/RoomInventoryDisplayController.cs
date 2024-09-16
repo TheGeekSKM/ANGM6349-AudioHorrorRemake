@@ -24,7 +24,7 @@ public class RoomInventoryDisplayController : MonoBehaviour
 
     private void PickUpItem()
     {
-        _itemData.PickUpItem(gameObject);
+        _itemData.PickUpItem(PlayerController.Instance.gameObject);
 
         PlayerController.Instance.RoomController.CurrentRoom.RemoveItem(_itemData);
         PlayerController.Instance.InventoryController.AddItem(_itemData);

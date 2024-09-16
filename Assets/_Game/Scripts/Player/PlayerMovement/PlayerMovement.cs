@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] Rigidbody _rigidbody;
     [SerializeField] GameObject _soundParent;
+    [Header("Settings")]
+    [SerializeField] float _moveSpeed = 5;
+    float _timeBetweenSteps = 0.5f;
 
     [Header("Events")]
     [SerializeField] BoolEvent _OnPlayerMove;
@@ -21,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     Coroutine _moveSoundsRoutine;
+    Coroutine _increaseSpeedRoutine;
 
     void OnValidate()
     {
@@ -64,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         while (_isMoving)
         {
             SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerFootstepSound, _soundParent.transform);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(_timeBetweenSteps);
         }
     }
 
@@ -90,9 +94,27 @@ public class PlayerMovement : MonoBehaviour
         SoundManager.Instance.PlaySound(transform, SoundAtlas.Instance.PlayerTurnSound, _soundParent.transform);
     }
 
+    public void BoostSpeed(float speedBoost, float duration)
+    {
+        if (_increaseSpeedRoutine != null) StopCoroutine(_increaseSpeedRoutine);
+        _increaseSpeedRoutine = StartCoroutine(IncreaseSpeedRoutine(speedBoost, duration));
+    }
+
+    IEnumerator IncreaseSpeedRoutine(float speedBoost, float duration)
+    {
+        _moveSpeed += speedBoost;
+        _timeBetweenSteps /= 2;
+        
+        yield return new WaitForSeconds(duration);
+        GamePlayUIController.Instance.AddNotification("Ah shit, I'm slow again...");
+        
+        _moveSpeed -= speedBoost;
+        _timeBetweenSteps *= 2;
+    }
+
     void FixedUpdate()
     {
-        if (_isMoving) _rigidbody.velocity = _moveDirection * 5;
+        if (_isMoving) _rigidbody.velocity = _moveDirection * _moveSpeed;
         else _rigidbody.velocity = Vector3.zero;
     }
 }

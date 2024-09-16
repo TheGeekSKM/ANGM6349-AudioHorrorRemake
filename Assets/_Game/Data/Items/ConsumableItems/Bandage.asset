@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Bandage
   m_EditorClassIdentifier: 
   ItemName: Bandage
-  ItemDescription: 
-  ItemUsageDescription: []
+  ItemDescription: The bandages are barely holding on, but atleast it'll hold the
+    infection for a bit longer...Some of them are used though...
+  ItemUsageDescription:
+  - I wrapped my wounds...I feel slightly better, I suppose.
+  - I just used a bandage...I better be careful with these.
+  - Good thing the creature can't exactly wrap itself with bandages...I'd piss my
+    pants if it did...
+  - I used another bandage...
+  - phewww....I feel slightly better physically...mentally though, I am still beyond
+    screwed....
   UseDurability: 1
   Durability: 1
   PickupSound: {fileID: 0}

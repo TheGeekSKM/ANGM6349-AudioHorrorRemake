@@ -36,6 +36,7 @@ public class InventoryItemDisplayController : MonoBehaviour
             _itemData.Durability--;
             if (_itemData.Durability <= 0)
             {
+                _itemData.OnItemBreak(PlayerController.Instance.gameObject);
                 PlayerController.Instance.InventoryController.RemoveItem(_itemData);
                 
                 _useButton.onClick.RemoveAllListeners();
@@ -48,6 +49,7 @@ public class InventoryItemDisplayController : MonoBehaviour
     private void DiscardItem()
     {
         PlayerController.Instance.InventoryController.RemoveItem(_itemData);
+        _itemData.DropItem(PlayerController.Instance.gameObject);
         PlayerController.Instance.RoomController.CurrentRoom.AddItem(_itemData);
         Destroy(gameObject);
     }

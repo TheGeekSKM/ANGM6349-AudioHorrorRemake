@@ -21,6 +21,9 @@ public class QuestManager : MonoBehaviour
     [Header("Cutscenes")]
     [SerializeField] DialogueSceneSO _bringBandagesCutscene;
 
+    [Header("Required Items")]
+    [SerializeField] ItemData _bandages;
+
     void Awake()
     {
         if (Instance != null) Destroy(gameObject);
@@ -83,6 +86,7 @@ public class QuestManager : MonoBehaviour
         if (QuestBringBandagesState.QuestData.questCompleted) return;
         QuestBringBandagesState.QuestData.questCompleted = true;
 
+        PlayerController.Instance.InventoryController.RemoveItem(_bandages);
         GameManager.Instance.PlayCutscene(_bringBandagesCutscene);
 
         ChangeQuestState(QuestFindSuppliesState);
