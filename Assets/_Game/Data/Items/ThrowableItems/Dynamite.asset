@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78dd14f40b8a954d9c9cd054fad3860, type: 3}
-  m_Name: TornLabCoat
+  m_Script: {fileID: 11500000, guid: c7ba1222ae5025d46ae3a7d913c19adc, type: 3}
+  m_Name: Dynamite
   m_EditorClassIdentifier: 
-  ItemName: Torn Lab Coat
-  ItemDescription: I bet I look badass wearing this...
-  ItemUsageDescription:
-  - Lemme hit a pose real quick in this lab coat...
+  ItemName: Dynamite
+  ItemDescription: If I drop this, it'll light...I probably got like 10 seconds to
+    leave the room before it explodes...If I drop it in the Monster Nest...would
+    the creature pick it up....?
+  ItemUsageDescription: []
   UseDurability: 0
   Durability: -1
   PickupSound: {fileID: 0}
   UseSound: {fileID: 0}
   BreakSound: {fileID: 0}
   DropSound: {fileID: 0}
+  _afterThrownPrefab: {fileID: 0}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b78dd14f40b8a954d9c9cd054fad3860, type: 3}
-  m_Name: TornLabCoat
+  m_Name: Record4
   m_EditorClassIdentifier: 
-  ItemName: Torn Lab Coat
-  ItemDescription: I bet I look badass wearing this...
+  ItemName: Medical Record D
+  ItemDescription: Medical "Records" that I can probably play in the safe room...
   ItemUsageDescription:
-  - Lemme hit a pose real quick in this lab coat...
+  - I wonder what was recorded on here...
   UseDurability: 0
   Durability: -1
   PickupSound: {fileID: 0}
