@@ -1,5 +1,6 @@
 
 using System.Collections;
+using System.Collections.Generic;
 using SaiUtils.GameEvents;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, ReadOnly] PlayerDirection _playerDirection = PlayerDirection.Down;
     public PlayerDirection PlayerDirection => _playerDirection; 
 
+    Dictionary<PlayerDirection, string> directionMap = new();
 
     Coroutine _moveSoundsRoutine;
     Coroutine _increaseSpeedRoutine;
@@ -45,6 +47,12 @@ public class PlayerMovement : MonoBehaviour
     {
         // set the initial move direction to forward
         _moveDirection = new Vector3(0, 0, -1);
+
+        directionMap.Add(PlayerDirection.Up, "north");
+        directionMap.Add(PlayerDirection.Right, "east");
+        directionMap.Add(PlayerDirection.Down, "south");
+        directionMap.Add(PlayerDirection.Left, "west");
+
     }
 
     [Button]
@@ -113,6 +121,8 @@ public class PlayerMovement : MonoBehaviour
         else if (_moveDirection == new Vector3(1, 0, 0)) _playerDirection = PlayerDirection.Right;
 
         Debug.Log("Player Direction: " + _playerDirection);
+
+        GamePlayUIController.Instance.AddNotification("<b>You:</b> I think I just turned to face " + directionMap[_playerDirection] + "...");
     }
 
     public void BoostSpeed(float speedBoost, float duration)
