@@ -23,6 +23,6 @@ public class QuestTextController : MonoBehaviour
     public void UpdateQuestText(string description)
     {
         Debug.Log($"Quest: {description}");
-        _questText.text = $"Quest: {description}";
+        _questText.text = $"<b>Quest:</b> {description}";
     }
 }
