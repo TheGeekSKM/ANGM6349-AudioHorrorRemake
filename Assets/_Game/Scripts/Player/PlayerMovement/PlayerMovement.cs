@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float _moveSpeed = 5;
     float _timeBetweenSteps = 0.5f;
+    [SerializeField] float raycastDistance = 2.0f;
+
 
     [Header("Events")]
     [SerializeField] BoolEvent _OnPlayerMove;
@@ -89,11 +91,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        // stop the player when it collides with something that isn't the ground
-        if (!other.gameObject.CompareTag("Ground")) Stop();
-    }
+    // void OnCollisionEnter(Collision other)
+    // {
+    //     // stop the player when it collides with something that isn't the ground
+    //     if (!other.gameObject.CompareTag("Ground")) Stop();
+    // }
+
+
 
     [Button]
     public void TurnLeft()
@@ -143,9 +147,29 @@ public class PlayerMovement : MonoBehaviour
         _timeBetweenSteps *= 2;
     }
 
+    void OnDrawGizmosSelected()
+    {
+        // Set the color for the gizmo
+        Gizmos.color = Color.red;
+
+        // Draw the ray in the direction the player is facing
+        Gizmos.DrawRay(transform.position, _moveDirection * raycastDistance);
+    }
+
     void FixedUpdate()
     {
-        if (_isMoving) _rigidbody.velocity = _moveDirection * _moveSpeed;
+        if (_isMoving) 
+        {
+            _rigidbody.velocity = _moveDirection * _moveSpeed;
+
+            // Launch a raycast in front of the player in the direction the player is facing
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, _moveDirection, out hit, raycastDistance))
+            {
+                // If the raycast hits an object that is tagged "Ground", call Stop function
+                if (hit.collider.CompareTag("Ground")) Stop();
+            }
+        }
         else _rigidbody.velocity = Vector3.zero;
     }
 }
