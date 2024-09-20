@@ -13,6 +13,13 @@ public enum PlayerDirection
     Left
 }
 
+public enum PlayerStopType
+{
+    UIStop,
+    HitWall,
+    Null
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
@@ -70,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     [Button]
-    public void Stop()
+    public void Stop(PlayerStopType stopType)
     {
         _isMoving = false;
         _OnPlayerMove.Raise(_isMoving);
@@ -79,6 +86,18 @@ public class PlayerMovement : MonoBehaviour
         {
             StopCoroutine(_moveSoundsRoutine);
             _moveSoundsRoutine = null;
+        }
+
+        switch (stopType)
+        {
+            case PlayerStopType.HitWall:
+                GamePlayUIController.Instance.AddNotification("<b>You:</b> I stopped walking...I must've hit a wall or something.");
+                break;
+            case PlayerStopType.UIStop:
+                GamePlayUIController.Instance.AddNotification("<b>You:</b> I stopped walking...");
+                break;
+            default:
+                break;
         }
     }
 
@@ -167,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.Raycast(transform.position, _moveDirection, out hit, raycastDistance))
             {
                 // If the raycast hits an object that is tagged "Ground", call Stop function
-                if (hit.collider.CompareTag("Ground")) Stop();
+                if (hit.collider.CompareTag("Ground")) Stop(PlayerStopType.HitWall);
             }
         }
         else _rigidbody.velocity = Vector3.zero;

@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 3231262545526613265}
   - component: {fileID: 2859022945553126169}
   - component: {fileID: 3706877744420130366}
+  - component: {fileID: 8743943110113097247}
   m_Layer: 5
   m_Name: PNL_ChatLog
   m_TagString: Untagged
@@ -237,3 +238,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chatLogText: {fileID: 8254086233591644574}
+--- !u!114 &8743943110113097247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142681209132498547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962326d4c991138499936b91ed2656eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 245703ee38f059649a5dd1c5e060ffe7, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3706877744420130366}
+        m_TargetAssemblyTypeName: ChatLogController, Assembly-CSharp
+        m_MethodName: ChatLogCountUpdated
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

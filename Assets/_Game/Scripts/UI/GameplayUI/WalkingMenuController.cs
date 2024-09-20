@@ -32,7 +32,7 @@ public class WalkingMenuController : MonoBehaviour
 
     void OnWalkingButtonClicked()
     {
-        if (_playerMovement.IsMoving) _playerMovement.Stop();
+        if (_playerMovement.IsMoving) _playerMovement.Stop(PlayerStopType.UIStop);
         else _playerMovement.Move();
     }
 }

@@ -17,7 +17,7 @@ public class GamePlayState : GameBaseState
     public override void OnExit()
     {
         GamePlayUIController.Instance.GameHidePanel.SetActive(true);
-        PlayerController.Instance.PlayerMovement.Stop();
+        PlayerController.Instance.PlayerMovement.Stop(PlayerStopType.UIStop);
         base.OnExit();
         // Debug.Log("GamePlayState Exit");
     }

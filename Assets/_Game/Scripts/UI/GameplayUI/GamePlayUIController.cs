@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using TMPro;
 using DG.Tweening;
+using SaiUtils.GameEvents;
 
 public enum GamePlayUIState
 {
@@ -66,7 +67,9 @@ public class GamePlayUIController : MonoBehaviour
 
     [Header("Events/Variables")]
     [SerializeField] BoolVariable _isNotepadFound;
+    [SerializeField] IntEvent _onChatLogCountChange;
 
+    int _chatLogCount = 0;
 
     StateMachine _gamePlayUIStateMachine;
     public StateMachine GamePlayUIStateMachine => _gamePlayUIStateMachine;
@@ -206,10 +209,12 @@ public class GamePlayUIController : MonoBehaviour
     [Button]
     public void AddNotification(string message)
     {
+        _chatLogCount++;
+        _onChatLogCountChange.Raise(_chatLogCount);
         foreach (var chatLogParent in _chatLogParents)
         {
             var chatLog = Instantiate(_chatLogPrefab, chatLogParent).GetComponent<ChatLogController>();
-            chatLog.Initialize(message);
+            chatLog.Initialize(message, _chatLogCount);
         }
     }
 

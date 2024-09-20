@@ -8,5 +8,13 @@ public class GamePlayUIWalkingState : GamePlayUIBaseState
         base(controller, panel, onScreenPos, offScreenPos, enableAnimations)
     {
     }
+
+    public override void OnExit()
+    {
+        PlayerController.Instance.PlayerMovement.Stop(
+            PlayerController.Instance.PlayerMovement.IsMoving ? PlayerStopType.UIStop : PlayerStopType.Null
+        );
+        base.OnExit();
+    }
 }
 
