@@ -95,6 +95,12 @@ public class PlayerArtDisplay : MonoBehaviour
         {
             _playerArt.transform.position = _player.position + _offset;
             _playerFloorReticle.transform.position = _player.position;
+
+            // sets the player art to face the MoveDirection from the PlayerMovement script
+            _playerArt.transform.LookAt(_player.position + _playerMovement.MoveDirection);
+            _playerArt.transform.rotation = Quaternion.Euler(0, _playerArt.transform.rotation.eulerAngles.y, 0);
+            
+            _playerFloorReticle.transform.LookAt(_player.position + _playerMovement.MoveDirection);
         }
     }
 

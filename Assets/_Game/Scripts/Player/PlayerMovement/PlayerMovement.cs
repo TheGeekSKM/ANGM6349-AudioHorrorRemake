@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField, ReadOnly] Vector3 _moveDirection;
+    public Vector3 MoveDirection => _moveDirection;
     [SerializeField, ReadOnly] bool _isMoving = false;
     public bool IsMoving => _isMoving;
     [SerializeField, ReadOnly] PlayerDirection _playerDirection = PlayerDirection.Down;
@@ -146,6 +147,9 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Player Direction: " + _playerDirection);
 
         GamePlayUIController.Instance.AddNotification("<b>You:</b> I think I just turned to face " + directionMap[_playerDirection] + "...");
+
+        // rotate the player to face the new direction
+        transform.rotation = Quaternion.LookRotation(_moveDirection);
     }
 
     public void BoostSpeed(float speedBoost, float duration)
