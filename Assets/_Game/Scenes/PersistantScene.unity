@@ -1651,6 +1651,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0772c07e357c6be4e8e0b501c6d50249, type: 2}
   WhooshSounds:
   - {fileID: 11400000, guid: 19b67ead87185694e97433cb956a6c99, type: 2}
+  PencilSounds:
+  - {fileID: 11400000, guid: c265f2b427fb70f4081987d66884fb37, type: 2}
 --- !u!82 &1461604696
 AudioSource:
   m_ObjectHideFlags: 0

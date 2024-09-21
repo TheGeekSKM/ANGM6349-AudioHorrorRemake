@@ -19,7 +19,7 @@ public class QuestBaseState : IState
     public void OnEnter() 
     {
         questManager.UpdateQuestText(questData.questDescription);
-        questManager.Quests.Add(questData);
+        // questManager.Quests.Add(questData);
         questManager.currentQuest = questData;
     }
 

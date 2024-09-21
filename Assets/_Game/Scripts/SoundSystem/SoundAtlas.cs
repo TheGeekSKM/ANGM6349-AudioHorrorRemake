@@ -6,12 +6,17 @@ public class SoundAtlas : MonoBehaviour
 {
     public static SoundAtlas Instance;
 
-    [Header("Sound References")]
+    [Header("Player Sound References")]
     public SoundData[] PlayerFootstepSounds;
     public SoundData[] PlayerTurnSounds;
+
+    [Header("Monster Sound References")]
     public SoundData[] MonsterFootstepSounds;
     public SoundData[] MonsterGrowlSounds;
+
+    [Header("UI Sound References")]
     public SoundData[] WhooshSounds;
+    public SoundData[] PencilSounds;
 
 
     public SoundData PlayerFootstepSound
@@ -51,6 +56,14 @@ public class SoundAtlas : MonoBehaviour
         get
         {
             return WhooshSounds[Random.Range(0, WhooshSounds.Length - 1)];
+        }
+    }
+
+    public SoundData PencilSound
+    {
+        get
+        {
+            return PencilSounds[Random.Range(0, PencilSounds.Length - 1)];
         }
     }
  

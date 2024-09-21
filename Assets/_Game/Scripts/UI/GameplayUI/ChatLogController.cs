@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using SaiUtils.GameEvents;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class ChatLogController : MonoBehaviour
 {
@@ -14,6 +12,10 @@ public class ChatLogController : MonoBehaviour
         // Initialize the chat log UI
         _chatLogText.text = message;
         _chatLogCount = chatLogCount;
+
+        // SoundManager.Instance.PlaySound2D(SoundAtlas.Instance.PencilSound);
+        _chatLogText.GetComponent<RectTransform>().DOShakeAnchorPos(0.2f, strength:new Vector3(10, 0, 0), vibrato:10, randomness:10, false, true);
+
     }
 
     public void ChatLogCountUpdated(int chatLogCount)

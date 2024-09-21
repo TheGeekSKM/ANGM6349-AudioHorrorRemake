@@ -18,8 +18,8 @@ public class RoomController : MonoBehaviour
         _onRoomEnterRoomData?.Raise(_currentRoom);
         _onRoomEnterString?.Raise(_currentRoom.RoomName);
 
-        if (_currentRoom.discovered) GamePlayUIController.Instance.AddNotification($"I think I just wandered into the {room.RoomName}...");
-        GamePlayUIController.Instance.AddNotification(room.RoomDescription);
+        if (_currentRoom.discovered) GamePlayUIController.Instance.AddNotification($"<b>You:</b> I think I just wandered into the {room.RoomName}...");
+        GamePlayUIController.Instance.AddNotification($"<b>You:</b> {room.RoomDescription}");
         _currentRoom.discovered = true;
     }
 

@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         _timeBetweenSteps /= 2;
         
         yield return new WaitForSeconds(duration);
-        GamePlayUIController.Instance.AddNotification("Ah shit, I'm slow again...");
+        GamePlayUIController.Instance.AddNotification("<b>You:</b> Ah shit, I'm slow again...");
         
         _moveSpeed -= speedBoost;
         _timeBetweenSteps *= 2;
