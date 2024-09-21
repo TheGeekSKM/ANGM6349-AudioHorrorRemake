@@ -7,6 +7,7 @@ public class GameSafeRoomState : GameBaseState
     public override void OnEnter()
     {
         _gameManager.OnGameStateChange?.Invoke(GameStateEnum.SafeRoom);
+        EnvironmentController.Instance.MovePlayerToSpawn();
         base.OnEnter();
     }
 }

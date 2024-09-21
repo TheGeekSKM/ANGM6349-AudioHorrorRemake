@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SaiUtils.Extensions;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class QuestTextController : MonoBehaviour
 {
@@ -24,5 +25,6 @@ public class QuestTextController : MonoBehaviour
     {
         Debug.Log($"Quest: {description}");
         _questText.text = $"<b>Quest:</b> {description}";
+        GetComponent<RectTransform>().DOShakeAnchorPos(0.2f, strength: new Vector3(10, 0, 0), vibrato: 10, randomness: 10, false, true);
     }
 }

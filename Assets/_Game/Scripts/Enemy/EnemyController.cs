@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _wanderRadius = 10f;
     [SerializeField] float _damage = 10f;
     [SerializeField] Vector2 _timeBetweenRoars = new Vector2(10, 15);
+    [SerializeField] Vector2 _timeSpentTargeting = new Vector2(7, 10);
 
     [Header("Debug")]
     [SerializeField, ReadOnly] Vector3 _direction;
@@ -56,7 +57,7 @@ public class EnemyController : MonoBehaviour
         _enemyStateMachine = new StateMachine();
 
         IdleState = new EnemyIdleState(this, _navMeshAgent, _wanderRadius, _timeBetweenRoars);
-        TargetState = new EnemyTargetState(this, _navMeshAgent, PlayerController.Instance.PlayerTransform);
+        TargetState = new EnemyTargetState(this, _navMeshAgent, PlayerController.Instance.PlayerTransform, _timeSpentTargeting);
         AttackState = new EnemyAttackState(this, _navMeshAgent, _damagePrefab, _attackCooldown);
 
         // switch to idle if player is out of range, or if the player is not the current target, or if there is no current target
@@ -85,6 +86,12 @@ public class EnemyController : MonoBehaviour
     {
         _currentTarget = target;
         _enemyStateMachine.ChangeState(TargetState);
+    }
+
+    public void TriggerIdleState()
+    {
+        _currentTarget = null;
+        _enemyStateMachine.ChangeState(IdleState);
     }
 
     void Update()

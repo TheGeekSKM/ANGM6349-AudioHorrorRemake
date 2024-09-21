@@ -1282,7 +1282,7 @@ MonoBehaviour:
   _bandages: {fileID: 11400000, guid: 00cb08008e3006649acb7dc1cb0df250, type: 2}
   _explosiveChemicals: {fileID: 11400000, guid: 0ff6754806b47a743b32c77bddcd8471, type: 2}
   _beaker: {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
-  _dynamite: {fileID: 0}
+  _dynamite: {fileID: 11400000, guid: 37852b7e9c2f9484e904f9e9017d5daf, type: 2}
 --- !u!1 &1246165433
 GameObject:
   m_ObjectHideFlags: 0

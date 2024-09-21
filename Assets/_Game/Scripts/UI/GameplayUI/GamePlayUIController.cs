@@ -92,6 +92,8 @@ public class GamePlayUIController : MonoBehaviour
 
     void Start()
     {
+        _gameHidePanel.SetActive(true);
+
         HideNotePadPanel();
 
         _notePadRectTransform = _notePadPanel.GetComponent<RectTransform>();

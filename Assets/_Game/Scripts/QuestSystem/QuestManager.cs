@@ -184,7 +184,7 @@ public class QuestManager : MonoBehaviour
         FindMonsterRoomQuestListener.SetActive(true);
         QuestFindMonsterNestState.QuestData.questActivated = true;
 
-        ChangeQuestState(QuestFindSuppliesState);
+        ChangeQuestState(QuestFindMonsterNestState);
         BringBandagesQuestListener.SetActive(false);
     }
 

@@ -26,6 +26,8 @@ public class ItemData : ScriptableObject
     {
         if (PickupSound) SoundManager.Instance.PlaySound(user.transform, PickupSound);
         OnPickUp?.Invoke();
+
+        GamePlayUIController.Instance.AddNotification($"<b>You:</b> I think I found a {ItemName}...");
     }
 
     public virtual void UseItem(GameObject user)
@@ -33,6 +35,8 @@ public class ItemData : ScriptableObject
 
         if (UseSound) SoundManager.Instance.PlaySound(user.transform, UseSound);
         OnUse?.Invoke();
+
+        GamePlayUIController.Instance.AddNotification($"<b>You:</b> {ItemUsageDescription[UnityEngine.Random.Range(0, ItemUsageDescription.Length)]}");
 
         if (UseDurability) 
         {
@@ -45,11 +49,15 @@ public class ItemData : ScriptableObject
     {
         if (DropSound) SoundManager.Instance.PlaySound(user.transform, DropSound);
         OnDrop?.Invoke();
+
+        GamePlayUIController.Instance.AddNotification($"<b>You:</b> I dropped the {ItemName} in the {room.RoomName}.");
     }
 
     public virtual void OnItemBreak(GameObject user)
     {
         if (BreakSound) SoundManager.Instance.PlaySound(user.transform, BreakSound);
         OnBreak?.Invoke();
+
+        GamePlayUIController.Instance.AddNotification($"<b>You:</b> The {ItemName} broke...shit...");
     }
 }
