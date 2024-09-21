@@ -13,6 +13,8 @@ public class EnvironmentalDamageController : MonoBehaviour
 
     public void PlayerNotInDamageZone() => _isPlayerInDamageZone = false;
 
+    float timer = 0;
+
 
     void Start()
     {
@@ -22,8 +24,15 @@ public class EnvironmentalDamageController : MonoBehaviour
     
     void Update()
     {
-        if (_isPlayerInDamageZone)
-            _playerHealth.TakeDamage(_damagePerSecond * Time.deltaTime);
+        if (_isPlayerInDamageZone) 
+        {
+            timer += Time.deltaTime;
+            if (timer >= 4f) 
+            {
+                timer = 0;
+                _playerHealth.TakeDamage(_damagePerSecond);
+            }
+        }
     }
 
 }

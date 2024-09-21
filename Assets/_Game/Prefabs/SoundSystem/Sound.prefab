@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 436650374378086318}
   - component: {fileID: 5372345983923322923}
   - component: {fileID: 5477883643126126871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3272737567357247300}
   - component: {fileID: 2810190234488982608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1434766441813111648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}

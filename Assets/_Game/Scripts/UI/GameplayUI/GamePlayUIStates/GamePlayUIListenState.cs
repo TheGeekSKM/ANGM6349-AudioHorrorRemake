@@ -11,6 +11,15 @@ public class GamePlayUIListenState : GamePlayUIBaseState
 
     public override void OnEnter()
     {
+        var enemyPos = EnemyController.Instance.transform.position;
+        var playerPos = PlayerController.Instance.transform.position;
+
+        var distance = Vector3.Distance(enemyPos, playerPos);
+
+        var finalDist = Mathf.RoundToInt(distance / 5) * 5;
+
+        Controller.AddNotification($"<b>You: </b> I think the creature is...maybe {finalDist} feet away from me.");
+
         base.OnEnter();
 
         // make the player visible

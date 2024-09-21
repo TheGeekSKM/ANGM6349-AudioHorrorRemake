@@ -57,11 +57,28 @@ public class SoundController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         var enemy = other.GetComponent<EnemyController>();
-        if (!enemy) return;
+        if (enemy) enemy.TriggerTargetState(transform);
 
-        // trigger the target state
-        enemy.TriggerTargetState(transform);
+        var player = other.GetComponent<PlayerHealth>();
+        if (player)
+        {
+            // what direction is the monster compared to the player
+            Vector3 direction = transform.position - player.transform.position;
 
+            // parse direction to north, east, south, or west
+            string directionHorizontalString = "";
+            string directionVerticalString = "";
+            if (direction.x > 0) directionHorizontalString = "east";
+            else if (direction.x < 0) directionHorizontalString = "west";
+            else if (direction.z > 0) directionVerticalString = "north";
+            else if (direction.z < 0) directionVerticalString = "south";
+
+            GamePlayUIController.Instance.AddNotification(
+                $"<b>You:</b> I think the creature's a bit to the {directionHorizontalString} and the {directionVerticalString} of me..."
+            );
+
+            if (direction.magnitude < 15f) GamePlayUIController.Instance.AddNotification("<b>You:</b Shit! It sounds pretty close...");
+        }
     }
 
     void Update()
