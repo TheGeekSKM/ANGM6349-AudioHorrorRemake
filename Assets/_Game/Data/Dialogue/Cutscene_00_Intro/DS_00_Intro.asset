@@ -29,13 +29,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3b76e072f5361648b7c6bb595dd2d9c, type: 2}
   - {fileID: 11400000, guid: b53564550c0aa164496c904d920d658f, type: 2}
   - {fileID: 11400000, guid: 582f8b94e59516f43a3efe5e640ad282, type: 2}
-  - {fileID: 11400000, guid: 21c8476b3e4dcad45b243761e544106d, type: 2}
-  - {fileID: 11400000, guid: e57cd5a2d09e7484ca27cc09f851fa31, type: 2}
-  - {fileID: 11400000, guid: 729ac5c7e799cbf428730d7366cc2082, type: 2}
-  - {fileID: 11400000, guid: 32e47297d4faa134897068925c61e800, type: 2}
-  - {fileID: 11400000, guid: 59b09f4902de8ad4cb25900ee1327e4d, type: 2}
-  - {fileID: 11400000, guid: 06a270da1cfd61049934d1969ffb3901, type: 2}
-  - {fileID: 11400000, guid: 8b30f84d2674c534da4805b6d8bceba2, type: 2}
-  - {fileID: 11400000, guid: 95db5c530475beb4bb6af0d767affe39, type: 2}
-  - {fileID: 11400000, guid: 3b80085b9979b9a43bc5ec144bd3eae4, type: 2}
   _backgroundMusic: {fileID: 0}

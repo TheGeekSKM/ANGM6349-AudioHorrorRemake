@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DL_06_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Look, I understand you're probably tired and sore...and maybe even bleeding...but
-    your friend didn't drop you here for no reason.
-  _voiceClip: {fileID: 0}
+  _line: Now, listen to me...your ears still contain function similar to that of
+    a normal human, correct? Good...
+  _voiceClip: {fileID: 8300000, guid: 72ce678f37db2e446a24628d3e4f054a, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_10_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Here...Take this...She left this for you...
-  _voiceClip: {fileID: 0}
+  _line: You help me, and I will help you. We can both get out of this wretched laboratory
+    and I promise I will find you a cure...
+  _voiceClip: {fileID: 8300000, guid: 771378bf3d5c22f4abbbce8f81b7a7a5, type: 3}

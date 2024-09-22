@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_11_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: No recollection...?
-  _voiceClip: {fileID: 0}
+  _line: Ah....regarding that slippery wretch outside...it's ironically very similar
+    to you. Both of you are blind as bats.
+  _voiceClip: {fileID: 8300000, guid: 76bb03c3f44c2294d957f7c4d40f6128, type: 3}

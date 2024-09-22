@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_07_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: She would want you to live...do you hear me?
-  _voiceClip: {fileID: 0}
+  _line: I need you to do us both a favor... Right outside this room, there is an
+    Infirmary. It will have bandages. Bring one back to me and drop them at my...
+  _voiceClip: {fileID: 8300000, guid: a617820c7622b174386fdbdd678918ef, type: 3}

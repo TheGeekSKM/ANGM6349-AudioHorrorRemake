@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_03_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Keep your wits about you, you mouthless <b>FREAK</b>!
-  _voiceClip: {fileID: 0}
+  _line: Do you remember who you are...? Do you recognize me, at least, boy...?
+  _voiceClip: {fileID: 8300000, guid: 638843d79bded0d49b1be563bc306f99, type: 3}

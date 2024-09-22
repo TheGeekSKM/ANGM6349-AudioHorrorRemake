@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_13_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Look, forgive me for rushing you, but we don't have time to reminisce...
-  _voiceClip: {fileID: 0}
+  _line: Throw them out of your inventory to create noise and distract the creature...or
+    use items how you see them fit...
+  _voiceClip: {fileID: 8300000, guid: 4eab05355a4df154e8c9a73272f450c6, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_14_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: My legs...my lower half...is gone...
-  _voiceClip: {fileID: 0}
+  _line: Now go! I don't have much time before my infected wounds kill me...go now,
+    please!!
+  _voiceClip: {fileID: 8300000, guid: b1e198c4d2733064e857059c298f1c63, type: 3}

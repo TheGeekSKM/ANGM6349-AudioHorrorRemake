@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_09_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Your memory seems to be a bit fuzzy...
-  _voiceClip: {fileID: 0}
+  _line: 'You can do this for me-for us, right? Your friend...she risked her life
+    to save you...you should...I mean she would want you to live, see? '
+  _voiceClip: {fileID: 8300000, guid: 884e0646d367a1b4ead01aa91ac86112, type: 3}

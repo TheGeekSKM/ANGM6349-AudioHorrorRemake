@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_02_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Shut it, you moron!
-  _voiceClip: {fileID: 0}
+  _line: <b>SHUT IT</b>, you moron! Keep your wits about you, you <b>FREAK</b>!
+  _voiceClip: {fileID: 8300000, guid: 25ac621f9aff1dd458c40d78f60d2046, type: 3}

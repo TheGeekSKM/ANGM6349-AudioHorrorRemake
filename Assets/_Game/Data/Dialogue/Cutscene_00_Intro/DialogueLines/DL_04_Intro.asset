@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_04_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Do you remember who you are?? Do you recognize me, at least?
-  _voiceClip: {fileID: 0}
+  _line: Ah, my apologies...she mentioned that your eyes and lower jaw fell out...
+  _voiceClip: {fileID: 8300000, guid: 136e23dbb87b26c40826ac0ed1b8b9a5, type: 3}

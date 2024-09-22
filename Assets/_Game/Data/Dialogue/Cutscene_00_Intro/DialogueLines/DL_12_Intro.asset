@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_12_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Oh for the love of the gods...
-  _voiceClip: {fileID: 0}
+  _line: When you enter a room, you should feel around the room...Use the items you
+    find to your advantage.
+  _voiceClip: {fileID: 8300000, guid: 9da10a65540d08245bacd2b3f4f96527, type: 3}

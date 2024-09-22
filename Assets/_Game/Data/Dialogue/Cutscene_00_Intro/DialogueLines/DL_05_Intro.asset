@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_05_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: Oh, apologies. I seem to have forgotten that you have no eyes. Lucky bastard...
-  _voiceClip: {fileID: 0}
+  _line: Hmmm...
+  _voiceClip: {fileID: 8300000, guid: b7b11fae8ca0ac541b012309b91ea986, type: 3}

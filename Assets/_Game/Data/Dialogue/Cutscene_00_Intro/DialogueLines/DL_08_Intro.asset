@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DL_08_Intro
   m_EditorClassIdentifier: 
   _characterName: The Voice
-  _line: She would want you to live...and by proxy...I would like to think she would
-    want me to live as well...yes?
-  _voiceClip: {fileID: 0}
+  _line: I was going to say "at my feet", but I suppose now is a good time as any
+    to mention that I have no legs anymore...They are probably being digested by
+    that creature outside...
+  _voiceClip: {fileID: 8300000, guid: 2bc47518f35a416439cc09651e875832, type: 3}
