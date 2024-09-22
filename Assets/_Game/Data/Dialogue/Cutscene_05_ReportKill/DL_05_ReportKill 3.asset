@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: Very well, friend...Lead the way, I shall follow close behind...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 9bd21a58564e6c04dae317c6763a52b4, type: 3}

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: Covered in that creature's guts, no less....
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: edd20e1b7e6c9b140ab1b9bb2cde1991, type: 3}
