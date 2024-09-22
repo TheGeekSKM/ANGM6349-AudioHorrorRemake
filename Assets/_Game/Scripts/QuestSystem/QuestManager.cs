@@ -1,8 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using SaiUtils.GameEvents;
 using SaiUtils.StateMachine;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class QuestManager : MonoBehaviour
 {
@@ -179,6 +179,18 @@ public class QuestManager : MonoBehaviour
         if (QuestBringBandagesState.QuestData.questCompleted) return;
         QuestBringBandagesState.QuestData.questCompleted = true;
 
+        PlayerController.Instance.InventoryController.RemoveItem(_bandages);
+        GameManager.Instance.PlayCutscene(_bringBandagesCutscene);
+        FindMonsterRoomQuestListener.SetActive(true);
+        QuestFindMonsterNestState.QuestData.questActivated = true;
+
+        ChangeQuestState(QuestFindMonsterNestState);
+        BringBandagesQuestListener.SetActive(false);
+    }
+
+    IEnumerator BroughtBandagesEffect()
+    {
+        yield return new WaitForSeconds(0.2f);
         PlayerController.Instance.InventoryController.RemoveItem(_bandages);
         GameManager.Instance.PlayCutscene(_bringBandagesCutscene);
         FindMonsterRoomQuestListener.SetActive(true);

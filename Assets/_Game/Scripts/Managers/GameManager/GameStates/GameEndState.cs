@@ -1,5 +1,6 @@
 using Eflatun.SceneReference;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class GameEndState : GameBaseState
 {
@@ -12,6 +13,7 @@ public class GameEndState : GameBaseState
     {
         _gameManager.OnGameStateChange?.Invoke(GameStateEnum.End);
         SceneManager.UnloadSceneAsync(gameScene.BuildIndex);
+        Debug.Log("GameEndState OnEnter");
         base.OnEnter();
     }
 

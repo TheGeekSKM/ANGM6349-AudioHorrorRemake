@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc06806b1d29f7a4592f44f59a872a7a, type: 3}
   m_Name: IsNotepadFound
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 0

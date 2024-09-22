@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: You
   _line: <b>AAAAAAAAAHHHHHH</b>-
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: c566dd9b4e00191499862098e3bc0150, type: 3}

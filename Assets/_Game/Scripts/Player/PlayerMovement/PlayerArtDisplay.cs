@@ -37,7 +37,7 @@ public class PlayerArtDisplay : MonoBehaviour
         _playerAnimationStateMachine.AddAnyTransition(PlayerLookMonsterCloseAnimState, new BlankPredicate());
         _playerAnimationStateMachine.AddAnyTransition(PlayerLookMonsterFarAnimState, new BlankPredicate());
 
-        _playerAnimationStateMachine.SetState(PlayerWalkAnimState);
+        _playerAnimationStateMachine.SetState(PlayerLookMonsterFarAnimState);
 
         Debug.Log($"PlayerAnimStateMachine Set Up: {_playerAnimationStateMachine != null}");
     }

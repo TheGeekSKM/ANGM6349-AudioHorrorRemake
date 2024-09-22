@@ -22,5 +22,9 @@ MonoBehaviour:
   - I will never eat cheese as long as I live...cheese sucks...it smells bad....I
     hate it so much...
   Loot:
-  - {fileID: 11400000, guid: ecd9cd77d620c2d4783e624bc962b775, type: 2}
+  - {fileID: 11400000, guid: de6ffe13cf1d35b43b488ea8a7e53a47, type: 2}
+  - {fileID: 11400000, guid: 3de12504601003c4086f8fd8f893458d, type: 2}
+  - {fileID: 11400000, guid: d33bebf28d3cecc42a2633aa360f287b, type: 2}
+  - {fileID: 11400000, guid: b9dfcf49356987149a0d7b0b18a940f9, type: 2}
+  - {fileID: 11400000, guid: 0e77ac358f1659c40ae3122ff093a3fd, type: 2}
   discovered: 0

@@ -8,6 +8,7 @@ public class GamePlayState : GameBaseState
 
     public override void OnEnter()
     {
+        Debug.Log("GamePlayState OnEnter");
         _gameManager.OnGameStateChange?.Invoke(GameStateEnum.Play);
         GamePlayUIController.Instance.GameHidePanel.SetActive(false);
         base.OnEnter();

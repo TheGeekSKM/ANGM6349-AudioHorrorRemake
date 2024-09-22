@@ -16,7 +16,7 @@ public class GameBaseState : IState
     }
 
     public virtual void OnEnter() {
-        if (_sceneReference != null) SceneManager.LoadSceneAsync(_sceneReference.BuildIndex, LoadSceneMode.Additive);
+        if (_sceneReference != null) SceneManager.LoadScene(_sceneReference.BuildIndex, LoadSceneMode.Additive);
     }
 
     public virtual void Update() { }

@@ -1,4 +1,5 @@
 using Eflatun.SceneReference;
+using UnityEngine;
 
 public class GameSafeRoomState : GameBaseState
 {
@@ -6,6 +7,7 @@ public class GameSafeRoomState : GameBaseState
 
     public override void OnEnter()
     {
+        Debug.Log("GameSafeRoomState OnEnter");
         _gameManager.OnGameStateChange?.Invoke(GameStateEnum.SafeRoom);
         EnvironmentController.Instance.MovePlayerToSpawn();
         base.OnEnter();

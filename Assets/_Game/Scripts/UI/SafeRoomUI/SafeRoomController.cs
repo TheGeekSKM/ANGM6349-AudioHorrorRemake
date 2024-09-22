@@ -129,6 +129,13 @@ public class SafeRoomController : MonoBehaviour
     }
 
     [Button]
+    void LeaveSafeRoom()
+    {
+        Debug.Log("LeaveSafeRoom");
+        GameManager.Instance.ChangeGameStateWithDelay(GameManager.Instance.GamePlayState, 0.2f);
+    }
+
+    [Button]
     void ShowNotepad()
     {
         // set the notepad anchor position y to 0

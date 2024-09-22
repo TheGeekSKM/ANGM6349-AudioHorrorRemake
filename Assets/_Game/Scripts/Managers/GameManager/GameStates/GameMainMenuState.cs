@@ -1,4 +1,5 @@
 using Eflatun.SceneReference;
+using UnityEngine;
 
 public class GameMainMenuState : GameBaseState
 {
@@ -7,6 +8,7 @@ public class GameMainMenuState : GameBaseState
     public override void OnEnter()
     {
         _gameManager.OnGameStateChange?.Invoke(GameStateEnum.MainMenu);
+        Debug.Log("GameMainMenuState OnEnter");
         base.OnEnter();
     }
 
