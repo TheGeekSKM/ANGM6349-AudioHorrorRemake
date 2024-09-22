@@ -68,13 +68,15 @@ public class SoundController : MonoBehaviour
             // parse direction to north, east, south, or west
             string directionHorizontalString = "";
             string directionVerticalString = "";
-            if (direction.x > 0) directionHorizontalString = "east";
+            
+            if (direction.x >= 0) directionHorizontalString = "east";
             else if (direction.x < 0) directionHorizontalString = "west";
-            else if (direction.z > 0) directionVerticalString = "north";
+            
+            if (direction.z >= 0) directionVerticalString = "north";
             else if (direction.z < 0) directionVerticalString = "south";
 
             GamePlayUIController.Instance.AddNotification(
-                $"<b>You:</b> I think the creature's a bit to the {directionHorizontalString} and the {directionVerticalString} of me..."
+                $"<b>You:</b> I think the creature's a bit to the {directionHorizontalString} and to the {directionVerticalString} of me..."
             );
 
             if (direction.magnitude < 15f) GamePlayUIController.Instance.AddNotification("<b>You:</b Shit! It sounds pretty close...");

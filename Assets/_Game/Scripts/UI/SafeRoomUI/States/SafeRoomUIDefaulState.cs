@@ -12,13 +12,13 @@ public class SafeRoomUIDefaultState : SafeRoomUIBaseState
     public override void OnEnter()
     {
         base.OnEnter();
-
+        _uiPanel.gameObject.SetActive(true);
     }
 
     public override void OnExit()
     {
         base.OnExit();
-
+        _uiPanel.gameObject.SetActive(false);
     }
 
     void OnQuestButtonClicked()

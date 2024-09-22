@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dea323c2eacd140b3c47a9dc828264, type: 3}
+  m_Name: RD_A
+  m_EditorClassIdentifier: 
+  _recordsName: Medical Record A
+  _recordsTranscript: "Subject 13. Initial results were... promising. The prisoner\u2019s
+    body seemed to tolerate the serum. Increased aggression, heightened senses, but
+    nothing too unexpected. However, after 24 hours, agitation set in. It seems we\u2019ll
+    need more restraints. Perhaps a... stronger dose next time.\r\n"
+  _recordsAudioClip: {fileID: 8300000, guid: 1e197cb19e41cfc4c9133ecbd085bb49, type: 3}

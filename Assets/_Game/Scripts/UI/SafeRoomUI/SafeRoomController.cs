@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class SafeRoomController : MonoBehaviour
 {
+    public static SafeRoomController Instance { get; private set; }
+
     [Header("Buttons")]
     [SerializeField] Button _leaveButton;
     [SerializeField] Button _questButton;
@@ -17,6 +19,7 @@ public class SafeRoomController : MonoBehaviour
     [SerializeField] Button _notePadCloseButton;
     [SerializeField] Button _recordsButton;
     [SerializeField] Button _recordsCloseButton;
+    [SerializeField] Button _recordsPlayCloseButton;
 
 
     [Header("Panels")]
@@ -25,6 +28,7 @@ public class SafeRoomController : MonoBehaviour
     [SerializeField] RectTransform _craftPanel;
     [SerializeField] RectTransform _notePadPanel;
     [SerializeField] RectTransform _recordsPanel;
+    [SerializeField] RectTransform _recordsPlayPanel;
     [SerializeField] float _notePadPanelY;
 
     [Header("Panel Settings")]
@@ -33,8 +37,13 @@ public class SafeRoomController : MonoBehaviour
     [SerializeField] Vector2 _offScreenQuestPanelPos;
     [SerializeField] Vector2 _offScreenCraftPanelPos;
     [SerializeField] Vector2 _offScreenRecordsPanelPos;
+    [SerializeField] Vector2 _offScreenRecordsPlayPanelPos;
     [SerializeField] bool _enableAnimations = true;
     [SerializeField] BoolVariable _notePadEnabled;
+    [SerializeField] RecordsDisplayController _recordsDisplayController;
+
+    [SerializeField, ReadOnly] RecordsData _recordsData;
+    public RecordsData RecordsData => _recordsData; 
     StateMachine _safeRoomStateMachine;
     public StateMachine SafeRoomStateMachine => _safeRoomStateMachine;
 
@@ -42,10 +51,14 @@ public class SafeRoomController : MonoBehaviour
     public SafeRoomUIQuestState SafeRoomUIQuestState { get; private set; }
     public SafeRoomUIDefaultState SafeRoomUIDefaultState { get; private set; }
     public SafeRoomUIRecordsState SafeRoomUIRecordsState { get; private set; }
+    public SafeRoomUIRecordsPlayState SafeRoomUIRecordsPlayState { get; private set; }
 
     private void Awake()
     {
         ConfigureStateMachine();
+
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     [Button]
@@ -55,6 +68,7 @@ public class SafeRoomController : MonoBehaviour
         _offScreenQuestPanelPos = _questPanel.anchoredPosition;
         _offScreenCraftPanelPos = _craftPanel.anchoredPosition;
         _offScreenRecordsPanelPos = _recordsPanel.anchoredPosition;
+        _offScreenRecordsPlayPanelPos = _recordsPlayPanel.anchoredPosition;
     }
 
     void ConfigureStateMachine()
@@ -65,11 +79,13 @@ public class SafeRoomController : MonoBehaviour
         SafeRoomUIQuestState = new SafeRoomUIQuestState(this, _questPanel, _onScreenPos, _offScreenQuestPanelPos, _enableAnimations);
         SafeRoomUIDefaultState = new SafeRoomUIDefaultState(this, _dialoguePanel, _onScreenPos, _offScreenDialoguePanelPos, _enableAnimations);
         SafeRoomUIRecordsState = new SafeRoomUIRecordsState(this, _recordsPanel, _onScreenPos, _offScreenRecordsPanelPos, _enableAnimations);
+        SafeRoomUIRecordsPlayState = new SafeRoomUIRecordsPlayState(this, _recordsPlayPanel, _onScreenPos, _offScreenRecordsPlayPanelPos, _enableAnimations, _recordsDisplayController);
 
         _safeRoomStateMachine.AddTransition(SafeRoomUICraftState, SafeRoomUIQuestState, new BlankPredicate());
         _safeRoomStateMachine.AddTransition(SafeRoomUIQuestState, SafeRoomUICraftState, new BlankPredicate());
         _safeRoomStateMachine.AddTransition(SafeRoomUICraftState, SafeRoomUIDefaultState, new BlankPredicate());
         _safeRoomStateMachine.AddTransition(SafeRoomUIRecordsState, SafeRoomUIDefaultState, new BlankPredicate());
+        _safeRoomStateMachine.AddAnyTransition(SafeRoomUIRecordsPlayState, new BlankPredicate());
 
         _safeRoomStateMachine.SetState(SafeRoomUIDefaultState);
     }
@@ -85,6 +101,7 @@ public class SafeRoomController : MonoBehaviour
         _notePadCloseButton.onClick.AddListener(() => HideNotepad());
         _recordsButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIRecordsState, 0.2f));
         _recordsCloseButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIDefaultState, 0.2f));
+        _recordsPlayCloseButton.onClick.AddListener(() => ChangeSafeRoomStateWithDelay(SafeRoomUIRecordsState, 0.2f));
 
         _notePadEnabled.OnValueChanged += (enabled) => _notePadPanel.gameObject.SetActive(enabled);
     }
@@ -100,6 +117,7 @@ public class SafeRoomController : MonoBehaviour
         _notePadCloseButton.onClick.RemoveAllListeners();
         _recordsButton.onClick.RemoveAllListeners();
         _recordsCloseButton.onClick.RemoveAllListeners();
+        _recordsPlayCloseButton.onClick.RemoveAllListeners();
 
         _notePadEnabled.OnValueChanged -= (enabled) => _notePadPanel.gameObject.SetActive(enabled);
     }
@@ -133,6 +151,12 @@ public class SafeRoomController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         _safeRoomStateMachine.ChangeState(state);
+    }
+
+    public void PlayRecord(RecordsData recordsData)
+    {
+        _recordsData = recordsData;
+        ChangeSafeRoomStateWithDelay(SafeRoomUIRecordsPlayState, 0.2f);
     }
     
 }

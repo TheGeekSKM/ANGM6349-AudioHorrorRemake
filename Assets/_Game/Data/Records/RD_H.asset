@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dea323c2eacd140b3c47a9dc828264, type: 3}
+  m_Name: RD_H
+  m_EditorClassIdentifier: 
+  _recordsName: Personal Record H
+  _recordsTranscript: "There\u2019s one thing I can\u2019t stop thinking about. The
+    ones who\u2019ve already turned. They\u2019re not like the others anymore. They\u2019ve
+    changed\u2014completely. The serum has... done something else to them, something
+    we didn\u2019t foresee. If they get loose, no one in this facility will survive.
+    I\u2019m risking everything. But the prisoners... they deserve a chance. Maybe
+    they can still escape before it\u2019s too late."
+  _recordsAudioClip: {fileID: 8300000, guid: 0fe975d85158b36428e3d06ab26b172f, type: 3}

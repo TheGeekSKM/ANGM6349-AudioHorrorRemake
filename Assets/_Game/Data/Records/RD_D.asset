@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dea323c2eacd140b3c47a9dc828264, type: 3}
+  m_Name: RD_D
+  m_EditorClassIdentifier: 
+  _recordsName: Medical Record D
+  _recordsTranscript: "Parts of them are just... falling off now. Limbs, teeth, fingers.
+    They scream, but the regenerative properties of the serum\u2014it keeps them
+    alive. Their minds are gone. They\u2019ve stopped resembling anything human,
+    but their strength, their endurance... it's perfect. I\u2019m afraid, though,
+    they might not be controllable for much longer.\r\n"
+  _recordsAudioClip: {fileID: 8300000, guid: f62937603516989418eaa30e84e83825, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dea323c2eacd140b3c47a9dc828264, type: 3}
+  m_Name: RD_B
+  m_EditorClassIdentifier: 
+  _recordsName: Medical Record B
+  _recordsTranscript: "The serum is beginning to show side effects. Subjects are...
+    deteriorating faster than anticipated. 48 hours after injection, one of them
+    started to claw at his face. Eyes... bulging, blood everywhere. The subject is
+    still alive, though\u2014somehow. The body\u2019s resistance is remarkable, but
+    this is no longer about survival, is it? We\u2019re pushing boundaries now.\r\n"
+  _recordsAudioClip: {fileID: 8300000, guid: 0b6b7f59750704b4f8aeacd3053cdb50, type: 3}

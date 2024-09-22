@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dea323c2eacd140b3c47a9dc828264, type: 3}
+  m_Name: RD_G
+  m_EditorClassIdentifier: 
+  _recordsName: Personal Record G
+  _recordsTranscript: "I\u2019ve begun sabotaging the systems. Slowly. Quietly. Just
+    enough to loosen the locks, to weaken the containment fields. It\u2019ll be hours
+    before they notice anything, if they notice anything at all. I\u2019m playing
+    a dangerous game here. If I\u2019m caught... they won\u2019t just throw me in
+    with the others. They\u2019ll make me one of them. I can\u2019t\u2014no no no
+    no no, I won\u2019t let that happen. These prisoners... I have to get them out.\r\n"
+  _recordsAudioClip: {fileID: 8300000, guid: 89ce56e2b9f7ec2469ff3b1f8f36a16f, type: 3}

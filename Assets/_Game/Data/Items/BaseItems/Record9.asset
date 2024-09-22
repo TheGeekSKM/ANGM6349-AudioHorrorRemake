@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78dd14f40b8a954d9c9cd054fad3860, type: 3}
+  m_Name: Record9
+  m_EditorClassIdentifier: 
+  ItemName: Medical Record I
+  ItemDescription: Medical "Records" that I can probably play in the safe room...
+  ItemUsageDescription:
+  - Another one?? I need to check this out in the Safe Room...
+  UseDurability: 0
+  Durability: -1
+  PickupSound: {fileID: 0}
+  UseSound: {fileID: 0}
+  BreakSound: {fileID: 0}
+  DropSound: {fileID: 0}

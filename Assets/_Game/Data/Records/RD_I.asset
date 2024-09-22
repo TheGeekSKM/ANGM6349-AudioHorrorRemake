@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dea323c2eacd140b3c47a9dc828264, type: 3}
+  m_Name: RD_I
+  m_EditorClassIdentifier: 
+  _recordsName: Personal Record I
+  _recordsTranscript: "It\u2019s almost time. I\u2019ve disabled the final security
+    systems. There\u2019s nothing standing between me and the release now. But the
+    creatures... the ones we couldn\u2019t save. If they get out while I\u2019m freeing
+    the prisoners... it\u2019ll be a massacre. I\u2019m gambling with all of our
+    lives. I know that. But if I don\u2019t act, those prisoners are as good as dead
+    anyway. I can only hope I make it in time.\r\n"
+  _recordsAudioClip: {fileID: 8300000, guid: 3f5f1e0428601a24195d8dec6e7b1f3d, type: 3}
