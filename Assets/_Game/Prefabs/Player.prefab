@@ -313,7 +313,6 @@ GameObject:
   - component: {fileID: 8531790710258581712}
   - component: {fileID: 8531790710258581713}
   - component: {fileID: 8531790710258581677}
-  - component: {fileID: 8531790710258581676}
   - component: {fileID: 8531790710258581675}
   - component: {fileID: 8531790710258581674}
   m_Layer: 8
@@ -437,14 +436,6 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: 0, z: 0}
   _isMoving: 1
   _playerDirection: 2
---- !u!81 &8531790710258581676
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8531790710258581715}
-  m_Enabled: 1
 --- !u!114 &8531790710258581675
 MonoBehaviour:
   m_ObjectHideFlags: 0

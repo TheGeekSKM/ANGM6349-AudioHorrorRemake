@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1895743018738950514}
   - component: {fileID: 1895743018738950512}
   - component: {fileID: 4659622866828177438}
+  - component: {fileID: 4356343833468362137}
   m_Layer: 5
   m_Name: PNL_Notepad
   m_TagString: Untagged
@@ -78,6 +79,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4356343833468362137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895743018738950525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9b25d8e018e7f419efd25af9c88792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 1895743018738950514}
+  hoverInPosY: 963
+  hoverOutPosY: 1014
+  _openButton: {fileID: 3221926007711785383}
+  _closeButton: {fileID: 1000274285644433909}
 --- !u!1001 &1895743019180336913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,6 +210,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1706503698858962661, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
   m_PrefabInstance: {fileID: 1895743019180336913}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1000274285644433909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1706503698858962660, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+  m_PrefabInstance: {fileID: 1895743019180336913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4258202585126670147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706503698858962661, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85.32
+      value: 177.5095
       objectReference: {fileID: 0}
     - target: {fileID: 1706503698858962661, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,6 +328,62 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4356343833468362137}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4356343833468362137}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HoverIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HoverOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: NotepadPanelController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: NotepadPanelController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264728591686970890, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
 --- !u!224 &3221926007711785382 stripped
@@ -306,3 +391,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1706503698858962661, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
   m_PrefabInstance: {fileID: 4258202585126670147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3221926007711785383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1706503698858962660, guid: 75a16cd24d4f0304586b043ca35419d1, type: 3}
+  m_PrefabInstance: {fileID: 4258202585126670147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

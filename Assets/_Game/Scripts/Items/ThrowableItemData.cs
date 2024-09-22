@@ -33,5 +33,7 @@ public class ThrowableItemData : ItemData
             var prefab = Instantiate(AfterThrownPrefab, roomTransform.position, roomTransform.rotation);
             prefab.Initialize(this, roomTrigger);
         }
+
+        Debug.Log("Dropped throwable item: " + this);
     }
 }

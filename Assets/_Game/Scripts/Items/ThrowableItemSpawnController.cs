@@ -16,6 +16,9 @@ public class ThrowableItemSpawnController : MonoBehaviour
     EnemyHealth _enemyHealth;
     EnemyController _enemyController;
 
+    PlayerHealth _playerHealth;
+    PlayerMovement _playerMovement;
+
 
     public void Initialize(ThrowableItemData throwableItemData, RoomTrigger roomTrigger)
     {
@@ -37,11 +40,44 @@ public class ThrowableItemSpawnController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var enemyHealth = other.GetComponent<EnemyHealth>();
-        if (!enemyHealth) return;
+        if (enemyHealth)
+        {
 
-        _enemyHealth = enemyHealth;
-        _enemyController = other.GetComponent<EnemyController>();
-        _enemyController.NavMeshAgent.speed *= _speedFactor;
+            _enemyHealth = enemyHealth;
+            _enemyController = other.GetComponent<EnemyController>();
+            _enemyController.NavMeshAgent.speed *= _speedFactor;
+        }
+        else
+        {
+            var playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth)
+            {
+                _playerHealth = playerHealth;
+                _playerMovement = other.GetComponent<PlayerMovement>();
+                _playerMovement.MoveSpeed *= _speedFactor;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        var enemyHealth = other.GetComponent<EnemyHealth>();
+        if (enemyHealth)
+        {
+            _enemyController.NavMeshAgent.speed /= _speedFactor;
+            _enemyHealth = null;
+            _enemyController = null;
+        }
+        else
+        {
+            var playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth)
+            {
+                _playerMovement.MoveSpeed /= _speedFactor;
+                _playerHealth = null;
+                _playerMovement = null;
+            }
+        }
     }
 
     void Update()
@@ -56,6 +92,17 @@ public class ThrowableItemSpawnController : MonoBehaviour
                 _timeBetweenAttacks = 0;
             }
         }
+
+        if (_playerHealth)
+        {
+            _timeBetweenAttacks += Time.deltaTime;
+
+            if (_timeBetweenAttacks >= _timeBetweenDamage)
+            {
+                _playerHealth.TakeDamage(Mathf.RoundToInt(_damageOverTime));
+                _timeBetweenAttacks = 0;
+            }
+        }
     }
 
     IEnumerator DestroyAfterTime()
@@ -63,6 +110,8 @@ public class ThrowableItemSpawnController : MonoBehaviour
         yield return new WaitForSeconds(_timeToDestroy);
         if (_enemyController) _enemyController.NavMeshAgent.speed /= _speedFactor;
         if (_enemyHealth) _enemyHealth.TakeDamage(Mathf.RoundToInt(_damageAtEnd));
+        if (_playerMovement) _playerMovement.MoveSpeed /= _speedFactor;
+        if (_playerHealth) _playerHealth.TakeDamage(Mathf.RoundToInt(_damageAtEnd));
         _roomTrigger.RoomData.RemoveItem(_throwableItemData);
         Destroy(gameObject);
     }

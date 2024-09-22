@@ -840,6 +840,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7692382783761621938, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692382783761621938, guid: f5952cf5a06958845b9e1ec931410fa0, type: 3}
       propertyPath: m_ChildControlHeight
       value: 1
       objectReference: {fileID: 0}

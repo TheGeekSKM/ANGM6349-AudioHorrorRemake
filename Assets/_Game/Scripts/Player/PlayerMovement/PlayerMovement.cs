@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject _soundParent;
     [Header("Settings")]
     [SerializeField] float _moveSpeed = 5;
+    public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
     float _timeBetweenSteps = 0.5f;
     [SerializeField] float raycastDistance = 2.0f;
 

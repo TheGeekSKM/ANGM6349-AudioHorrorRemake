@@ -62,7 +62,7 @@ public class GamePlayUIController : MonoBehaviour
     RectTransform _notePadRectTransform;
 
     [Header("Chatlogs")]
-    [SerializeField] List<Transform> _chatLogParents = new();
+    [SerializeField] List<ChatParent> _chatLogParents = new();
     [SerializeField] GameObject _chatLogPrefab;
 
     [Header("Events/Variables")]
@@ -215,8 +215,8 @@ public class GamePlayUIController : MonoBehaviour
         _onChatLogCountChange.Raise(_chatLogCount);
         foreach (var chatLogParent in _chatLogParents)
         {
-            var chatLog = Instantiate(_chatLogPrefab, chatLogParent).GetComponent<ChatLogController>();
-            chatLog.Initialize(message, _chatLogCount);
+            var chatLog = Instantiate(_chatLogPrefab, chatLogParent.Parent).GetComponent<ChatLogController>();
+            chatLog.Initialize(message, _chatLogCount, chatLogParent.StartingXPos);
         }
     }
 
@@ -225,13 +225,13 @@ public class GamePlayUIController : MonoBehaviour
     {
         foreach (var chatLogParent in _chatLogParents)
         {
-            foreach (Transform child in chatLogParent)
+            foreach (Transform child in chatLogParent.Parent)
             {
-                Destroy(child.gameObject);
-
                 // destroy immediate for unity editor
 #if UNITY_EDITOR
                 DestroyImmediate(child.gameObject);
+#else
+                Destroy(child.gameObject);
 #endif
             }
         }
@@ -271,6 +271,18 @@ public class GamePlayUIController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         _gamePlayUIStateMachine.ChangeState(state);
+    }
+}
+
+[Serializable]
+public struct ChatParent
+{
+    public Transform Parent;
+    public float StartingXPos;
+    public ChatParent(Transform parent, float startingXPos)
+    {
+        Parent = parent;
+        StartingXPos = startingXPos;
     }
 }
 

@@ -1,16 +1,16 @@
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class ChatLogController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _chatLogText;
     int _chatLogCount = 0;
-    float positionX;
 
-    public void Initialize(string message, int chatLogCount)
-    {
-        positionX = GetComponent<RectTransform>().anchoredPosition.x;
+    [Button]
+    public void Initialize(string message, int chatLogCount, float positionX)
+    {   
 
         // Initialize the chat log UI
         _chatLogText.text = message;

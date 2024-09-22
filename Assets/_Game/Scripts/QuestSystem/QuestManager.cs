@@ -77,53 +77,53 @@ public class QuestManager : MonoBehaviour
         QuestFindBandagesState = new QuestFindBandagesState(this, new QuestData("Find Bandages", "Find bandages in the <b>Infirmary</b>..."));
         _questStateMachine.AddAnyTransition(QuestFindBandagesState, new BlankPredicate());
         _quests.Add(QuestFindBandagesState.QuestData);
-        Debug.Log("QuestFindBandagesState: " + QuestFindBandagesState.QuestData.questActivated);
+        // Debug.Log("QuestFindBandagesState: " + QuestFindBandagesState.QuestData.questActivated);
 
         QuestBringBandagesState = new QuestBringBandagesState(this, new QuestData("Bring Bandages", "Bring bandages to the man in the <b>Safe Room</b>..."));
         _questStateMachine.AddAnyTransition(QuestBringBandagesState, new BlankPredicate());
         _quests.Add(QuestBringBandagesState.QuestData);
-        Debug.Log("QuestBringBandagesState: " + QuestBringBandagesState.QuestData.questActivated);
+        // Debug.Log("QuestBringBandagesState: " + QuestBringBandagesState.QuestData.questActivated);
 
         QuestFindMonsterNestState = new QuestFindMonsterNestState(this, new QuestData("Find Monster Nest", "Find the monster nest..."));
         _questStateMachine.AddAnyTransition(QuestFindMonsterNestState, new BlankPredicate());
         _quests.Add(QuestFindMonsterNestState.QuestData);
-        Debug.Log("QuestFindMonsterNestState: " + QuestFindMonsterNestState.QuestData.questActivated);
+        // Debug.Log("QuestFindMonsterNestState: " + QuestFindMonsterNestState.QuestData.questActivated);
 
         QuestReportMonsterRoomState = new QuestReportMonsterRoomState(this, new QuestData("Report Monster Room", "Report the Monster Nest's location to the man in the <b>Safe Room</b>..."));
         _questStateMachine.AddAnyTransition(QuestReportMonsterRoomState, new BlankPredicate());
         _quests.Add(QuestReportMonsterRoomState.QuestData);
-        Debug.Log("QuestReportMonsterRoomState: " + QuestReportMonsterRoomState.QuestData.questActivated);
+        // Debug.Log("QuestReportMonsterRoomState: " + QuestReportMonsterRoomState.QuestData.questActivated);
 
         QuestFindSuppliesState = new QuestFindSuppliesState(this, new QuestData("Find Supplies", 
             "Find explosive chemicals in the <b>Chemical Storage Room</b> and beakers in the <b>Supply Storage Room</b>..."));
         _questStateMachine.AddAnyTransition(QuestFindSuppliesState, new BlankPredicate());
         _quests.Add(QuestFindSuppliesState.QuestData);
-        Debug.Log("QuestFindSuppliesState: " + QuestFindSuppliesState.QuestData.questActivated);
+        // Debug.Log("QuestFindSuppliesState: " + QuestFindSuppliesState.QuestData.questActivated);
 
         QuestBringSuppliesBackState = new QuestBringSuppliesBackState(this, new QuestData("Bring Supplies Back", "Bring the chemicals and beaker back to the man in the <b>Safe Room</b>..."));
         _questStateMachine.AddAnyTransition(QuestBringSuppliesBackState, new BlankPredicate());
         _quests.Add(QuestBringSuppliesBackState.QuestData);
-        Debug.Log("QuestBringSuppliesBackState: " + QuestBringSuppliesBackState.QuestData.questActivated);
+        // Debug.Log("QuestBringSuppliesBackState: " + QuestBringSuppliesBackState.QuestData.questActivated);
        
         QuestFindExitRoomState = new QuestFindExitRoomState(this, new QuestData("Find Exit Room", "Find the exit room..."));
         _questStateMachine.AddAnyTransition(QuestFindExitRoomState, new BlankPredicate());
         _quests.Add(QuestFindExitRoomState.QuestData);
-        Debug.Log("QuestFindExitRoomState: " + QuestFindExitRoomState.QuestData.questActivated);
+        // Debug.Log("QuestFindExitRoomState: " + QuestFindExitRoomState.QuestData.questActivated);
 
         QuestReportExitRoomState = new QuestReportExitRoomState(this, new QuestData("Report Exit Room", "Report the exit room to the man in the <b>Safe Room</b>..."));
         _questStateMachine.AddAnyTransition(QuestReportExitRoomState, new BlankPredicate());
         _quests.Add(QuestReportExitRoomState.QuestData);
-        Debug.Log("QuestReportExitRoomState: " + QuestReportExitRoomState.QuestData.questActivated);
+        // Debug.Log("QuestReportExitRoomState: " + QuestReportExitRoomState.QuestData.questActivated);
 
         QuestKillMonsterState = new QuestKillMonsterState(this, new QuestData("Kill Monster", "Kill the monster..."));
         _questStateMachine.AddAnyTransition(QuestKillMonsterState, new BlankPredicate());
         _quests.Add(QuestKillMonsterState.QuestData);
-        Debug.Log("QuestKillMonsterState: " + QuestKillMonsterState.QuestData.questActivated);
+        // Debug.Log("QuestKillMonsterState: " + QuestKillMonsterState.QuestData.questActivated);
 
         QuestReportKillOrLeaveState = new QuestReportKillOrLeave(this, new QuestData("Report Kill", "Report the monster's death to the man, or explode the <b>Exit Room</b> and leave..."));
         _questStateMachine.AddAnyTransition(QuestReportKillOrLeaveState, new BlankPredicate());
         _quests.Add(QuestReportKillOrLeaveState.QuestData);
-        Debug.Log("QuestReportKillOrLeaveState: " + QuestReportKillOrLeaveState.QuestData.questActivated);
+        // Debug.Log("QuestReportKillOrLeaveState: " + QuestReportKillOrLeaveState.QuestData.questActivated);
 
         _questStateMachine.SetState(QuestFindBandagesState);
     }
