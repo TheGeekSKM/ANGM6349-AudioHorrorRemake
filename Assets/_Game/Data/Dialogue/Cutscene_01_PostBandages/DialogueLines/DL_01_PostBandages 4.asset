@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 4
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: Anyway, we can now plan...We have some time before I die from infection...we
-    must find a way out...
-  _voiceClip: {fileID: 0}
+  _line: Oh...I'm sorry...I...I forgot you would not know...
+  _voiceClip: {fileID: 8300000, guid: 838f6076d16b6b549b903f3d33e7577e, type: 3}

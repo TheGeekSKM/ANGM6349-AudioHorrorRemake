@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 3
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: Bastard!
-  _voiceClip: {fileID: 0}
+  _line: Before your friend died, she was able to find the creature's nest and-
+  _voiceClip: {fileID: 8300000, guid: 33f6b42dc1ae6ed4a91187ff82cca12a, type: 3}

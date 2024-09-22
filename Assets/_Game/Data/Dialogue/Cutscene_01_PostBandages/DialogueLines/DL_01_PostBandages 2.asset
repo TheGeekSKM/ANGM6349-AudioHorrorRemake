@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 2
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: You look like the idea of my death amuses you...
-  _voiceClip: {fileID: 0}
+  _line: Now I have a few moments to plan out my eventual death...
+  _voiceClip: {fileID: 8300000, guid: 51b0cc6a6758fd241a2e517b6b3a73a3, type: 3}

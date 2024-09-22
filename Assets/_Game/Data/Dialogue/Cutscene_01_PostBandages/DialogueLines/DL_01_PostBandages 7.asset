@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 7
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: But there is a monster nest...I need you to find that room and report back
-    to me what you see..
-  _voiceClip: {fileID: 0}
+  _line: I hope you can do the same...
+  _voiceClip: {fileID: 8300000, guid: edfda5721e785fb40bad125783f7b59c, type: 3}

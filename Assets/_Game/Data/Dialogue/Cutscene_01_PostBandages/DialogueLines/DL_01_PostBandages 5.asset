@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 5
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: Before your friend died, she mentioned that there's a monster nest hear
-    somewhere...
-  _voiceClip: {fileID: 0}
+  _line: 'But there is a monster nest...I need you to find that room and report back
+    to me what you see.. '
+  _voiceClip: {fileID: 8300000, guid: 5840a0a989ade9d47be999e2ae34d807, type: 3}

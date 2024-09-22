@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 0
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: Oh thank the gods you found bandages...
-  _voiceClip: {fileID: 0}
+  _line: Oh thank the gods you found bandages!! I truly believed for a moment that
+    you would have become a dissolved corpse by now...Consider me quite impressed!
+  _voiceClip: {fileID: 8300000, guid: 82eaa8238c4146f439715725e9c36e33, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_01_PostBandages 1
   m_EditorClassIdentifier: 
   _characterName: The Guy
-  _line: I thought for a moment that you would leave me here to die...
-  _voiceClip: {fileID: 0}
+  _line: <i>sigh</i>....Fantastic...
+  _voiceClip: {fileID: 8300000, guid: 389c9d0b9c3b5a043bcc3fe77b27b046, type: 3}
