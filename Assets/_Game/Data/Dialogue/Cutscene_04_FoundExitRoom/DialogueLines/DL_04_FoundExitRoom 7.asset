@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: May the gods watch over you, boy...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 16a3cf1217f02d04dbc47a89d0fdbd7c, type: 3}

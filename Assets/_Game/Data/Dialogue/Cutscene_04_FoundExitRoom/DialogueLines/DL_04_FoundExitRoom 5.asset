@@ -15,4 +15,4 @@ MonoBehaviour:
   _characterName: The Man
   _line: Before you go...thank you for helping...I know you're not only doing this
     for me, but...thank you nonetheless...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: d2c2005756ec8be4db1df035263653c7, type: 3}

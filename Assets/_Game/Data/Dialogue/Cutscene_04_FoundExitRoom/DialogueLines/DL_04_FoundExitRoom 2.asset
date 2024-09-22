@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: And I presume you found the <b>Exit Room</b>?
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 841bf42323b0189409201bc014fd3862, type: 3}

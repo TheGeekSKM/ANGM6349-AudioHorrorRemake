@@ -15,4 +15,4 @@ MonoBehaviour:
   _characterName: The Man
   _line: I've done some awful things in this lab...and thanks to you, I might be
     able to redeem myself, one day...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: b02fb505f7587e34abfe790ad9dc98e0, type: 3}

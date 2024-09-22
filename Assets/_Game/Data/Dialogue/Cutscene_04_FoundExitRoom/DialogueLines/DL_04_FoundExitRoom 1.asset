@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_04_FoundExitRoom 1
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: I just finished the dynamite...
-  _voiceClip: {fileID: 0}
+  _line: I just finished the explosive chemicals...
+  _voiceClip: {fileID: 8300000, guid: a79bfab0684e7b846a62e2bd2ee4c256, type: 3}

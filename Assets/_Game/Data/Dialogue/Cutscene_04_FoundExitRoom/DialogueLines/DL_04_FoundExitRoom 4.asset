@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DL_04_FoundExitRoom 4
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: The moment you drop the Dynamite in any room, you have maybe a few seconds
-    to run...
-  _voiceClip: {fileID: 0}
+  _line: The moment you drop the Dynamite in any room, you have maybe just a few
+    seconds to run...
+  _voiceClip: {fileID: 8300000, guid: 6465639ffbd69d34d8b763ef7319ff1c, type: 3}

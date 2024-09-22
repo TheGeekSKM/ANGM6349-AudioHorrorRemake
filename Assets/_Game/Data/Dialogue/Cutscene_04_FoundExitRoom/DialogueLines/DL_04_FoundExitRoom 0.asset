@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: Excellent...you're back!
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 8ceb04ddee82a3541836bc84c8caf967, type: 3}

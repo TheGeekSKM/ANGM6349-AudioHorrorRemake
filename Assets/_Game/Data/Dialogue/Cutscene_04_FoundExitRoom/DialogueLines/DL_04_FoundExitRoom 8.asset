@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DL_04_FoundExitRoom 8
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Kill that wretched beast!
-  _voiceClip: {fileID: 0}
+  _line: And if you can...kill that wretched beast!
+  _voiceClip: {fileID: 8300000, guid: f19631ba435b69342908559ef4ab61d0, type: 3}

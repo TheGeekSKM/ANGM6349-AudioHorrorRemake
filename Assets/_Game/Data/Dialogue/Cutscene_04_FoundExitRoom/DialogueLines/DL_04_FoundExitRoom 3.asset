@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: Brilliant! Here...I made 7 Pouches of Dynamite...use it carefully...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 5dc03d60f7fc65c40b9fc230a8d4404e, type: 3}
