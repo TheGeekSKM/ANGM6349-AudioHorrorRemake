@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: The Man
   _line: OH! Hhahahhahhaahh!!! Yes!!! I knew you were fantastic!
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 0425e5c2b542d4d45abb6b20dea9d622, type: 3}

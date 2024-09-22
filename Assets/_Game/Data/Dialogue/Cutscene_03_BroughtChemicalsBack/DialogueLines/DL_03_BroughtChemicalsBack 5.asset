@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: DL_03_BroughtChemicalsBack 5
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: 'Once the creature has been killed, we can find our way out of here...
-
-'
-  _voiceClip: {fileID: 0}
+  _line: Once the creature is dead, we can make a sprint to the exit!
+  _voiceClip: {fileID: 8300000, guid: eb14c6880b4f5f14693dee2ec2bfad00, type: 3}

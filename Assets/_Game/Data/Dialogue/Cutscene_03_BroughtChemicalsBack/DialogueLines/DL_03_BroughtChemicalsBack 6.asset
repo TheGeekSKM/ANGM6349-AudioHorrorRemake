@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DL_03_BroughtChemicalsBack 6
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Your friend mentioned that there was a room with a little bit of breeze
-    coming through...Find that room, and report back to me...
-  _voiceClip: {fileID: 0}
+  _line: There should be a collapsed room that is closest to the outside world. Find
+    it while I make the explosive chemicals, and I promise I will make sure we get
+    out of here...
+  _voiceClip: {fileID: 8300000, guid: 635d38d86014cce4b94f63c1907bb31b, type: 3}

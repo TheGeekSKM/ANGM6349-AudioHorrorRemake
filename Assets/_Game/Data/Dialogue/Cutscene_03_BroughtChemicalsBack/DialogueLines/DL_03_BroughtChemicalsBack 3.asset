@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DL_03_BroughtChemicalsBack 3
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: The idea is to make an explosive, set it in the Monster Nest, and hopefully
+  _line: The idea is to make an explosive, set it in the Creature Nest, and hopefully
     explode the eggs...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 8aaa6ac6ef7cf0948b491aaf03ab3b9f, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   _characterName: The Man
   _line: Ideally, if you lure the creature into the Nest, we can explode the creature,
     too...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: 78e0bfc0dfd77b746a7b9a90d74e807d, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   _characterName: The Man
   _line: Now, I need some time...I'm not the best at this, but I will try to make
     what little I can in my current state...
-  _voiceClip: {fileID: 0}
+  _voiceClip: {fileID: 8300000, guid: dbcdc25228460644eb7f57c043380181, type: 3}

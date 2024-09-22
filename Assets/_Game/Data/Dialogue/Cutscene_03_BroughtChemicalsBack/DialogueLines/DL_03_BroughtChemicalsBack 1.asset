@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: DL_03_BroughtChemicalsBack 1
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Very well, boy! Well done, indeed...
-  _voiceClip: {fileID: 0}
+  _line: Well done, indeed!! I must say I definitely underestimated you, but you
+    are far-and I mean this sincerely-far better at this than I thought you would
+    be...
+  _voiceClip: {fileID: 8300000, guid: d7b510e3213247e4b95840eb612a0eb6, type: 3}
