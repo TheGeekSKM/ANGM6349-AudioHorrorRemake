@@ -55,6 +55,7 @@ public class GamePlayUIController : MonoBehaviour
     [SerializeField] Button _closeRoomInventoryButton;
     [SerializeField] Button _notePadActivateButton;
     [SerializeField] Button _notePadHideButton;
+    [SerializeField] Button _safeRoomButton;
 
     [Header("NotePad")]
     [SerializeField] float _notePadHiddenYPos = 1014f;
@@ -99,6 +100,17 @@ public class GamePlayUIController : MonoBehaviour
         _notePadRectTransform = _notePadPanel.GetComponent<RectTransform>();
         _notePadPanel.SetActive(_isNotepadFound.Value);
 
+        _safeRoomButton.gameObject.SetActive(false);
+    }
+
+    public void ShowSafeRoomButton()
+    {
+        _safeRoomButton.gameObject.SetActive(true);
+    }
+
+    public void HideSafeRoomButton()
+    {
+        _safeRoomButton.gameObject.SetActive(false);
     }
 
 
@@ -161,6 +173,7 @@ public class GamePlayUIController : MonoBehaviour
         _closeRoomInventoryButton.onClick.AddListener(() => ChangeGamePlayUIStateWithDelay(GamePlayUIDefaultState, 0.2f));
         _leftButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnLeft());
         _rightButton.onClick.AddListener(() => PlayerController.Instance.PlayerMovement.TurnRight());
+        _safeRoomButton.onClick.AddListener(() => GameManager.Instance.ChangeGameStateWithDelay(GameManager.Instance.GameSafeRoomState, 0.2f)); 
 
         _isNotepadFound.OnValueChanged += (value) => _notePadPanel.SetActive(value);
     }
@@ -179,7 +192,7 @@ public class GamePlayUIController : MonoBehaviour
         _closeRoomInventoryButton.onClick.RemoveAllListeners();
         _leftButton.onClick.RemoveAllListeners();
         _rightButton.onClick.RemoveAllListeners();
-
+        _safeRoomButton.onClick.RemoveAllListeners();
         _isNotepadFound.OnValueChanged -= (value) => _notePadPanel.SetActive(value);
     }
 
