@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using SaiUtils.StateMachine;
 
 public class PlayerArtDisplay : MonoBehaviour
 {
@@ -9,9 +10,38 @@ public class PlayerArtDisplay : MonoBehaviour
     [SerializeField] GameObject _playerFloorReticle;
     [SerializeField] Transform _player;
     [SerializeField] List<GameObject> _playerAnimationList;
+    [SerializeField] Animator _playerAnimator;
     bool _artEnabled;
     Vector3 _offset;
     PlayerMovement _playerMovement;
+
+    StateMachine _playerAnimationStateMachine;
+
+    public PlayerLookMonsterCloseAnimState PlayerLookMonsterCloseAnimState { get; private set; }
+    public PlayerLookMonsterFarAnimState PlayerLookMonsterFarAnimState { get; private set; }
+    public PlayerWalkAnimState PlayerWalkAnimState { get; private set; }
+
+    private static readonly int Walk = Animator.StringToHash("Walk");
+    private static readonly int LookingAround_MonsterClose = Animator.StringToHash("LookingAround_MonsterClose");
+    private static readonly int LookingAround_MonsterFar = Animator.StringToHash("LookingAround_MonsterFar");
+
+    void Awake()
+    {
+        _playerAnimationStateMachine = new StateMachine();
+
+        PlayerLookMonsterCloseAnimState = new PlayerLookMonsterCloseAnimState(_playerAnimator, LookingAround_MonsterClose, 0.1f);
+        PlayerLookMonsterFarAnimState = new PlayerLookMonsterFarAnimState(_playerAnimator, LookingAround_MonsterFar, 0.1f);
+        PlayerWalkAnimState = new PlayerWalkAnimState(_playerAnimator, Walk, 0.1f);
+
+        _playerAnimationStateMachine.AddAnyTransition(PlayerWalkAnimState, new BlankPredicate());
+        _playerAnimationStateMachine.AddAnyTransition(PlayerLookMonsterCloseAnimState, new BlankPredicate());
+        _playerAnimationStateMachine.AddAnyTransition(PlayerLookMonsterFarAnimState, new BlankPredicate());
+
+        _playerAnimationStateMachine.SetState(PlayerWalkAnimState);
+
+        Debug.Log($"PlayerAnimStateMachine Set Up: {_playerAnimationStateMachine != null}");
+    }
+
 
     void Start()
     {
@@ -79,14 +109,41 @@ public class PlayerArtDisplay : MonoBehaviour
     [Button]
     public void SetPlayerArtInactive()
     {
-        // sets the player art to inactive
-        _playerArt.SetActive(false);
-        foreach (GameObject anims in _playerAnimationList)
+        // // sets the player art to inactive
+        // _playerArt.SetActive(false);
+        // foreach (GameObject anims in _playerAnimationList)
+        // {
+        //     anims.SetActive(false);
+        // }
+        // _playerFloorReticle.SetActive(false);
+        // _artEnabled = false;
+    }
+
+    public void PlayerMove(bool isMoving)
+    {
+
+        Debug.Log("PlayerMove: " + isMoving);
+        if (isMoving) 
         {
-            anims.SetActive(false);
+            _playerAnimationStateMachine.ChangeState(PlayerWalkAnimState);
+            return;
         }
-        _playerFloorReticle.SetActive(false);
-        _artEnabled = false;
+        
+        if (EnemyController.Instance && _playerMovement)
+        {
+            if (EnemyController.Instance.Direction == _playerMovement.MoveDirection)
+            {
+                _playerAnimationStateMachine.ChangeState(PlayerLookMonsterFarAnimState);
+                return;
+            }
+            else
+            {
+                _playerAnimationStateMachine.ChangeState(PlayerLookMonsterCloseAnimState);
+                return;
+            }
+        }
+
+        _playerAnimationStateMachine?.ChangeState(PlayerLookMonsterFarAnimState);
     }
 
     void Update()
@@ -98,10 +155,18 @@ public class PlayerArtDisplay : MonoBehaviour
 
             // sets the player art to face the MoveDirection from the PlayerMovement script
             _playerArt.transform.LookAt(_player.position + _playerMovement.MoveDirection);
+            _playerAnimationList[0].transform.LookAt(_player.position + _playerMovement.MoveDirection);
             _playerArt.transform.rotation = Quaternion.Euler(0, _playerArt.transform.rotation.eulerAngles.y, 0);
             
             _playerFloorReticle.transform.LookAt(_player.position + _playerMovement.MoveDirection);
         }
+
+        _playerAnimationStateMachine?.Update();
+    }
+
+    void FixedUpdate()
+    {
+        _playerAnimationStateMachine?.FixedUpdate();
     }
 
 }
