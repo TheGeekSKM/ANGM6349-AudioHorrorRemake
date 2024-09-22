@@ -106,6 +106,7 @@ public class GamePlayUIController : MonoBehaviour
     public void ShowSafeRoomButton()
     {
         _safeRoomButton.gameObject.SetActive(true);
+        AddNotification("<b>You: </b> If I stop walking, I can probably take a breather in the Safe Room...too bad the old guy's here, though...");
     }
 
     public void HideSafeRoomButton()
