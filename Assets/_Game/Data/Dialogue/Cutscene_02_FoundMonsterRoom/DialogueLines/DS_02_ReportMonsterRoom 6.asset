@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DS_02_ReportMonsterRoom 6
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Very well, at least it has a home...which means we can defeat it...
-  _voiceClip: {fileID: 0}
+  _line: I might be able to turn the tables with those items...
+  _voiceClip: {fileID: 8300000, guid: 42db419565a2a0c4aa6a17c95197f08b, type: 3}

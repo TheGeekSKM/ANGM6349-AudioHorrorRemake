@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DS_02_ReportMonsterRoom 0
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Thank the gods!!! You're alive!
-  _voiceClip: {fileID: 0}
+  _line: 'Ah! You survived...Considering how much slime and viscera you have on you...I
+    can only assume you found the Creature Nest... '
+  _voiceClip: {fileID: 8300000, guid: fa066dd56f2c66b42b7ca614fc12082b, type: 3}

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: DS_02_ReportMonsterRoom 3
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Very well, I suppose you found the monster room...Here...take this paper
-    and pen and write down everything you observed-oh pardon me-felt in the room...
-  _voiceClip: {fileID: 0}
+  _line: My gods...so it can replicate after all...
+  _voiceClip: {fileID: 8300000, guid: 96f83f428858a6548ae78e076bf448f7, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DS_02_ReportMonsterRoom 1
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: You look a little malnourished though...Here, I've been hoarding some bread...
-  _voiceClip: {fileID: 0}
+  _line: Here...take this paper and pen and write down everything you observed-oh
+    pardon me-felt in the room...
+  _voiceClip: {fileID: 8300000, guid: 4a97354bdf001ae48b16a7944ef68dae, type: 3}

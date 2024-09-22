@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DS_02_ReportMonsterRoom 5
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: My gods...so the creature does replicate after all...
-  _voiceClip: {fileID: 0}
+  _line: Do me a favor, grab me some chemicals from the Chemical Supply Room and
+    a beaker from the Supplies Storage Room...
+  _voiceClip: {fileID: 8300000, guid: 57a1dd42496bfa64c886c8f8520e5613, type: 3}

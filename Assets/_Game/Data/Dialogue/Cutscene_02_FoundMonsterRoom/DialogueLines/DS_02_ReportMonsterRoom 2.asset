@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DS_02_ReportMonsterRoom 2
   m_EditorClassIdentifier: 
   _characterName: The Man
-  _line: Don't give me that look, boy...
-  _voiceClip: {fileID: 0}
+  _line: Eggs...? Nothing but eggs?!
+  _voiceClip: {fileID: 8300000, guid: 1fccacfa71579704191c7b36fe0dff00, type: 3}
