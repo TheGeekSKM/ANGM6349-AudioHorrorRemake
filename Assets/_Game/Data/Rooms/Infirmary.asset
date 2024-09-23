@@ -25,7 +25,8 @@ MonoBehaviour:
   Loot:
   - {fileID: 11400000, guid: 396fd6e3b64e60d498ffab7bd856a6ce, type: 2}
   - {fileID: 11400000, guid: 9614a4b52c495374f82251eaaf44b6e3, type: 2}
+  - {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
   - {fileID: 11400000, guid: 00cb08008e3006649acb7dc1cb0df250, type: 2}
-  - {fileID: 11400000, guid: 088cefd2584c3d14dbb5f5abbf4033ba, type: 2}
   - {fileID: 11400000, guid: ecd9cd77d620c2d4783e624bc962b775, type: 2}
-  discovered: 0
+  - {fileID: 11400000, guid: 088cefd2584c3d14dbb5f5abbf4033ba, type: 2}
+  discovered: 1
