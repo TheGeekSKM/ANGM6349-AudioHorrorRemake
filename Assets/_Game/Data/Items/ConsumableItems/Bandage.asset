@@ -25,10 +25,10 @@ MonoBehaviour:
     screwed....
   UseDurability: 1
   Durability: 1
-  PickupSound: {fileID: 0}
-  UseSound: {fileID: 0}
+  PickupSound: {fileID: 11400000, guid: 33f1c88622f9a2147a7619ce0a73b6b2, type: 2}
+  UseSound: {fileID: 11400000, guid: 33f1c88622f9a2147a7619ce0a73b6b2, type: 2}
   BreakSound: {fileID: 0}
-  DropSound: {fileID: 0}
+  DropSound: {fileID: 11400000, guid: 33f1c88622f9a2147a7619ce0a73b6b2, type: 2}
   HealthRestore: 10
   SpeedBoost: 0
   SpeedBoostDuration: 0
