@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c1b6f66d311f24ab453c19d8e0d01c, type: 3}
   m_Name: ExplosiveChemicals
   m_EditorClassIdentifier: 
-  ItemName: Explosive Chemicals
+  ItemName: Chemicals
   ItemDescription: I definitely could drink these...but I probably shouldn't....It
     would be a sick way to die, though...
   ItemUsageDescription:

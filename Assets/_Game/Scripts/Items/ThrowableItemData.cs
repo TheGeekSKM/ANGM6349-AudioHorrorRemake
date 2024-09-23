@@ -12,6 +12,7 @@ public class ThrowableItemData : ItemData
     [SerializeField] float _damageOverTime = 5f;
     [SerializeField] float _timeBetweenDamage = 1f;
     [SerializeField] ThrowableItemSpawnController _afterThrownPrefab;
+    [SerializeField] SoundData _afterThrowableExpiredSound;
 
     
     public float TimeToDestroy => _timeToDestroy;
@@ -31,7 +32,7 @@ public class ThrowableItemData : ItemData
         if (AfterThrownPrefab) 
         {
             var prefab = Instantiate(AfterThrownPrefab, roomTransform.position, roomTransform.rotation);
-            prefab.Initialize(this, roomTrigger);
+            prefab.Initialize(this, roomTrigger, _afterThrowableExpiredSound);
         }
 
         Debug.Log("Dropped throwable item: " + this);

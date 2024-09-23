@@ -10,7 +10,8 @@ public class ThrowableItemSpawnController : MonoBehaviour
     [SerializeField] float _damageOverTime = 5f;
     [SerializeField] float _timeBetweenDamage = 1f;
     [SerializeField] RoomTrigger _roomTrigger;
-
+    
+    SoundData _afterThrowableExpiredSound;
     float _timeBetweenAttacks;
     Coroutine _destroyCoroutine;
     EnemyHealth _enemyHealth;
@@ -20,7 +21,7 @@ public class ThrowableItemSpawnController : MonoBehaviour
     PlayerMovement _playerMovement;
 
 
-    public void Initialize(ThrowableItemData throwableItemData, RoomTrigger roomTrigger)
+    public void Initialize(ThrowableItemData throwableItemData, RoomTrigger roomTrigger, SoundData afterThrowableExpiredSound)
     {
         _throwableItemData = throwableItemData;
         _timeToDestroy = _throwableItemData.TimeToDestroy;
@@ -28,6 +29,7 @@ public class ThrowableItemSpawnController : MonoBehaviour
         _damageAtEnd = _throwableItemData.DamageAtEnd;
         _damageOverTime = _throwableItemData.DamageOverTime;
         _timeBetweenDamage = _throwableItemData.TimeBetweenDamage;
+        _afterThrowableExpiredSound = afterThrowableExpiredSound;
 
         //this object should be the same size as the RoomTrigger's collider
         _roomTrigger = roomTrigger;
@@ -113,6 +115,7 @@ public class ThrowableItemSpawnController : MonoBehaviour
         if (_playerMovement) _playerMovement.MoveSpeed /= _speedFactor;
         if (_playerHealth) _playerHealth.TakeDamage(Mathf.RoundToInt(_damageAtEnd));
         _roomTrigger.RoomData.RemoveItem(_throwableItemData);
+        if (_afterThrowableExpiredSound) SoundManager.Instance.PlaySound(_roomTrigger.transform, _afterThrowableExpiredSound);
         Destroy(gameObject);
     }
 
