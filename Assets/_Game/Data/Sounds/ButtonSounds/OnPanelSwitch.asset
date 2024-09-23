@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OnPanelSwitch
   m_EditorClassIdentifier: 
   Sounds:
-  - {fileID: 8300000, guid: 2bcac83a275f40d4c9ae3eb6eddf64f7, type: 3}
+  - {fileID: 8300000, guid: 7ae47a631685c114a9031cc4213be060, type: 3}
   Volume: 0.2
