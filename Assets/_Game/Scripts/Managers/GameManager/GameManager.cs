@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     // [Header("Events")]
     // [SerializeField] VoidEvent _onPlayerEnterSafeRoom;
 
+    bool _playerInSafeRoom = false;
+    float _safeRoomTimer = 0;
+
 
     StateMachine _gameStateMachine;
 
@@ -95,6 +98,15 @@ public class GameManager : MonoBehaviour
             Application.Quit();
 #endif
         }
+
+        if (_playerInSafeRoom)
+        {
+            _safeRoomTimer += Time.deltaTime;
+            if (_safeRoomTimer == 1f) {
+                PlayerController.Instance.PlayerHealth.TakeDamage(-2);
+                _safeRoomTimer = 0;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -138,6 +150,20 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         EnemyController.Instance.NavMeshAgent.speed = 2;
+    }
+
+    public void PlayerInSafeRoom()
+    {
+        Debug.Log("Player in safe room");
+        EnemyController.Instance.NavMeshAgent.speed = 0;
+        _playerInSafeRoom = true;
+    }
+
+    public void PlayerOutOfSafeRoom()
+    {
+        Debug.Log("Player out of safe room");
+        EnemyController.Instance.NavMeshAgent.speed = 2;
+        _playerInSafeRoom = false;
     }
 
 }

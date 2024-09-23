@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using SaiUtils.GameEvents;
 using Sirenix.OdinInspector;
 using UnityEngine;

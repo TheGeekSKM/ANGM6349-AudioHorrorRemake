@@ -24,4 +24,7 @@ MonoBehaviour:
   - Ewwwwwww I hate eggs....
   Loot:
   - {fileID: 11400000, guid: d6edf53faebdfd144b83104e144618f8, type: 2}
+  - {fileID: 11400000, guid: 9614a4b52c495374f82251eaaf44b6e3, type: 2}
+  - {fileID: 11400000, guid: d6edf53faebdfd144b83104e144618f8, type: 2}
+  - {fileID: 11400000, guid: dc27abafe04310941b8891149d1778b2, type: 2}
   discovered: 0

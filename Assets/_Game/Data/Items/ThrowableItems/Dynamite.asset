@@ -29,3 +29,4 @@ MonoBehaviour:
   _damageOverTime: 0
   _timeBetweenDamage: 1
   _afterThrownPrefab: {fileID: 4797945711150691599, guid: 9a3e643e45688e14c90ec3eb58d601ea, type: 3}
+  _afterThrowableExpiredSound: {fileID: 11400000, guid: c7ff7004245e0b14398a599c367c5b0c, type: 2}

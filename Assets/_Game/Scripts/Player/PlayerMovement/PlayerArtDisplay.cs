@@ -157,6 +157,7 @@ public class PlayerArtDisplay : MonoBehaviour
             _playerArt.transform.LookAt(_player.position + _playerMovement.MoveDirection);
             _playerAnimationList[0].transform.LookAt(_player.position + _playerMovement.MoveDirection);
             _playerArt.transform.rotation = Quaternion.Euler(0, _playerArt.transform.rotation.eulerAngles.y, 0);
+            _playerAnimationList[0].transform.rotation = Quaternion.Euler(0, _playerAnimationList[0].transform.rotation.eulerAngles.y, 0);
             
             _playerFloorReticle.transform.LookAt(_player.position + _playerMovement.MoveDirection);
         }

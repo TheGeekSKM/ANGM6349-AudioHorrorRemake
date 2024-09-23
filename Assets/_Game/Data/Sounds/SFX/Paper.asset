@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198e4bea277850c4f93de9cbab5fab04, type: 3}
+  m_Name: Paper
+  m_EditorClassIdentifier: 
+  Sounds:
+  - {fileID: 8300000, guid: b06fcbdeace88234daeff95915a22f74, type: 3}
+  - {fileID: 8300000, guid: e1260786e2d2bec42b546ffba96e4ed6, type: 3}
+  Volume: 0.5

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundData: {fileID: 0}
-  _additionalTime: 5
+  _additionalTime: 3
   _spriteRenderer: {fileID: 2810190234488982608}
   _audioSource: {fileID: 436650374378086318}
   _clipLength: 0

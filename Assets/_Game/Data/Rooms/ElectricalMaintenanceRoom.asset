@@ -24,6 +24,4 @@ MonoBehaviour:
   - If I step on another wire...I might kill this creature and then, myself.
   Loot:
   - {fileID: 11400000, guid: d6edf53faebdfd144b83104e144618f8, type: 2}
-  - {fileID: 11400000, guid: 0ff6754806b47a743b32c77bddcd8471, type: 2}
-  - {fileID: 11400000, guid: 396fd6e3b64e60d498ffab7bd856a6ce, type: 2}
   discovered: 0

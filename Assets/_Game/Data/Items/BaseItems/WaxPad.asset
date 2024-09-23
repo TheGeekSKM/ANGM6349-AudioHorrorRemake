@@ -18,7 +18,7 @@ MonoBehaviour:
   - Hmmmm....feels like a kid wrote this...shit...
   UseDurability: 0
   Durability: -1
-  PickupSound: {fileID: 0}
-  UseSound: {fileID: 0}
+  PickupSound: {fileID: 11400000, guid: 20d85a750f20c4d458a0dd8c4e131905, type: 2}
+  UseSound: {fileID: 11400000, guid: 20d85a750f20c4d458a0dd8c4e131905, type: 2}
   BreakSound: {fileID: 0}
-  DropSound: {fileID: 0}
+  DropSound: {fileID: 11400000, guid: 20d85a750f20c4d458a0dd8c4e131905, type: 2}

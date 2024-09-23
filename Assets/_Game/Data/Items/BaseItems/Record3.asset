@@ -18,7 +18,7 @@ MonoBehaviour:
   - I hope this one has some sick jams...oh gods, I'm going insane, aren't I?
   UseDurability: 0
   Durability: -1
-  PickupSound: {fileID: 0}
-  UseSound: {fileID: 0}
+  PickupSound: {fileID: 11400000, guid: 67329157762c29340a00a5c34b8296a6, type: 2}
+  UseSound: {fileID: 11400000, guid: 67329157762c29340a00a5c34b8296a6, type: 2}
   BreakSound: {fileID: 0}
-  DropSound: {fileID: 0}
+  DropSound: {fileID: 11400000, guid: 67329157762c29340a00a5c34b8296a6, type: 2}

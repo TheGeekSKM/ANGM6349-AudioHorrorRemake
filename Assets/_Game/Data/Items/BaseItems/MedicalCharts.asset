@@ -21,7 +21,7 @@ MonoBehaviour:
   - I could probably throw these to make some kinda noise...
   UseDurability: 0
   Durability: -1
-  PickupSound: {fileID: 0}
-  UseSound: {fileID: 0}
+  PickupSound: {fileID: 11400000, guid: 4d6bab0e652ee924abea32ca61b110ca, type: 2}
+  UseSound: {fileID: 11400000, guid: 4d6bab0e652ee924abea32ca61b110ca, type: 2}
   BreakSound: {fileID: 0}
-  DropSound: {fileID: 0}
+  DropSound: {fileID: 11400000, guid: 4d6bab0e652ee924abea32ca61b110ca, type: 2}

@@ -24,10 +24,10 @@ MonoBehaviour:
   - This shit is better than therapy...and it makes me fast, too.
   UseDurability: 1
   Durability: 1
-  PickupSound: {fileID: 0}
-  UseSound: {fileID: 0}
+  PickupSound: {fileID: 11400000, guid: 0d798100b66420b499ba842b7036f515, type: 2}
+  UseSound: {fileID: 11400000, guid: 0d798100b66420b499ba842b7036f515, type: 2}
   BreakSound: {fileID: 0}
-  DropSound: {fileID: 0}
+  DropSound: {fileID: 11400000, guid: 0d798100b66420b499ba842b7036f515, type: 2}
   HealthRestore: -5
   SpeedBoost: 3
   SpeedBoostDuration: 5

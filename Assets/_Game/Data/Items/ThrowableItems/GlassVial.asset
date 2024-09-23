@@ -19,13 +19,14 @@ MonoBehaviour:
   ItemUsageDescription: []
   UseDurability: 0
   Durability: -1
-  PickupSound: {fileID: 0}
-  UseSound: {fileID: 0}
+  PickupSound: {fileID: 11400000, guid: 0d798100b66420b499ba842b7036f515, type: 2}
+  UseSound: {fileID: 11400000, guid: 0d798100b66420b499ba842b7036f515, type: 2}
   BreakSound: {fileID: 0}
-  DropSound: {fileID: 0}
+  DropSound: {fileID: 11400000, guid: 6c3d9105ce0641348a8d2d89b2929618, type: 2}
   _timeToDestroy: 5
   _speedFactor: 1
   _damageAtEnd: 10
   _damageOverTime: 5
   _timeBetweenDamage: 1
   _afterThrownPrefab: {fileID: 4797945711150691599, guid: 9a3e643e45688e14c90ec3eb58d601ea, type: 3}
+  _afterThrowableExpiredSound: {fileID: 0}
