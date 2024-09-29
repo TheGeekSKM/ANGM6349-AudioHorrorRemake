@@ -88,6 +88,8 @@ MonoBehaviour:
   _wanderRadius: 42.43
   _damage: 10
   _timeBetweenRoars: {x: 25, y: 35}
+  _timeSpentTargeting: {x: 7, y: 10}
+  _enemySpeed: {fileID: 11400000, guid: c98cbb2b1a318d44a8f46a4933b72453, type: 2}
   _direction: {x: 0, y: 0, z: 0}
   _currentTarget: {fileID: 0}
 --- !u!195 &2918469850128649183

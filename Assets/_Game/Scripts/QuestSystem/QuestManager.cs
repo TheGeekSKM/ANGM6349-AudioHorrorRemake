@@ -40,11 +40,15 @@ public class QuestManager : MonoBehaviour
     [SerializeField] ItemData _explosiveChemicals;
     [SerializeField] ItemData _beaker;
     [SerializeField] ItemData _dynamite;
+    [SerializeField] RoomData _monsterRoom;
+    [SerializeField] FloatVariable _monsterSpeed;
     bool _foundExplosiveChemicals = false;
     bool _foundBeaker = false;
 
     bool _reportedKill = false;
     bool _explodedExitRoom = false;
+    float _originalMonsterSpeed;
+    bool _foundMonsterRoom = false;
 
     void Awake()
     {
@@ -131,6 +135,12 @@ public class QuestManager : MonoBehaviour
     void Start()
     {
         QuestListenerSetup();
+        _originalMonsterSpeed = _monsterSpeed.Value;
+    }
+
+    void Update()
+    {
+        if (!_foundMonsterRoom) _monsterSpeed.Value = 0f;
     }
 
     void QuestListenerSetup()
@@ -200,8 +210,12 @@ public class QuestManager : MonoBehaviour
         BringBandagesQuestListener.SetActive(false);
     }
 
-    public void FoundMonsterRoom()
+    public void FoundMonsterRoom(RoomData roomData)
     {
+        if (roomData != _monsterRoom) return;
+        _foundMonsterRoom = true;
+        _monsterSpeed.Value = _originalMonsterSpeed;
+
         if (QuestFindMonsterNestState.QuestData.questCompleted) return;
         QuestFindMonsterNestState.QuestData.questCompleted = true;
 

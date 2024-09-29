@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _damage = 10f;
     [SerializeField] Vector2 _timeBetweenRoars = new Vector2(10, 15);
     [SerializeField] Vector2 _timeSpentTargeting = new Vector2(7, 10);
+    [SerializeField] FloatVariable _enemySpeed;
 
     [Header("Debug")]
     [SerializeField, ReadOnly] Vector3 _direction;
@@ -96,6 +97,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        _navMeshAgent.speed = _enemySpeed.Value;
         _enemyStateMachine.Update();
     }
 
