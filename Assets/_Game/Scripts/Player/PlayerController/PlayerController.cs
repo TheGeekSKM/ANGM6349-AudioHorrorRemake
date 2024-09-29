@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool _isCrouching;
     public bool IsCrouching => _isCrouching;
 
+    [SerializeField] FloatVariable _enemySpeed;
+    public FloatVariable EnemySpeed => _enemySpeed;
 
     StateMachine _playerMotionStateMachine;
     public StateMachine PlayerMotionStateMachine => _playerMotionStateMachine;
