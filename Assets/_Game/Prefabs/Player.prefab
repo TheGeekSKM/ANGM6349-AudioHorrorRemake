@@ -285,6 +285,7 @@ MonoBehaviour:
   _playerArtDisplay: {fileID: 8531790709959741189}
   _playerHealth: {fileID: 8531790710258581674}
   _isCrouching: 0
+  _enemySpeed: {fileID: 11400000, guid: c98cbb2b1a318d44a8f46a4933b72453, type: 2}
 --- !u!114 &8531790709959741186
 MonoBehaviour:
   m_ObjectHideFlags: 0
